@@ -1,0 +1,27 @@
+
+> wica@0.1.0 build
+> next build
+
+   ▲ Next.js 15.2.4
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./src/app/archive/page.tsx
+Error:   [31mx[0m `ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a client component.
+   ,-[[36;1;4mD:\cosmic\wica.lol\src\app\archive\page.tsx[0m:5:1]
+ [2m2[0m | import TheArchive from '~/components/TheArchive';
+ [2m3[0m | import dynamic from 'next/dynamic';
+ [2m4[0m | 
+ [2m5[0m | const NavBar = dynamic(() => import("~/components/NavBar"), { ssr: false });
+   : [35;1m               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+ [2m6[0m | 
+ [2m7[0m | export const metadata: Metadata = {
+ [2m8[0m |   title: 'Archive | ℏarnitya',
+   `----
+
+Import trace for requested module:
+./src/app/archive/page.tsx
+
+
+> Build failed because of webpack errors
