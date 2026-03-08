@@ -1,4 +1,4 @@
-﻿# ℏarnitya | Custom Polymath OS
+
  # ℏarnitya - Modern Personal Portfolio
 ![Website](https://portfolio-website-gules-delta-91.vercel.app/)
 ![Next.js](https://img.shields.io/badge/Next.js-15.2.3-000000?logo=next.js)
@@ -21,4 +21,5 @@
 Distributed under the [MIT License](/LICENSE). See [LICENSE](/LICENSE) for details.
 
 A personal digital brain, knowledge graph, and interactive portfolio.
+
 
