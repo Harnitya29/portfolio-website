@@ -42,7 +42,7 @@ export async function GET(request: Request) {
     const encodedTop = searchParams.get("top");
     
     // Giải mã URL với xử lý an toàn
-    const title = encodedTitle ? decodeURIComponent(encodedTitle) : "wica's blog";
+    const title = encodedTitle ? decodeURIComponent(encodedTitle) : "harnitya's blog";
     const top = encodedTop ? decodeURIComponent(encodedTop) : "";
 
     // Xử lý title quá dài và loại bỏ ký tự đặc biệt nếu cần
@@ -51,8 +51,8 @@ export async function GET(request: Request) {
     // Tải thêm font cho tiêu đề và nội dung với xử lý lỗi
     let fontData, fontDataBold;
     try {
-      fontData = await loadGoogleFont("Geist+Mono", "wica blog tech");
-      fontDataBold = await loadGoogleFont("Inter:wght@700", "wica blog tech");
+      fontData = await loadGoogleFont("Geist+Mono", "harnitya blog tech");
+      fontDataBold = await loadGoogleFont("Inter:wght@700", "harnitya blog tech");
     } catch (error) {
       console.error("Font loading error:", error);
       fontData = null;
@@ -190,7 +190,7 @@ export async function GET(request: Request) {
                 textShadow: "0 0 5px rgba(226, 232, 240, 0.3)",
               }}
             >
-              @williamcachamwri
+              @harnitya29
             </span>
           </div>
 
@@ -370,7 +370,7 @@ export async function GET(request: Request) {
             padding: "40px",
           }}
         >
-          <h1 style={{ fontSize: 60, textAlign: "center" }}>wica blog</h1>
+          <h1 style={{ fontSize: 60, textAlign: "center" }}>harnitya archive</h1>
         </div>
       ),
       {

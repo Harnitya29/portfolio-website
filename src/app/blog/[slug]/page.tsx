@@ -40,10 +40,10 @@ export async function generateMetadata({
       description: post.metadata.description,
       publishedTime,
       type: "article",
-      url: `https://wica.lol/blog/${post.slug}`,
+      url: `https://harnitya.vercel.app/blog/${post.slug}`,
       images: [
         {
-          url: `https://wica.lol/og/blog?title=${encodedTitle}`,
+          url: `https://harnitya.vercel.app/og/blog?title=${encodedTitle}`,
         },
       ],
     },
@@ -51,9 +51,9 @@ export async function generateMetadata({
       title: post.metadata.title,
       description: post.metadata.description,
       card: "summary_large_image",
-      creator: "@williamcachamwri",
+      creator: "@harnitya29",
       images: [
-        `https://wica.lol/og/blog?title=${encodedTitle}&top=${encodedDate}`,
+        `https://harnitya.vercel.app/og/blog?title=${encodedTitle}&top=${encodedDate}`,
       ],
     },
   };
@@ -84,8 +84,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
               datePublished: post.metadata.date,
               dateModified: post.metadata.date,
               description: post.metadata.description,
-              image: `https://wica.lol/og/blog?title=${encodedTitle}&top=${encodedDate}`,
-              url: `https://wica.lol/blog/${post.slug}`,
+              image: `https://harnitya.vercel.app/og/blog?title=${encodedTitle}&top=${encodedDate}`,
+              url: `https://harnitya.vercel.app/blog/${post.slug}`,
               author: {
                 "@type": "Person",
                 name: "Harnitya Narola",

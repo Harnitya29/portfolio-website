@@ -24,7 +24,7 @@ async function loadGoogleFont(font: string, text: string) {
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const title = searchParams.get("title");
-  const text = title ? `wica | ${title}` : "wica | home";
+  const text = title ? `harnitya | ${title}` : "harnitya | home";
 
   // Tải thêm font cho tiêu đề và nội dung
   const fontData = await loadGoogleFont("Geist+Mono", text);
@@ -389,7 +389,7 @@ export async function GET(request: Request) {
           
           {/* Hình ảnh hồ sơ */}
           <img
-            src="https://wica.lol/cc.jpg"
+            src="https://harnitya.vercel.app/cc.jpg"
             style={{
               width: "100px",
               height: "100px",
@@ -496,7 +496,7 @@ export async function GET(request: Request) {
               textShadow: "0 0 5px rgba(226, 232, 240, 0.3)",
             }}
           >
-            wica.lol
+            harnitya.vercel.app
           </span>
         </div>
         

@@ -3,7 +3,19 @@
 /** @type {import("next").NextConfig} */
 const config = {
   images: {
-    domains: ["i.pinimg.com", "avatars.githubusercontent.com", "i.scdn.co", "upload.wikimedia.org", "user-images.githubusercontent.com", "mdxjs.com", "raw.githubusercontent.com", "github.com", "cdn.jsdelivr.net", "www.svgrepo.com", "images.unsplash.com"],
+    remotePatterns: [
+      { protocol: "https", hostname: "i.pinimg.com" },
+      { protocol: "https", hostname: "avatars.githubusercontent.com" },
+      { protocol: "https", hostname: "i.scdn.co" },
+      { protocol: "https", hostname: "upload.wikimedia.org" },
+      { protocol: "https", hostname: "user-images.githubusercontent.com" },
+      { protocol: "https", hostname: "mdxjs.com" },
+      { protocol: "https", hostname: "raw.githubusercontent.com" },
+      { protocol: "https", hostname: "github.com" },
+      { protocol: "https", hostname: "cdn.jsdelivr.net" },
+      { protocol: "https", hostname: "www.svgrepo.com" },
+      { protocol: "https", hostname: "images.unsplash.com" }
+    ],
   },
   typescript: {
     // !! WARN !!

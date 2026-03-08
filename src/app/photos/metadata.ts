@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Photos",
-  description: "Photography collection by William, capturing special moments and interesting perspectives.",
+  description: "Photography collection by Harnitya, capturing special moments and interesting perspectives.",
   openGraph: {
     title: "Photos",
-    description: "Photography collection by William, capturing special moments and interesting perspectives.",
-    url: "https://wica.lol/photos",
+    description: "Photography collection by Harnitya, capturing special moments and interesting perspectives.",
+    url: "https://harnitya.vercel.app/photos",
     images: [
       {
-        url: "https://wica.lol/og/home?title=photos",
+        url: "https://harnitya.vercel.app/og/home?title=photos",
       },
     ],
   },
   twitter: {
     title: "Photos",
-    description: "Photography collection by William, capturing special moments and interesting perspectives.",
+    description: "Photography collection by Harnitya, capturing special moments and interesting perspectives.",
     card: "summary_large_image",
-    creator: "@williamcachamwri",
-    images: ["https://wica.lol/og/home?title=photos"],
+    creator: "@harnitya29",
+    images: ["https://harnitya.vercel.app/og/home?title=photos"],
   },
 };

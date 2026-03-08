@@ -58,7 +58,7 @@ export default function BlogPostClient({
       {/* GitHub Comments Section */}
       <section className="max-w-4xl mx-auto px-6 font-mono">
         <GitHubComments
-          repositoryOwner="williamcachamwri"
+          repositoryOwner="Harnitya29"
           repositoryName="blog-data"
           repositoryId="R_kgDOOYrY-w"
           categoryId="DIC_kwDOOYrY-84Cpsfz"
@@ -266,7 +266,7 @@ export default function BlogPostClient({
               transition={{ delay: 1 }}
               viewport={{ once: true }}
             >
-              <span className="mb-1">© {new Date().getFullYear()} William Cachamwri</span>
+              <span className="mb-1">© {new Date().getFullYear()} Harnitya Narola</span>
               <span className="text-zinc-600/50 text-[10px]">All rights reserved</span>
             </motion.div>
           </div>

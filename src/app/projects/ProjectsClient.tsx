@@ -130,7 +130,7 @@ export default function Projects() {
           className="mb-16"
         >
           <motion.h1 
-            className="text-5xl font-bold text-white relative inline-block"
+            className="text-5xl font-sans font-bold text-white relative inline-block"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}

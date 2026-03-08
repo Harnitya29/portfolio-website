@@ -76,7 +76,7 @@ export default function Experience() {
       animate="visible"
     >
       <motion.h1 
-        className="text-2xl font-bold text-white relative inline-block"
+        className="text-2xl font-sans font-bold text-white relative inline-block"
         variants={titleVariants}
         whileHover={{ scale: 1.03 }}
       >

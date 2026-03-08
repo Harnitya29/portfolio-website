@@ -2,7 +2,8 @@
 
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { RiBookLine, RiFilmLine, RiCodeBoxLine, RiArrowRightUpLine } from "@remixicon/react";
+import { RiBookLine, RiFilmLine, RiCodeBoxLine, RiArrowRightUpLine, RiLayoutGridLine, RiNodeTree } from "@remixicon/react";
+import ArchiveGraph from "./ArchiveGraph";
 
 // Types
 type Category = "ALL" | "BOOKS" | "CINEMA" | "SERIES" | "ARCHETYPES" | "MODELS";
@@ -171,6 +172,7 @@ const archiveData: ArchiveItem[] = [
 export default function TheArchive() {
   const [activeCategory, setActiveCategory] = useState<Category>("ALL");
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<"GRID" | "NETWORK">("GRID");
 
   const categories: Category[] = ["ALL", "BOOKS", "CINEMA", "MODELS"];
 
@@ -204,37 +206,94 @@ export default function TheArchive() {
         A digital brain mapping the mental models, literature, and media that shape my technical philosophy.
       </motion.p>
 
-      {/* Filter Toggle */}
-      <motion.div 
-        className="flex gap-2 mb-8 bg-zinc-900/50 p-1 rounded-lg w-fit border border-zinc-800"
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-      >
-        {categories.map((cat) => (
+      {/* Controls Container */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 relative z-10 w-full">
+        {/* Filter Toggle */}
+        <motion.div 
+          className="flex flex-wrap gap-2 bg-zinc-900/50 p-1 rounded-lg border border-zinc-800"
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+        >
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => {
+                setActiveCategory(cat);
+                setExpandedId(null);
+              }}
+              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
+                activeCategory === cat 
+                  ? "bg-zinc-800 text-green-300 shadow-sm" 
+                  : "text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/50"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* View Mode Toggle */}
+        <motion.div 
+          className="flex gap-1 bg-zinc-900/50 p-1 rounded-lg border border-zinc-800 self-end sm:self-auto"
+          initial={{ opacity: 0, x: 10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+        >
           <button
-            key={cat}
             onClick={() => {
-              setActiveCategory(cat);
-              setExpandedId(null); // Reset expansion on filter
+              setViewMode("GRID");
+              setExpandedId(null);
             }}
-            className={`px-4 py-1.5 text-xs font-medium rounded-md transition-all ${
-              activeCategory === cat 
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
+              viewMode === "GRID" 
                 ? "bg-zinc-800 text-green-300 shadow-sm" 
                 : "text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/50"
             }`}
           >
-            {cat}
+            <RiLayoutGridLine size={14} /> GRID
           </button>
-        ))}
-      </motion.div>
+          <button
+            onClick={() => setViewMode("NETWORK")}
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
+              viewMode === "NETWORK" 
+                ? "bg-zinc-800 text-cyan-400 shadow-sm" 
+                : "text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/50"
+            }`}
+          >
+            <RiNodeTree size={14} /> NETWORK
+          </button>
+        </motion.div>
+      </div>
 
-      {/* Data Fragments Grid */}
-      <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-        layout
-      >
+      {/* View Matrix */}
+      {viewMode === "NETWORK" ? (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="relative z-10 w-full"
+        >
+          <ArchiveGraph 
+            data={filteredData} 
+            onNodeClick={(item) => {
+              // Switch back to grid view and expand the specific data fragment
+              setViewMode("GRID");
+              setActiveCategory("ALL"); // Reset filter safely just to ensure visibility
+              
+              // Small timeout ensures the DOM switches back to GRID before expanding
+              setTimeout(() => setExpandedId(item.id), 50);
+            }} 
+          />
+        </motion.div>
+      ) : (
+        /* Data Fragments Grid */
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          layout
+        >
         <AnimatePresence mode="popLayout">
           {filteredData.map((item, i) => {
             const isExpanded = expandedId === item.id;
@@ -347,6 +406,7 @@ export default function TheArchive() {
           })}
         </AnimatePresence>
       </motion.div>
+      )}
     </div>
   );
 }

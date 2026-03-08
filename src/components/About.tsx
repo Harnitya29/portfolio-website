@@ -129,7 +129,7 @@ export default function About() {
         className="relative"
       >
         <motion.h2 
-          className="text-3xl font-bold mb-2 relative inline-block"
+          className="text-3xl font-sans font-bold mb-2 relative inline-block"
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >

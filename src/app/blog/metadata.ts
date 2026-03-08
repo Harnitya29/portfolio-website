@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog",
     description: "Dive into Harnitya's thoughts, ideas, and stories on technology, design, and creativity.",
-    url: "https://wica.lol/blog",
+    url: "https://harnitya.vercel.app/blog",
     images: [
       {
-        url: "https://wica.lol/og/home?title=blog",
+        url: "https://harnitya.vercel.app/og/home?title=blog",
       },
     ],
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "Blog",
     description: "Dive into Harnitya's thoughts, ideas, and stories on technology, design, and creativity.",
     card: "summary_large_image",
-    creator: "@williamcachamwri",
-    images: ["https://wica.lol/og/home?title=blog"],
+    creator: "@harnitya29",
+    images: ["https://harnitya.vercel.app/og/home?title=blog"],
   },
 };

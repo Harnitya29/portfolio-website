@@ -167,7 +167,7 @@ export default function Socials() {
                   initial={{ opacity: 0 }}
                   animate={{ 
                     opacity: isHovered ? 0.15 : 0,
-                    backgroundColor: isHovered ? social.color : "transparent",
+                    backgroundColor: isHovered ? social.color : "rgba(0, 0, 0, 0)",
                     boxShadow: isHovered 
                       ? [
                           `0 0 20px ${social.color}40`,

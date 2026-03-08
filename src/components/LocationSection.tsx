@@ -111,7 +111,7 @@ export default function LocationSection() {
           const canvas = document.createElement('canvas');
           canvas.width = this.width;
           canvas.height = this.height;
-          this.context = canvas.getContext('2d') || undefined;
+          this.context = canvas.getContext('2d', { willReadFrequently: true }) || undefined;
         },
         
         // Call once before every frame where the icon will be used.
@@ -388,7 +388,10 @@ export default function LocationSection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
           >
-            Currently living in uni dorm room and surviving and might thrive 
+            Currently living in uni dorm room and surviving and might thrive.
+            <span className="block mt-2 text-zinc-500">
+              If you&apos;re looking for me in 5 years, check Tokyo 🇯🇵. I&apos;ll probably be somewhere there—chilling.
+            </span>
           </motion.p>
         </motion.div>
       </div>

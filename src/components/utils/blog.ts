@@ -21,7 +21,7 @@ export const fetchBlogPosts = cache(async (): Promise<MDXFileData[]> => {
   try {
     // Fetch danh sách các file từ GitHub API
     const response = await fetch(
-      'https://api.github.com/repos/williamcachamwri/blog-data/contents',
+      'https://api.github.com/repos/Harnitya29/blog-data/contents',
       {
         headers: {
           'Accept': 'application/vnd.github.v3+json',

@@ -251,7 +251,7 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                               color: tech === activeCategory
                                 ? '#86efac'
                                 : isHovered ? 'rgba(134, 239, 172, 0.9)' : '#a1a1aa',
-                              backgroundColor: 'transparent'
+                              backgroundColor: 'rgba(0, 0, 0, 0)'
                             }}
                             transition={{ 
                               duration: 0.3, 

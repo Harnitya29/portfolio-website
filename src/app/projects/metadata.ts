@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Explore the innovative projects crafted by Wica, blending creativity, technology, and design.",
+  description: "Explore the innovative projects crafted by Harnitya Narola, blending creativity, technology, and design.",
   openGraph: {
     title: "Projects",
-    description: "Explore the innovative projects crafted by Wica, blending creativity, technology, and design.",
-    url: "https://wica.lol/projects",
+    description: "Explore the innovative projects crafted by Harnitya Narola, blending creativity, technology, and design.",
+    url: "https://harnitya.vercel.app/projects",
     images: [
       {
-        url: "https://wica.lol/og/home?title=projects",
+        url: "https://harnitya.vercel.app/og/home?title=projects",
       },
     ],
   },
   twitter: {
     title: "Projects",
-    description: "Explore the innovative projects crafted by Wica, blending creativity, technology, and design.",
+    description: "Explore the innovative projects crafted by Harnitya Narola, blending creativity, technology, and design.",
     card: "summary_large_image",
-    creator: "@williamcachamwri",
-    images: ["https://wica.lol/og/home?title=projects"],
+    creator: "@harnitya29",
+    images: ["https://harnitya.vercel.app/og/home?title=projects"],
   },
 };

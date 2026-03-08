@@ -26,7 +26,7 @@ export default function NowPlaying() {
       name: "Forever Young",
       artists: [{ name: "Alphaville" }],
       album: {
-        images: [{ url: "https://i.scdn.co/image/ab67616d0000b273c52a3536066236b281f6ebdb" }]
+        images: [{ url: "https://upload.wikimedia.org/wikipedia/en/e/e0/Alphaville_-_Forever_Young_%28song%29_single_cover.jpg" }]
       },
       external_urls: {
         spotify: "https://open.spotify.com/track/4mHW3A0p2U2KxWcMibZJ6w"
