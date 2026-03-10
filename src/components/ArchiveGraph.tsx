@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 // ForceGraph2D requires window object, so we must dynamically import with ssr: false
 const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), { ssr: false });
 
-type Category = "ALL" | "BOOKS" | "CINEMA" | "SERIES" | "ARCHETYPES" | "MODELS";
+type Category = "ALL" | "BOOKS" | "CINEMA" | "ARCHETYPES" | "MODELS";
 
 interface ArchiveItem {
   id: string;
@@ -23,7 +23,6 @@ interface ArchiveGraphProps {
 const CATEGORY_COLORS: Record<string, string> = {
   BOOKS: "#fcd34d", // amber-300
   CINEMA: "#818cf8", // indigo-400
-  SERIES: "#d4d4d8", // zinc-300
   ARCHETYPES: "#ef4444", // red-500
   MODELS: "#22d3ee", // cyan-400
 };

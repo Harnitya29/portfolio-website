@@ -6,7 +6,7 @@ import { RiBookLine, RiFilmLine, RiCodeBoxLine, RiArrowRightUpLine, RiLayoutGrid
 import ArchiveGraph from "./ArchiveGraph";
 
 // Types
-type Category = "ALL" | "BOOKS" | "CINEMA" | "SERIES" | "ARCHETYPES" | "MODELS";
+type Category = "ALL" | "BOOKS" | "CINEMA" | "ARCHETYPES" | "MODELS";
 
 interface ArchiveItem {
   id: string;
@@ -86,7 +86,7 @@ const archiveData: ArchiveItem[] = [
   {
     id: "dark",
     title: "Dark",
-    category: "SERIES",
+    category: "CINEMA",
     icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-zinc-300 transition-colors" />,
     tag: "[DETERMINISM]",
     thesis: "The end is the beginning, and the beginning is the end.",
@@ -98,7 +98,7 @@ const archiveData: ArchiveItem[] = [
   {
     id: "aot",
     title: "Attack on Titan",
-    category: "ARCHETYPES",
+    category: "CINEMA",
     icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-red-600 transition-colors" />,
     tag: "[WILLPOWER]",
     thesis: "The pursuit of freedom against deterministic walls.",
@@ -110,7 +110,7 @@ const archiveData: ArchiveItem[] = [
   {
     id: "berserk",
     title: "Berserk",
-    category: "ARCHETYPES",
+    category: "CINEMA",
     icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-orange-600 transition-colors" />,
     tag: "[STRUGGLE]",
     thesis: "Enduring seemingly impossible odds.",
@@ -166,6 +166,342 @@ const archiveData: ArchiveItem[] = [
     application: "Optimizing computation and personal efficiency.",
     nugget: "Time is the scarcest resource and unless it is managed nothing else can be managed.",
     tooltip: "Related: Relativity, ChronoSyn, Execution."
+  },
+  {
+    id: "1984",
+    title: "1984 - George Orwell",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-neutral-400 transition-colors" />,
+    tag: "[DYSTOPIA]",
+    thesis: "Truth is constructed by those with power.",
+    connection: "Privacy, surveillance, and data security.",
+    application: "Designing systems with user privacy in mind.",
+    nugget: "Who controls the past controls the future.",
+    tooltip: "Related: Surveillance, Truth, Control."
+  },
+  {
+    id: "autobiography-yogi",
+    title: "Autobiography of a Yogi",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-orange-400 transition-colors" />,
+    tag: "[SPIRITUALITY]",
+    thesis: "The science of religion and self-realization.",
+    connection: "Internal optimization bridging Eastern thought and Western logic.",
+    application: "Meditation as a tool for extreme cognitive clarity.",
+    nugget: "You do not have to struggle to reach God, but you do have to struggle to tear away the self-created veil that hides him.",
+    tooltip: "Related: Kriya Yoga, Mindfulness, Zen."
+  },
+  {
+    id: "steve-jobs",
+    title: "Steve Jobs - Walter Isaacson",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-zinc-200 transition-colors" />,
+    tag: "[VISION/PRODUCT]",
+    thesis: "The intersection of technology and liberal arts.",
+    connection: "Obsessive focus on user experience.",
+    application: "Building products that feel inevitable.",
+    nugget: "People don't know what they want until you show it to them.",
+    tooltip: "Related: Product Design, Apple, Vision."
+  },
+  {
+    id: "leonardo-da-vinci",
+    title: "Leonardo da Vinci",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-amber-200 transition-colors" />,
+    tag: "[CURIOSITY]",
+    thesis: "Relentless observation across disciplines.",
+    connection: "Blending engineering mechanics with visual art.",
+    application: "Learning broadly to solve highly specific technical problems.",
+    nugget: "Simplicity is the ultimate sophistication.",
+    tooltip: "Related: Polymath, Art, Invention."
+  },
+  {
+    id: "einstein",
+    title: "Albert Einstein",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-blue-200 transition-colors" />,
+    tag: "[IMAGINATION]",
+    thesis: "Imagination is more important than knowledge.",
+    connection: "Thought experiments as a way of conceptualizing invisible systems.",
+    application: "Abstract reasoning in backend architectures.",
+    nugget: "God does not play dice with the universe.",
+    tooltip: "Related: Physics, Imagination, Relativity."
+  },
+  {
+    id: "thinking-fast-slow",
+    title: "Thinking, Fast and Slow",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-rose-300 transition-colors" />,
+    tag: "[BEHAVIOR]",
+    thesis: "The dichotomy between two modes of thought.",
+    connection: "Understanding cognitive biases in user interfaces.",
+    application: "Designing frictionless UX by appealing to System 1.",
+    nugget: "Nothing in life is as important as you think it is, while you are thinking about it.",
+    tooltip: "Related: Psychology, Heuristics, Economics."
+  },
+  {
+    id: "upanishads",
+    title: "The Upanishads",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-amber-600 transition-colors" />,
+    tag: "[NON-DUALITY]",
+    thesis: "The underlying unity of the observer and the observed.",
+    connection: "Philosophical foundation for consciousness studies.",
+    application: "Approaching AI and systemic awareness holistically.",
+    nugget: "You are what your deep, driving desire is.",
+    tooltip: "Related: Vedanta, Atman, Consciousness."
+  },
+  {
+    id: "ashtavakra",
+    title: "The Ashtavakra Gita",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-yellow-600 transition-colors" />,
+    tag: "[AWARENESS]",
+    thesis: "Pure awareness is the only reality.",
+    connection: "Detachment from local variables to see the global state.",
+    application: "Maintaining objectivity during catastrophic system failures.",
+    nugget: "If you think you are free, you are free. If you think you are bound, you are bound.",
+    tooltip: "Related: Advaita, Freedom, Self."
+  },
+  {
+    id: "zarathustra",
+    title: "Thus Spoke Zarathustra",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-red-500 transition-colors" />,
+    tag: "[UBERMENSCH]",
+    thesis: "Humanity is a bridge to be overcome.",
+    connection: "The drive toward continuous self-iteration and versioning.",
+    application: "Rejecting complacency in skill acquisition.",
+    nugget: "I teach you the Overman. Man is something that shall be overcome.",
+    tooltip: "Related: Nietzsche, Will, Evolution."
+  },
+  {
+    id: "red-book",
+    title: "The Red Book - Carl Jung",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-red-800 transition-colors" />,
+    tag: "[UNCONSCIOUS]",
+    thesis: "The confrontation with the deep psyche.",
+    connection: "Uncovering the hidden layers of intent.",
+    application: "Analyzing the 'shadow' in system legacy code.",
+    nugget: "Who looks outside, dreams; who looks inside, awakes.",
+    tooltip: "Related: Archetype, Shadow, Psychology."
+  },
+  {
+    id: "schrodinger-life",
+    title: "What is Life? - Schrödinger",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-emerald-500 transition-colors" />,
+    tag: "[BIOPHYSICS]",
+    thesis: "Life relies on negentropy to maintain order.",
+    connection: "The physics of information and biological computation.",
+    application: "Inspiration for autonomous agents and resilient codebases.",
+    nugget: "Living matter evades the decay to equilibrium.",
+    tooltip: "Related: Information Theory, Entropy, Biology."
+  },
+  {
+    id: "yoga-sutras",
+    title: "Yoga Sutras - Patanjali",
+    category: "BOOKS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-indigo-300 transition-colors" />,
+    tag: "[MINDFULNESS]",
+    thesis: "The cessation of the modifications of the mind.",
+    connection: "Mental bandwidth optimization.",
+    application: "Achieving deep flow states via eliminated distractions.",
+    nugget: "Yoga is the settling of the mind into silence.",
+    tooltip: "Related: Patanjali, Focus, Inner Engineering."
+  },
+  {
+    id: "dune",
+    title: "Dune",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-yellow-700 transition-colors" />,
+    tag: "[ECOLOGY/POWER]",
+    thesis: "He who controls the spice controls the universe.",
+    connection: "Resource allocation and monopoly dynamics.",
+    application: "Strategic infrastructure planning.",
+    nugget: "Fear is the mind-killer.",
+    tooltip: "Related: Sci-Fi, Strategy, Resources."
+  },
+  {
+    id: "social-network",
+    title: "The Social Network",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-blue-500 transition-colors" />,
+    tag: "[AMBITION]",
+    thesis: "The chaotic genesis of hyper-scale platforms.",
+    connection: "Startup culture and intense shipping velocity.",
+    application: "Shipping fast over pursuing perfect.",
+    nugget: "A million dollars isn't cool. You know what's cool? A billion dollars.",
+    tooltip: "Related: Startups, Engineering, Scale."
+  },
+  {
+    id: "21",
+    title: "21",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-red-400 transition-colors" />,
+    tag: "[PROBABILITY]",
+    thesis: "Exploiting systemic edges through applied math.",
+    connection: "Statistical modeling and algorithms.",
+    application: "Writing logic to tilt probability in your favor.",
+    nugget: "Always split eights and aces.",
+    tooltip: "Related: Math, Risk, Edges."
+  },
+  {
+    id: "imitation-game",
+    title: "The Imitation Game",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-green-200 transition-colors" />,
+    tag: "[COMPUTATION]",
+    thesis: "Machines breaking human encryption.",
+    connection: "The birth of modern computer science.",
+    application: "Cryptography, heuristic searches, and brute force limits.",
+    nugget: "Sometimes it is the people no one imagines anything of who do the things that no one can imagine.",
+    tooltip: "Related: Turing, Cryptography, CS History."
+  },
+  {
+    id: "beautiful-mind",
+    title: "A Beautiful Mind",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-teal-200 transition-colors" />,
+    tag: "[GAME THEORY]",
+    thesis: "Mathematical analysis of competition and cooperation.",
+    connection: "Nash equilibrium in distributed networks.",
+    application: "Designing incentive-aligned tokenomics or protocols.",
+    nugget: "The best result will come from everyone in the group doing what's best for themselves and the group.",
+    tooltip: "Related: Math, Economics, Nash."
+  },
+  {
+    id: "fight-club",
+    title: "Fight Club",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-pink-600 transition-colors" />,
+    tag: "[NIHILISM]",
+    thesis: "Rejecting consumer identity paradigms.",
+    connection: "Minimalist philosophy in life and code.",
+    application: "Stripping away all unnecessary dependencies and features.",
+    nugget: "The things you own end up owning you.",
+    tooltip: "Related: Identity, Consumerism, Chaos."
+  },
+  {
+    id: "the-matrix",
+    title: "The Matrix",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-green-500 transition-colors" />,
+    tag: "[SIMULATION]",
+    thesis: "Reality is a construct maintained by machines.",
+    connection: "The foundational myth of the programmer.",
+    application: "Seeing the underlying code behind interfaces.",
+    nugget: "There is no spoon.",
+    tooltip: "Related: AI, Reality, Hackers."
+  },
+  {
+    id: "breaking-bad",
+    title: "Breaking Bad",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-green-600 transition-colors" />,
+    tag: "[TRANSFORMATION]",
+    thesis: "The study of absolute change.",
+    connection: "Chemistry as a metaphor for controlled state changes.",
+    application: "Managing irreversible state mutations.",
+    nugget: "I am the one who knocks.",
+    tooltip: "Related: Chemistry, Power, Consequences."
+  },
+  {
+    id: "true-detective-s1",
+    title: "True Detective S1",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-yellow-600 transition-colors" />,
+    tag: "[PESSIMISM]",
+    thesis: "Time is a flat circle.",
+    connection: "Atmospheric storytelling masking complex character flaws.",
+    application: "Debugging profound architectural decay.",
+    nugget: "We are things that labor under the illusion of having a self.",
+    tooltip: "Related: Philosophy, Time, Nihilism."
+  },
+  {
+    id: "blue-lock",
+    title: "Blue Lock",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-blue-500 transition-colors" />,
+    tag: "[EGO]",
+    thesis: "Unleashing raw, unfiltered individualism.",
+    connection: "The striker mindset.",
+    application: "Taking extreme ownership of outcomes.",
+    nugget: "Be the greatest egoist in the world.",
+    tooltip: "Related: Ego, Sports, Ambition."
+  },
+  {
+    id: "classroom-elite",
+    title: "Classroom of the Elite",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-rose-500 transition-colors" />,
+    tag: "[MANIPULATION]",
+    thesis: "People are nothing more than tools.",
+    connection: "Calculated strategies over emotional responses.",
+    application: "Systemic utilization of individual strengths.",
+    nugget: "I don't care what I have to sacrifice, as long as I win in the end.",
+    tooltip: "Related: Strategy, Human Nature, Meritocracy."
+  },
+  {
+    id: "death-note",
+    title: "Death Note",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-zinc-600 transition-colors" />,
+    tag: "[JUSTICE]",
+    thesis: "The absolute corruption of absolute power.",
+    connection: "Logic duels and playing god.",
+    application: "The danger of unrestricted systemic access privileges.",
+    nugget: "I will become the God of this new world.",
+    tooltip: "Related: Morality, Logic, Hubris."
+  },
+  {
+    id: "monster",
+    title: "Monster",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-red-900 transition-colors" />,
+    tag: "[MORALITY]",
+    thesis: "The nature of extreme evil embedded in humanity.",
+    connection: "Philosophical investigations into what makes human life equal.",
+    application: "Navigating deep, complex systemic ethical issues.",
+    nugget: "All lives are not created equal.",
+    tooltip: "Related: Ethics, Psychology, Truth."
+  },
+  {
+    id: "avatar-tla",
+    title: "Avatar: The Last Airbender",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-cyan-500 transition-colors" />,
+    tag: "[BALANCE]",
+    thesis: "Equilibrium among opposing elemental forces.",
+    connection: "Harmonizing diverse concepts and teams.",
+    application: "Creating seamless integration between frontend and backend.",
+    nugget: "In the darkest times, hope is something you give yourself.",
+    tooltip: "Related: Harmony, Elements, Growth."
+  },
+  {
+    id: "my-hero-academia",
+    title: "My Hero Academia",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-green-500 transition-colors" />,
+    tag: "[HEROISM]",
+    thesis: "What it means to sacrifice for the greater good.",
+    connection: "Open source contributions and mentorship.",
+    application: "Pushing boundaries: Plus Ultra.",
+    nugget: "A hero's job is to risk his life to make his lip service a reality.",
+    tooltip: "Related: Duty, Sacrifice, Effort."
+  },
+  {
+    id: "demon-slayer",
+    title: "Demon Slayer",
+    category: "CINEMA",
+    icon: <RiFilmLine size={20} className="text-zinc-400 group-hover:text-fuchsia-500 transition-colors" />,
+    tag: "[CONVICTION]",
+    thesis: "Unwavering resolve shapes reality.",
+    connection: "Perfecting specific fundamental techniques.",
+    application: "Total concentration breathing -> Deep focus work sessions.",
+    nugget: "Set your heart ablaze.",
+    tooltip: "Related: Discipline, Brotherhood, Will."
   }
 ];
 
@@ -174,7 +510,7 @@ export default function TheArchive() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<"GRID" | "NETWORK">("GRID");
 
-  const categories: Category[] = ["ALL", "BOOKS", "CINEMA", "MODELS"];
+  const categories: Category[] = ["ALL", "BOOKS", "CINEMA", "ARCHETYPES", "MODELS"];
 
   // Filter items
   const filteredData = useMemo(() => {

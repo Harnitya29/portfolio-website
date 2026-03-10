@@ -16,6 +16,7 @@ const NowPlaying = dynamic(() => import("~/components/NowPlaying"), { ssr: false
 const HobbySection = dynamic(() => import("~/components/HobbySection"), { ssr: true });
 const SkillsSection = dynamic(() => import("~/components/SkillsSection"), { ssr: true });
 const LocationSection = dynamic(() => import("~/components/LocationSection"), { ssr: false });
+const AntigravityBackground = dynamic(() => import("~/components/AntigravityBackground"), { ssr: false });
 // Define custom mouse tracking interface
 interface MousePosition {
   x: number;
@@ -93,6 +94,7 @@ export default function HomePage() {
     <main className="relative flex min-h-screen flex-col text-white p-8 md:p-16 lg:p-24 max-w-3xl mx-auto">
       {/* Background elements */}
       <div className="fixed inset-0 -z-10 bg-black">
+        <AntigravityBackground />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(50,50,50,0.1),rgba(0,0,0,0)_50%)]" />
         <motion.div 
           className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-300/30 to-transparent"
