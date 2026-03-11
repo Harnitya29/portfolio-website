@@ -91,11 +91,12 @@ export default async function AdminPage() {
         .select("*")
         .order("timestamp", { ascending: false })
         .limit(100);
-      
+
       if (error) throw error;
       visits = data || [];
     } else {
-      fetchError = "Supabase environment variables are missing.";
+      fetchError =
+        "Telemetry not configured yet. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your Vercel project settings.";
     }
   } catch (err: any) {
     fetchError = err.message || "Failed to fetch telemetry data.";

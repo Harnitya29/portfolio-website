@@ -3,22 +3,24 @@ import { createClient } from '@supabase/supabase-js';
 
 export const dynamic = 'force-dynamic';
 
-// Initialize Supabase.
-// Using NEXT_PUBLIC_SUPABASE_URL so it can be safely referenced (even though this is server side).
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-// Only instantiate if credentials exist to prevent Next.js build crash
-const supabase = supabaseUrl && supabaseKey 
-  ? createClient(supabaseUrl, supabaseKey) 
-  : null;
-
 export async function POST(req: Request) {
   try {
-    // Return early if Supabase isn't configured, but still return 200 OK so client isn't blocked/errored.
-    if (!supabase) {
+    // Read and validate Supabase credentials at request time so bad config never crashes the route.
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    let supabase = null as ReturnType<typeof createClient> | null;
+
+    if (!supabaseUrl || !supabaseKey) {
       console.warn('Supabase credentials missing. Tracking disabled.');
-      return NextResponse.json({ ok: true });
+    } else {
+      try {
+        // Validate URL format; if invalid, disable tracking instead of throwing.
+        new URL(supabaseUrl);
+        supabase = createClient(supabaseUrl, supabaseKey);
+      } catch (err) {
+        console.warn('Invalid Supabase configuration. Tracking disabled.', err);
+      }
     }
 
     const body = await req.json().catch(() => ({}));
@@ -85,24 +87,26 @@ export async function POST(req: Request) {
       city = 'LocalDev';
     }
 
-    // 5. Insert to Supabase directly
-    const { error: insertError } = await supabase.from('visits').insert([
-      {
-        ip,
-        user_agent: userAgent,
-        device,
-        os,
-        browser,
-        phone_model: phoneModel,
-        referrer,
-        page,
-        country,
-        city
+    // 5. Insert to Supabase directly (if tracking is configured)
+    if (supabase) {
+      const { error: insertError } = await supabase.from('visits').insert([
+        {
+          ip,
+          user_agent: userAgent,
+          device,
+          os,
+          browser,
+          phone_model: phoneModel,
+          referrer,
+          page,
+          country,
+          city
+        }
+      ]);
+      
+      if (insertError) {
+        console.error('Supabase Insert Error:', insertError);
       }
-    ]);
-    
-    if (insertError) {
-       console.error('Supabase Insert Error:', insertError);
     }
 
   } catch (error) {
