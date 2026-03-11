@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
+export const dynamic = 'force-dynamic';
+
 // Initialize Supabase.
 // Using NEXT_PUBLIC_SUPABASE_URL so it can be safely referenced (even though this is server side).
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;

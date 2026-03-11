@@ -6,12 +6,7 @@ import React from "react";
 export const dynamic = "force-dynamic";
 export const config = { runtime: "nodejs" };
 
-// Initialize Supabase correctly avoiding build crashes if env vars are missing
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const supabase = supabaseUrl && supabaseKey 
-  ? createClient(supabaseUrl, supabaseKey) 
-  : null;
+// Removed global supabase client initialization. Doing it dynamically per request.
 
 // Types
 type VisitRow = {
@@ -84,6 +79,12 @@ export default async function AdminPage() {
   let fetchError = null;
 
   try {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    const supabase = supabaseUrl && supabaseKey 
+      ? createClient(supabaseUrl, supabaseKey) 
+      : null;
+
     if (supabase) {
       const { data, error } = await supabase
         .from("visits")
