@@ -81,9 +81,22 @@ export default async function AdminPage() {
   try {
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    const supabase = supabaseUrl && supabaseKey 
-      ? createClient(supabaseUrl, supabaseKey) 
-      : null;
+
+    let supabase: ReturnType<typeof createClient> | null = null;
+
+    if (!supabaseUrl || !supabaseKey) {
+      fetchError =
+        "Telemetry not configured yet. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your Vercel project settings.";
+    } else {
+      try {
+        // Validate URL format; if invalid, treat as not configured instead of throwing a hard error.
+        new URL(supabaseUrl);
+        supabase = createClient(supabaseUrl, supabaseKey);
+      } catch {
+        fetchError =
+          "Telemetry misconfigured. Check that NEXT_PUBLIC_SUPABASE_URL is a valid https:// URL in your Vercel settings.";
+      }
+    }
 
     if (supabase) {
       const { data, error } = await supabase
@@ -94,9 +107,6 @@ export default async function AdminPage() {
 
       if (error) throw error;
       visits = data || [];
-    } else {
-      fetchError =
-        "Telemetry not configured yet. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your Vercel project settings.";
     }
   } catch (err: any) {
     fetchError = err.message || "Failed to fetch telemetry data.";
