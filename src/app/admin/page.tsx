@@ -109,7 +109,9 @@ export default async function AdminPage() {
       visits = data || [];
     }
   } catch (err: any) {
-    fetchError = err.message || "Failed to fetch telemetry data.";
+    console.error("Admin telemetry fetch failed:", err);
+    fetchError =
+      "Telemetry query failed. Check Supabase configuration or try again in a moment.";
   }
 
   // 3. Admin Dashboard View
