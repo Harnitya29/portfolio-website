@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import BackToTop from "~/components/utils/BackToTop";
 import { Analytics } from "@vercel/analytics/react"
 import LoadingScreen from "~/components/utils/LoadingScreen";
+import VisitorTracker from "~/components/VisitorTracker";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -71,6 +72,7 @@ export default function RootLayout({
           {/* Analytics */}
           <Analytics/>
           <SpeedInsights />
+          <VisitorTracker />
           <div className="relative z-[100]">
             <BackToTop />
           </div>
