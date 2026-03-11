@@ -238,7 +238,7 @@ export default function About() {
             >
               [
             </motion.span>
-            {" break → understand → build "}
+            {" break -> understand -> build "}
             <motion.span
               animate={{ 
                 scale: [1, 1.1, 1],
