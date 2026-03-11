@@ -3,9 +3,8 @@ import { createClient } from '@supabase/supabase-js';
 
 // Initialize Supabase.
 // Using NEXT_PUBLIC_SUPABASE_URL so it can be safely referenced (even though this is server side).
-// Using SUPABASE_SERVICE_ROLE_KEY to bypass Row Level Security.
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 // Only instantiate if credentials exist to prevent Next.js build crash
 const supabase = supabaseUrl && supabaseKey 
