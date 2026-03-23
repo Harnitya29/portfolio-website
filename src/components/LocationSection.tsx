@@ -57,7 +57,7 @@ export default function LocationSection() {
       container: mapContainer.current,
       // Sử dụng style tùy chỉnh giống Apple Maps dark mode 2024-2025
       style: 'mapbox://styles/mapbox/navigation-night-v1',
-      center: [138.7274, 35.3606], // Mount Fuji coordinates
+      center: [73.1791, 22.3186], // Vadodara NV Hall coordinates
       zoom: 11,
       attributionControl: false,
       interactive: true,
@@ -85,7 +85,7 @@ export default function LocationSection() {
         color: '#34d399',
         scale: 0.8
       })
-        .setLngLat([138.7274, 35.3606])
+        .setLngLat([73.1791, 22.3186])
         .addTo(map.current!);
       
       // Add pulsing dot effect
@@ -179,7 +179,7 @@ export default function LocationSection() {
               'type': 'Feature',
               'geometry': {
                 'type': 'Point',
-                'coordinates': [138.7274, 35.3606]
+                'coordinates': [73.1791, 22.3186]
               },
               'properties': {}
             }
