@@ -253,6 +253,9 @@ export default function LocationSection() {
           }}
           onHoverStart={() => handleHoverStart('map')}
           onHoverEnd={handleHoverEnd}
+          onTouchStart={() => handleHoverStart('map')}
+          onTouchEnd={handleHoverEnd}
+          onTouchCancel={handleHoverEnd}
         >
           {/* Map container */}
           <div 
@@ -379,7 +382,7 @@ export default function LocationSection() {
             className="text-xl font-medium text-green-300"
             whileHover={{ scale: 1.02 }}
           >
-            35.3606° N, 138.7274° E (Mount Fuji) 🇯🇵
+            NV Hall MSU Boys Hostel Vadodara , Gujarat India
           </motion.h3>
           
           <motion.p 
@@ -390,7 +393,7 @@ export default function LocationSection() {
           >
             Currently living in uni dorm room and surviving and might thrive.
             <span className="block mt-2 text-zinc-500">
-              If you&apos;re looking for me in 5 years, check Mount Fuji. I&apos;ll probably be somewhere there—chilling.
+              If you&apos;re looking for me in 5 years, check 35.3606° N, 138.7274° E. I&apos;ll probably be somewhere there—chilling.
             </span>
           </motion.p>
         </motion.div>

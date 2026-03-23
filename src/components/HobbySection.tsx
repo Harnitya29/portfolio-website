@@ -103,6 +103,9 @@ const HobbyTag = memo(({
       }}
       onHoverStart={onHoverStart}
       onHoverEnd={onHoverEnd}
+      onTouchStart={onHoverStart}
+      onTouchEnd={onHoverEnd}
+      onTouchCancel={onHoverEnd}
       initial={{ opacity: 0, y: 20, scale: 0.9 }}
       animate={{ 
         opacity: 1, 
