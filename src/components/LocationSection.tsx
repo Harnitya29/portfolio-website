@@ -57,7 +57,7 @@ export default function LocationSection() {
       container: mapContainer.current,
       // Sử dụng style tùy chỉnh giống Apple Maps dark mode 2024-2025
       style: 'mapbox://styles/mapbox/navigation-night-v1',
-      center: [73.1791, 22.3186], // Vadodara NV Hall coordinates
+      center: [138.7274, 35.3606], // Mount Fuji coordinates
       zoom: 11,
       attributionControl: false,
       interactive: true,
@@ -85,7 +85,7 @@ export default function LocationSection() {
         color: '#34d399',
         scale: 0.8
       })
-        .setLngLat([73.1791, 22.3186])
+        .setLngLat([138.7274, 35.3606])
         .addTo(map.current!);
       
       // Add pulsing dot effect
@@ -179,7 +179,7 @@ export default function LocationSection() {
               'type': 'Feature',
               'geometry': {
                 'type': 'Point',
-                'coordinates': [73.1791, 22.3186]
+                'coordinates': [138.7274, 35.3606]
               },
               'properties': {}
             }
@@ -379,7 +379,7 @@ export default function LocationSection() {
             className="text-xl font-medium text-green-300"
             whileHover={{ scale: 1.02 }}
           >
-            NV Hall MSU Boys Hostel Vadodara , Gujarat India
+            35.3606° N, 138.7274° E (Mount Fuji) 🇯🇵
           </motion.h3>
           
           <motion.p 
@@ -390,7 +390,7 @@ export default function LocationSection() {
           >
             Currently living in uni dorm room and surviving and might thrive.
             <span className="block mt-2 text-zinc-500">
-              If you&apos;re looking for me in 5 years, check Tokyo 🇯🇵. I&apos;ll probably be somewhere there—chilling.
+              If you&apos;re looking for me in 5 years, check Mount Fuji. I&apos;ll probably be somewhere there—chilling.
             </span>
           </motion.p>
         </motion.div>

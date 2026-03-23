@@ -394,6 +394,7 @@ const SkillItem = memo(({
       onHoverStart={onHoverStart}
       onHoverEnd={handleMouseLeave}
       onMouseMove={handleMouseMove}
+      onClick={() => isHovered ? handleMouseLeave() : onHoverStart()}
     >
       {/* Hiệu ứng hạt khi hover */}
       <AnimatePresence>

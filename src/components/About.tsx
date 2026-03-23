@@ -17,7 +17,7 @@ export default function About() {
   
   // Memoize paragraphs to prevent unnecessary re-renders
   const paragraphs = useMemo(() => [
-    "Not here to just consume—here to dissect, understand, and evolve. I blend logic with depth, viewing code not just as instructions, but as architecture for better futures. My focus spans the stack from web development and AI to cybersecurity and the theoretical edges of logic. Currently laying the groundwork for research and graduate studies at ETH Zurich or MIT."
+    "Not here to just consume—here to dissect, understand, and evolve. I blend logic with depth, viewing code not just as instructions, but as architecture for better futures. My focus spans the stack from web development and AI to cybersecurity and the theoretical edges of logic."
   ], []);
   
   // Optimize mouse tracking with useCallback and throttling
@@ -386,6 +386,7 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.5 + (index * 0.2) }}
               onHoverStart={() => handleHoverStart(index)}
               onHoverEnd={handleHoverEnd}
+              onClick={() => hoveredParagraph === index ? handleHoverEnd() : handleHoverStart(index)}
             >
               <motion.div 
                 className="text-gray-300 leading-relaxed tracking-wide relative z-10 p-4 rounded-lg"

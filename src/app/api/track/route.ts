@@ -6,8 +6,8 @@ export const dynamic = 'force-dynamic';
 export async function POST(req: Request) {
   try {
     // Read and validate Supabase credentials at request time so bad config never crashes the route.
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
 
     let supabase = null as ReturnType<typeof createClient> | null;
 
@@ -89,6 +89,7 @@ export async function POST(req: Request) {
 
     // 5. Insert to Supabase directly (if tracking is configured)
     if (supabase) {
+      // @ts-ignore: Next.js/Supabase inference fallback
       const { error: insertError } = await supabase.from('visits').insert([
         {
           ip,
