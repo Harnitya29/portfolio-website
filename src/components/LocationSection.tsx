@@ -11,9 +11,12 @@ export default function LocationSection() {
     const loadMap = async () => {
       const L = (await import("leaflet")).default;
 
-      const container = document.getElementById("portfolio-map");
+      const container =
+        document.getElementById("portfolio-map");
 
       if (!container) return;
+
+      if ((container as any)._leaflet_id) return;
 
       map = L.map(container, {
         zoomControl: false,
@@ -25,8 +28,8 @@ export default function LocationSection() {
       L.tileLayer(
         "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
         {
-          maxZoom: 19,
-          attribution: "&copy; OpenStreetMap &copy; CARTO",
+          attribution:
+            "&copy; OpenStreetMap &copy; CARTO",
         }
       ).addTo(map);
 
@@ -34,7 +37,7 @@ export default function LocationSection() {
         position: "bottomright",
       }).addTo(map);
 
-      const icon = L.divIcon({
+      const marker = L.divIcon({
         html: `
           <div class="pulse-marker">
             <div class="core"></div>
@@ -44,9 +47,12 @@ export default function LocationSection() {
         iconSize: [32, 32],
       });
 
-      L.marker([22.3072, 73.1812], {
-        icon,
-      }).addTo(map);
+      L.marker(
+        [22.3072, 73.1812],
+        {
+          icon: marker,
+        }
+      ).addTo(map);
 
       setTimeout(() => {
         map.invalidateSize();
@@ -56,47 +62,55 @@ export default function LocationSection() {
     loadMap();
 
     return () => {
-      if (map) map.remove();
+      if (map) {
+        map.remove();
+      }
     };
   }, []);
 
   return (
     <section className="mt-24">
+
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        initial={{
+          opacity: 0,
+          y: 40,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+        }}
       >
-        <p className="text-green-300/70 text-sm mb-4">
+
+        <p className="text-sm text-green-300/70 mb-4">
           &gt; location
         </p>
 
-        <div className="relative overflow-hidden rounded-[28px] border border-zinc-800 bg-black">
+        <div className="relative rounded-[28px] overflow-hidden border border-zinc-800 bg-black">
 
           <div
             id="portfolio-map"
-            className="
-              w-full
-              h-[380px]
-              md:h-[520px]
-              lg:h-[620px]
-            "
+            className="w-full h-[380px] md:h-[520px] lg:h-[620px]"
           />
 
           <div
             className="
               absolute
-              bottom-5
               left-5
+              bottom-5
               rounded-2xl
-              border
-              border-green-400/20
               bg-black/70
               backdrop-blur-xl
+              border
+              border-green-500/20
               p-5
               max-w-[280px]
             "
           >
+
             <p className="text-xs text-green-300 mb-2">
               // CURRENT BASE
             </p>
@@ -105,21 +119,36 @@ export default function LocationSection() {
               Vadodara, Gujarat
             </h3>
 
-            <p className="text-zinc-400 text-sm mt-1">
+            <p className="text-sm text-zinc-400 mt-1">
               22.3072° N · 73.1812° E
             </p>
 
             <div className="mt-4 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+
+              <span
+                className="
+                  w-2
+                  h-2
+                  rounded-full
+                  bg-green-400
+                  animate-pulse
+                "
+              />
+
               <span className="text-sm text-zinc-300">
                 open to remote · relocation
               </span>
+
             </div>
+
           </div>
+
         </div>
+
       </motion.div>
 
       <style jsx global>{`
+
         .leaflet-container {
           background: #020202;
           border-radius: 28px;
@@ -134,33 +163,37 @@ export default function LocationSection() {
         .pulse-marker::before {
           content: "";
           position: absolute;
+
           inset: 0;
 
           border-radius: 999px;
 
           background:
-            rgba(52,211,153,.3);
+            rgba(52,211,153,.35);
 
           animation:
             pulse 2s infinite;
         }
 
         .core {
-          position: absolute;
-
           width: 12px;
+
           height: 12px;
 
+          position: absolute;
+
           left: 50%;
+
           top: 50%;
 
           transform:
             translate(-50%,-50%);
 
+          border-radius:
+            999px;
+
           background:
             rgb(52,211,153);
-
-          border-radius: 999px;
 
           box-shadow:
             0 0 25px
@@ -170,13 +203,19 @@ export default function LocationSection() {
         @keyframes pulse {
 
           from {
-            transform: scale(.8);
-            opacity: 1;
+            transform:
+              scale(.8);
+
+            opacity:
+              1;
           }
 
           to {
-            transform: scale(2.5);
-            opacity: 0;
+            transform:
+              scale(2.5);
+
+            opacity:
+              0;
           }
 
         }
@@ -184,12 +223,16 @@ export default function LocationSection() {
         @media (max-width:768px){
 
           .leaflet-control-container{
+
             transform:
-              scale(.92);
+              scale(.9);
+
           }
 
         }
+
       `}</style>
+
     </section>
   );
 }
