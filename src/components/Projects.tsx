@@ -17,7 +17,7 @@ export const projectList: Project[] = [
   {
     title: "Cosmic Portfolio",
     description: "An ultra-clean, data-dense cyberpunk portfolio engineered with React, Next.js, and framer-motion for an immersive terminal experience.",
-    link: "https://github.com/Harnitya29/portfolio-website",
+    link: "https://harnitya.in",
     technologies: ["Next.js", "Tailwind", "Framer Motion"],
     featured: true
   },
