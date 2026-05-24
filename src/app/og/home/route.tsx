@@ -332,7 +332,7 @@ export async function GET(request: Request) {
                   textShadow: "0 0 5px rgba(165, 180, 252, 0.3)",
                 }}
               >
-                Cosmic Developer & Architect
+                Software Engineer • Building systems, interfaces, and intelligent experiences.
               </p>
             </div>
           </div>
