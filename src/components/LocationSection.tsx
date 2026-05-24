@@ -12,7 +12,7 @@ export default function LocationSection() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [mapLoaded, setMapLoaded] = useState(false);
+  const [isMapLoading, setIsMapLoading] = useState(true);
 
   // Memoize animation variants
   const containerVariants = useMemo(() => ({
@@ -71,8 +71,8 @@ export default function LocationSection() {
     // Loại bỏ control điều hướng (không thêm NavigationControl)
 
     // Add marker for location
-    map.current.on('load', () => {
-      setMapLoaded(true);
+    map.current.on('style.load', () => {
+      setIsMapLoading(false);
       
       // Tùy chỉnh style bản đồ để giống Apple Maps 2024-2025
       if (map.current) {
@@ -326,7 +326,7 @@ export default function LocationSection() {
           </motion.div>
           
           {/* Loading indicator */}
-          {!mapLoaded && (
+          {isMapLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-zinc-900/80 z-30">
               <div className="flex space-x-2">
                 {[...Array(3)].map((_, i) => (

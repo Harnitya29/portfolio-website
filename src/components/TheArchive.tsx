@@ -6,7 +6,7 @@ import { RiBookLine, RiFilmLine, RiCodeBoxLine, RiArrowRightUpLine, RiLayoutGrid
 import ArchiveGraph from "./ArchiveGraph";
 
 // Types
-type Category = "ALL" | "BOOKS" | "CINEMA" | "ARCHETYPES" | "MODELS";
+type Category = "ALL" | "BOOKS" | "CINEMA" | "TRANSMISSIONS";
 
 interface ArchiveItem {
   id: string;
@@ -19,10 +19,24 @@ interface ArchiveItem {
   application: string;
   nugget: string;
   tooltip: string;
+  link?: string;
 }
 
 // Data Array
 const archiveData: ArchiveItem[] = [
+  {
+    id: "ubermensch-notes",
+    title: "Übermensch Notes — Notes on Cognitive Evolution",
+    category: "TRANSMISSIONS",
+    icon: <RiBookLine size={20} className="text-zinc-400 group-hover:text-green-400 transition-colors" />,
+    tag: "[ESSAY]",
+    thesis: "A long-form exploration of cognition, philosophy, and self-revision.",
+    connection: "Personal notes made public.",
+    application: "Evolving models of thought.",
+    nugget: "Think -> Write -> Publish.",
+    tooltip: "Related: Philosophy, Cognition, Systems.",
+    link: "https://medium.com/"
+  },
   {
     id: "meditations",
     title: "Meditations - Marcus Aurelius",
@@ -122,7 +136,7 @@ const archiveData: ArchiveItem[] = [
   {
     id: "nietzsche",
     title: "Nietzsche",
-    category: "MODELS",
+    category: "TRANSMISSIONS",
     icon: <RiCodeBoxLine size={20} className="text-zinc-400 group-hover:text-red-400 transition-colors" />,
     tag: "[META-PHYSICS]",
     thesis: "Self-overcoming and the Will to Power.",
@@ -134,7 +148,7 @@ const archiveData: ArchiveItem[] = [
   {
     id: "entropy",
     title: "Entropy",
-    category: "MODELS",
+    category: "TRANSMISSIONS",
     icon: <RiCodeBoxLine size={20} className="text-zinc-400 group-hover:text-purple-400 transition-colors" />,
     tag: "[THERMODYNAMICS]",
     thesis: "Systems naturally decline into disorder.",
@@ -146,7 +160,7 @@ const archiveData: ArchiveItem[] = [
   {
     id: "systems-thinking",
     title: "Systems Thinking",
-    category: "MODELS",
+    category: "TRANSMISSIONS",
     icon: <RiCodeBoxLine size={20} className="text-zinc-400 group-hover:text-cyan-400 transition-colors" />,
     tag: "[ARCHITECTURE]",
     thesis: "Focusing on interconnections rather than parts.",
@@ -158,7 +172,7 @@ const archiveData: ArchiveItem[] = [
   {
     id: "time",
     title: "Time",
-    category: "MODELS",
+    category: "TRANSMISSIONS",
     icon: <RiCodeBoxLine size={20} className="text-zinc-400 group-hover:text-green-500 transition-colors" />,
     tag: "[PHYSICS/PERCEPTION]",
     thesis: "Time is relative, subjective, and the ultimate constraint.",
@@ -510,7 +524,7 @@ export default function TheArchive() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<"GRID" | "NETWORK">("GRID");
 
-  const categories: Category[] = ["ALL", "BOOKS", "CINEMA", "ARCHETYPES", "MODELS"];
+  const categories: Category[] = ["ALL", "BOOKS", "CINEMA", "TRANSMISSIONS"];
 
   // Filter items
   const filteredData = useMemo(() => {
@@ -694,8 +708,16 @@ export default function TheArchive() {
                       <h3 className="text-sm font-medium text-zinc-200">
                         {item.title}
                       </h3>
-                    </div>
-                  </motion.div>
+                    
+                          {item.link && (
+                            <div className="mt-4">
+                              <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-medium text-black bg-green-400 hover:bg-green-300 px-3 py-1.5 rounded transition-colors">
+                                Read Transmission <RiArrowRightUpLine size={14} />
+                              </a>
+                            </div>
+                          )}
+                        </div>
+                      </motion.div>
 
                   {/* Expanded Content "Quick 4" */}
                   <AnimatePresence>

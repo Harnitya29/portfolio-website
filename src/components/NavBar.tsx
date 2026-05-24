@@ -12,8 +12,6 @@ import {
   RiMenuLine,
   RiMenuFoldLine,
   RiMenuUnfoldLine,
-  RiFileInfoFill,
-  RiFileInfoLine,
   RiBookmarkFill,
   RiBookmarkLine
 } from "@remixicon/react";
@@ -348,17 +346,6 @@ const NavBar = () => {
                   hoveredIcon={hoveredIcon}
                   setHoveredIcon={setHoveredIcon}
                 />
-
-<div className="inline-block h-6 w-px self-stretch bg-zinc-700/50 mx-5"></div>
-
-<NavItem 
-  href="/credits"
-  icon={{ filled: RiFileInfoFill, outline: RiFileInfoLine }}
-  name="credits"
-  isActive={isActive("/credits")}
-  hoveredIcon={hoveredIcon}
-  setHoveredIcon={setHoveredIcon}
-/>
                 
                 <div className="inline-block h-6 w-px self-stretch bg-zinc-700/50 ml-5"></div>
                 
