@@ -24,19 +24,19 @@ export const projectList: Project[] = [
   {
     title: "NeuralNet Dashboard",
     description: "Visualizing model drift and performance metrics in real-time.",
-    link: "https://github.com/Harnitya29/neuralnet-dashboard",
+    link: "#",
     technologies: ["Next.js", "Tailwind", "Python"],
   },
   {
     title: "Sentinel.sh",
     description: "Automated reconnaissance and vulnerability scanning tool for local networks.",
-    link: "https://github.com/Harnitya29/sentinel",
+    link: "#",
     technologies: ["Python", "Bash", "Nmap"],
   },
   {
     title: "Quantum State Visualizer",
     description: "An interactive web app demystifying fundamental quantum logic gates.",
-    link: "https://github.com/Harnitya29/quantum-state-visualizer",
+    link: "#",
     technologies: ["React", "Three.js", "TypeScript"],
   }
 ];
