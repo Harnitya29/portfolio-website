@@ -69,7 +69,7 @@ export default function BackToTop() {
               className="absolute inset-0 -z-10"
               animate={{ 
                 boxShadow: isHovered 
-                  ? "0 0 20px rgba(16, 185, 129, 0.3), inset 0 0 10px rgba(16, 185, 129, 0.2)" 
+                  ? "0 0 20px rgba(139, 92, 246, 0.3), inset 0 0 10px rgba(139, 92, 246, 0.2)" 
                   : "0 0 0 rgba(0, 0, 0, 0)"
               }}
               transition={{ duration: 0.2 }}
@@ -87,7 +87,7 @@ export default function BackToTop() {
               repeatType: "loop"
             }}
           >
-            <RiArrowUpLine size={20} className="text-green-400" />
+            <RiArrowUpLine size={20} className="text-violet-400" />
           </motion.div>
         </motion.button>
       )}

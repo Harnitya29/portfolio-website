@@ -5,6 +5,14 @@ import { useState, useMemo, useCallback } from "react";
 
 const experience = [
   {
+    title: "1st Prize Winner — DataVerse Datathon 2026",
+    position: "Machine Learning Engineer",
+    date: "2026",
+    description: "Built a causal ML-driven analytics platform for churn intervention and profit optimization using uplift modeling and prescriptive analytics.",
+    link: "https://threed2y.github.io/DataVerse-2026/winners.html",
+    color: "#c4b5fd",
+  },
+  {
     title: "BCA (Honours) @ MSU Baroda",
     position: "BCA student",
     date: "2024 - 2027 (expected)",
@@ -57,7 +65,7 @@ export default function Experience() {
   const titleAnimation = useMemo(() => ({
     rotate: [0, 5, 0, -5, 0],
     color: ['#86efac', '#4ade80', '#86efac'],
-    textShadow: ['0 0 0px rgba(134, 239, 172, 0)', '0 0 10px rgba(134, 239, 172, 0.5)', '0 0 0px rgba(134, 239, 172, 0)']
+    textShadow: ['0 0 0px rgba(167, 139, 250, 0)', '0 0 10px rgba(167, 139, 250, 0.5)', '0 0 0px rgba(167, 139, 250, 0)']
   }), []);
 
   const titleTransition = useMemo(() => ({ 
@@ -81,20 +89,20 @@ export default function Experience() {
         whileHover={{ scale: 1.03 }}
       >
         <motion.span
-          className="text-green-300 inline-block will-change-transform"
+          className="text-violet-300 inline-block will-change-transform"
           animate={titleAnimation}
           transition={titleTransition}
         >
           &gt;
         </motion.span>{" "}
         <span className="relative group">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-green-200 to-white bg-[length:200%_100%] animate-shimmer">experience</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-violet-200 to-white bg-[length:200%_100%] animate-shimmer">experience</span>
           <motion.span
-            className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-green-300/0 via-green-300 to-green-300/0 will-change-transform"
+            className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-violet-300/0 via-violet-300 to-violet-300/0 will-change-transform"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 1, delay: 0.5 }}
-            style={{ boxShadow: '0 2px 10px rgba(134, 239, 172, 0.3)' }}
+            style={{ boxShadow: '0 2px 10px rgba(167, 139, 250, 0.3)' }}
           />
         </span>
       </motion.h1>
@@ -380,7 +388,7 @@ export default function Experience() {
       
       {/* Decorative elements - optimized with will-change */}
       <motion.div 
-        className="absolute -left-20 top-1/2 w-40 h-40 rounded-full bg-green-300/5 blur-3xl pointer-events-none will-change-transform"
+        className="absolute -left-20 top-1/2 w-40 h-40 rounded-full bg-violet-300/5 blur-3xl pointer-events-none will-change-transform"
         animate={{ 
           scale: [1, 1.2, 1],
           opacity: [0.1, 0.2, 0.1]

@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 :root {
-  background-color: black;
+  background-color: var(--q-void, #030308);
   color: white;
   scroll-behavior: smooth;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::-webkit-scrollbar {
@@ -96,17 +101,7 @@ body::after {
 }
 
 .initial-load {
-  opacity: 0;
-  animation: fadeInPage 10s ease-out forwards 3s;
-}
-
-@keyframes fadeInPage {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  opacity: 1;
 }
 
 /* Show scrollbar only for code blocks - Ultra enhanced styling */
@@ -281,7 +276,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -100;
-  background: radial-gradient(circle at center, rgba(16, 185, 129, 0.05), transparent 70%);
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.05), transparent 70%);
   opacity: 0.5;
   filter: blur(80px);
   pointer-events: none;
@@ -294,7 +289,7 @@ body::after {
   width: 40vmax;
   height: 40vmax;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05) 40%, transparent 70%);
   filter: blur(60px);
   animation: cosmic-float 20s infinite alternate ease-in-out;
   opacity: 0.5;
@@ -337,8 +332,8 @@ body::after {
   inset: 0;
   z-index: -99;
   background-image: 
-    linear-gradient(to right, rgba(16, 185, 129, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
   opacity: 0.2;
   pointer-events: none;
@@ -371,11 +366,11 @@ body::after {
   position: fixed;
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.8), transparent);
   z-index: 9995;
   opacity: 0;
   filter: blur(1px);
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
   pointer-events: none;
 }
 
@@ -406,7 +401,7 @@ body::after {
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.8), transparent 70%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.8), transparent 70%);
   transform: translate(-50%, -50%);
   z-index: 9994;
   opacity: 0;
@@ -482,7 +477,7 @@ body::after {
 .glow-cursor {
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(134, 239, 172, 0.15), transparent 70%);
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.15), transparent 70%);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
@@ -571,7 +566,7 @@ body::after {
   position: absolute;
   border-radius: 50%;
   filter: blur(1px);
-  box-shadow: 0 0 5px rgba(134, 239, 172, 0.7);
+  box-shadow: 0 0 5px rgba(167, 139, 250, 0.7);
   animation: float-particle linear infinite;
 }
 
@@ -789,7 +784,7 @@ body::after {
 
 .card-3d:hover {
   transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(134, 239, 172, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(167, 139, 250, 0.2);
 }
 
 /* Holographic glow effects */
@@ -805,7 +800,7 @@ body::after {
   background: linear-gradient(
     45deg,
     transparent 25%,
-    rgba(134, 239, 172, 0.1) 50%,
+    rgba(167, 139, 250, 0.1) 50%,
     transparent 75%
   );
   background-size: 200% 200%;
@@ -829,9 +824,9 @@ body::after {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(134, 239, 172, 0.5),
-    rgba(134, 239, 172, 0.8),
-    rgba(134, 239, 172, 0.5),
+    rgba(167, 139, 250, 0.5),
+    rgba(167, 139, 250, 0.8),
+    rgba(167, 139, 250, 0.5),
     transparent
   );
   filter: blur(1px);
@@ -878,7 +873,7 @@ body::after {
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(134, 239, 172, 0.5),
+    rgba(167, 139, 250, 0.5),
     transparent
   );
   filter: blur(1px);
@@ -900,8 +895,8 @@ body::after {
 /* Cyber grid */
 .cyber-grid {
   background-image: 
-    linear-gradient(to right, rgba(134, 239, 172, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(134, 239, 172, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(167, 139, 250, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(167, 139, 250, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: center center;
   transform: perspective(1000px) rotateX(60deg) scale(2);
@@ -912,24 +907,24 @@ body::after {
 /* Neon glow text */
 .neon-glow {
   text-shadow: 
-    0 0 5px rgba(134, 239, 172, 0.5),
-    0 0 10px rgba(134, 239, 172, 0.3),
-    0 0 15px rgba(134, 239, 172, 0.2);
+    0 0 5px rgba(167, 139, 250, 0.5),
+    0 0 10px rgba(167, 139, 250, 0.3),
+    0 0 15px rgba(167, 139, 250, 0.2);
   animation: neon-pulse 2s ease-in-out infinite alternate;
 }
 
 @keyframes neon-pulse {
   from {
     text-shadow: 
-      0 0 5px rgba(134, 239, 172, 0.5),
-      0 0 10px rgba(134, 239, 172, 0.3),
-      0 0 15px rgba(134, 239, 172, 0.2);
+      0 0 5px rgba(167, 139, 250, 0.5),
+      0 0 10px rgba(167, 139, 250, 0.3),
+      0 0 15px rgba(167, 139, 250, 0.2);
   }
   to {
     text-shadow: 
-      0 0 10px rgba(134, 239, 172, 0.7),
-      0 0 20px rgba(134, 239, 172, 0.5),
-      0 0 30px rgba(134, 239, 172, 0.3);
+      0 0 10px rgba(167, 139, 250, 0.7),
+      0 0 20px rgba(167, 139, 250, 0.5),
+      0 0 30px rgba(167, 139, 250, 0.3);
   }
 }
 
@@ -939,9 +934,9 @@ body::after {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(134, 239, 172, 0.8);
+  background: rgba(167, 139, 250, 0.8);
   filter: blur(1px);
-  box-shadow: 0 0 10px rgba(134, 239, 172, 0.8);
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
   opacity: 0;
 }
 
@@ -966,23 +961,23 @@ body::after {
 
 /* Holographic interface elements */
 .holo-element {
-  border: 1px solid rgba(134, 239, 172, 0.3);
+  border: 1px solid rgba(167, 139, 250, 0.3);
   background: rgba(0, 10, 5, 0.2);
   backdrop-filter: blur(4px);
-  box-shadow: 0 0 20px rgba(134, 239, 172, 0.1);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.1);
   transition: all 0.3s ease;
 }
 
 .holo-element:hover {
-  border-color: rgba(134, 239, 172, 0.6);
-  box-shadow: 0 0 30px rgba(134, 239, 172, 0.2);
+  border-color: rgba(167, 139, 250, 0.6);
+  box-shadow: 0 0 30px rgba(167, 139, 250, 0.2);
 }
 
 /* Energy field pulse */
 .energy-field-pulse {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(134, 239, 172, 0.3);
+  border: 1px solid rgba(167, 139, 250, 0.3);
   transform: translate(-50%, -50%);
   opacity: 0;
 }

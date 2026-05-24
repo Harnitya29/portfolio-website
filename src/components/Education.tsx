@@ -47,7 +47,7 @@ export default function Education() {
   const titleAnimation = useMemo(() => ({
     rotate: [0, 5, 0, -5, 0],
     color: ['#86efac', '#4ade80', '#86efac'],
-    textShadow: ['0 0 0px rgba(134, 239, 172, 0)', '0 0 10px rgba(134, 239, 172, 0.5)', '0 0 0px rgba(134, 239, 172, 0)']
+    textShadow: ['0 0 0px rgba(167, 139, 250, 0)', '0 0 10px rgba(167, 139, 250, 0.5)', '0 0 0px rgba(167, 139, 250, 0)']
   }), []);
 
   const titleTransition = useMemo(() => ({ 
@@ -71,20 +71,20 @@ export default function Education() {
         whileHover={{ scale: 1.03 }}
       >
         <motion.span
-          className="text-green-300 inline-block will-change-transform"
+          className="text-violet-300 inline-block will-change-transform"
           animate={titleAnimation}
           transition={titleTransition}
         >
           &gt;
         </motion.span>{" "}
         <span className="relative group">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-green-200 to-white bg-[length:200%_100%] animate-shimmer">education</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-violet-200 to-white bg-[length:200%_100%] animate-shimmer">education</span>
           <motion.span
-            className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-green-300/0 via-green-300 to-green-300/0 will-change-transform"
+            className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-violet-300/0 via-violet-300 to-violet-300/0 will-change-transform"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 1, delay: 0.5 }}
-            style={{ boxShadow: '0 2px 10px rgba(134, 239, 172, 0.3)' }}
+            style={{ boxShadow: '0 2px 10px rgba(167, 139, 250, 0.3)' }}
           />
         </span>
       </motion.h1>

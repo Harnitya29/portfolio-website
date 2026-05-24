@@ -128,7 +128,7 @@ export default function ArchiveGraph({ data, onNodeClick }: ArchiveGraphProps) {
         nodeLabel={() => ""} // Custom tooltips instead 
         nodeColor={(node: any) => CATEGORY_COLORS[node.group] || "#fff"}
         nodeRelSize={4}
-        linkColor={() => "rgba(52, 211, 153, 0.25)"}
+        linkColor={() => "rgba(167, 139, 250, 0.25)"}
         linkWidth={(link: any) => link.value}
         linkDirectionalParticles={2}
         linkDirectionalParticleWidth={1.5}
@@ -157,7 +157,7 @@ export default function ArchiveGraph({ data, onNodeClick }: ArchiveGraphProps) {
             );
             ctx.fill();
             
-            ctx.fillStyle = hoverNode?.id === node.id ? '#6ee7b7' : 'rgba(255, 255, 255, 0.7)';
+            ctx.fillStyle = hoverNode?.id === node.id ? '#c4b5fd' : 'rgba(255, 255, 255, 0.7)';
             ctx.fillText(label, node.x, node.y + node.val * 0.4 + 4);
           }
         }}

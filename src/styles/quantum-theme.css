@@ -1,0 +1,95 @@
+/**
+ * Quantum / physics design tokens — single source for color & motion
+ */
+:root {
+  --q-void: #030308;
+  --q-surface: #0a0a12;
+  --q-violet: #7b6ef6;
+  --q-violet-dim: rgba(123, 110, 246, 0.35);
+  --q-cyan: #5eead4;
+  --q-cyan-dim: rgba(94, 234, 212, 0.25);
+  --q-lime: #7B6EF6;
+  --q-lime-dim: rgba(123, 110, 246, 0.15);
+  --q-magenta: #e879f9;
+  --q-text: #e4e4e7;
+  --q-muted: #71717a;
+  --q-glow: 0 0 24px rgba(123, 110, 246, 0.35);
+  --q-ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --q-duration-fast: 0.25s;
+  --q-duration-med: 0.5s;
+}
+
+/* Accent utilities */
+.text-q-accent {
+  color: var(--q-violet);
+}
+.text-q-cyan {
+  color: var(--q-cyan);
+}
+.border-q-accent {
+  border-color: var(--q-violet-dim);
+}
+.bg-q-glow {
+  box-shadow: var(--q-glow);
+}
+
+/* Section header — physics terminal style */
+.q-section-label {
+  color: var(--q-violet);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+.q-section-rule {
+  width: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--q-violet), var(--q-cyan));
+}
+
+/* Quantum panel frame */
+.q-panel {
+  position: relative;
+  background: var(--q-void);
+  border: 1px solid rgba(123, 110, 246, 0.12);
+  border-radius: 2px;
+  transition:
+    border-color var(--q-duration-med) var(--q-ease-smooth),
+    box-shadow var(--q-duration-med) var(--q-ease-smooth);
+}
+
+.q-panel:hover {
+  border-color: rgba(123, 110, 246, 0.35);
+  box-shadow: 0 0 32px rgba(123, 110, 246, 0.08);
+}
+
+/* Monospace formula strip */
+.q-formula {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  color: var(--q-cyan);
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+
+/* GPU-friendly smooth transforms site-wide */
+.smooth-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduced motion: strip decorative animation */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -107,7 +107,7 @@ export default function Pagination({
             {[...Array(particleCount)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-1 h-1 rounded-full bg-green-300/70"
+                className="absolute w-1 h-1 rounded-full bg-violet-300/70"
                 initial={{ 
                   x: 0, 
                   y: 0, 
@@ -197,7 +197,7 @@ export default function Pagination({
             className="absolute inset-0 rounded-xl -z-10"
             animate={{
               boxShadow: hoveredPage !== null 
-                ? "0 0 20px rgba(52, 211, 153, 0.15), inset 0 0 15px rgba(52, 211, 153, 0.08)" 
+                ? "0 0 20px rgba(167, 139, 250, 0.15), inset 0 0 15px rgba(167, 139, 250, 0.08)" 
                 : "0 0 0px rgba(0, 0, 0, 0)"
             }}
             transition={{ duration: 0.3 }}
@@ -288,7 +288,7 @@ export default function Pagination({
               {/* Text label on hover - simplified */}
               {hoveredPage === -1 && !prefersReducedMotion && (
                 <motion.span
-                  className="absolute text-xs font-medium text-green-300 whitespace-nowrap"
+                  className="absolute text-xs font-medium text-violet-300 whitespace-nowrap"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 18 }}
                   transition={{ duration: 0.2 }}
@@ -331,7 +331,7 @@ export default function Pagination({
                   <motion.div
                     className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-medium transition-all duration-300 relative overflow-hidden ${
                       currentPage === page
-                        ? "text-green-300"
+                        ? "text-violet-300"
                         : "text-zinc-400"
                     }`}
                     whileHover={{ 
@@ -347,7 +347,7 @@ export default function Pagination({
                     {/* Active page background - simplified */}
                     {currentPage === page && !prefersReducedMotion && (
                       <motion.div 
-                        className="absolute inset-0 rounded-lg bg-green-500/20"
+                        className="absolute inset-0 rounded-lg bg-violet-500/20"
                         animate={{ 
                           boxShadow: "0 0 10px rgba(74, 222, 128, 0.3), inset 0 0 5px rgba(74, 222, 128, 0.2)",
                         }}
@@ -457,7 +457,7 @@ export default function Pagination({
               {/* Text label on hover - simplified */}
               {hoveredPage === -2 && !prefersReducedMotion && (
                 <motion.span
-                  className="absolute text-xs font-medium text-green-300 whitespace-nowrap"
+                  className="absolute text-xs font-medium text-violet-300 whitespace-nowrap"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 18 }}
                   transition={{ duration: 0.2 }}

@@ -540,8 +540,8 @@ export default function TheArchive() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span className="text-green-300">&gt;</span>
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-green-200 to-white">
+        <span className="text-violet-300">&gt;</span>
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-violet-200 to-white">
           the archive
         </span>
       </motion.h2>
@@ -575,7 +575,7 @@ export default function TheArchive() {
               }}
               className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
                 activeCategory === cat 
-                  ? "bg-zinc-800 text-green-300 shadow-sm" 
+                  ? "bg-zinc-800 text-violet-300 shadow-sm" 
                   : "text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/50"
               }`}
             >
@@ -599,7 +599,7 @@ export default function TheArchive() {
             }}
             className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
               viewMode === "GRID" 
-                ? "bg-zinc-800 text-green-300 shadow-sm" 
+                ? "bg-zinc-800 text-violet-300 shadow-sm" 
                 : "text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/50"
             }`}
           >
@@ -662,23 +662,23 @@ export default function TheArchive() {
                 onClick={() => setExpandedId(isExpanded ? null : item.id)}
               >
                 <motion.div 
-                  className={`h-full rounded-xl border border-zinc-800/50 bg-zinc-900/30 backdrop-blur-sm overflow-hidden transition-colors hover:border-zinc-700 ${
+                  className={`flex flex-col h-full rounded-xl border border-zinc-800/50 bg-zinc-900/30 backdrop-blur-sm overflow-hidden transition-colors hover:border-zinc-700 ${
                     isExpanded ? "bg-zinc-900/80 shadow-2xl border-green-900/30" : ""
                   }`}
                   layout
                 >
                   {/* Top Bar / Header */}
                   <motion.div 
-                    className="p-4 flex items-start gap-3 relative z-10"
+                    className="p-4 flex flex-1 items-start gap-3 relative z-10"
                     layout
                   >
                     <div 
-                      className="p-2 rounded-lg bg-zinc-800/50 text-zinc-100"
+                      className="p-2 rounded-lg bg-zinc-800/50 text-zinc-100 shrink-0"
                     >
                       {item.icon}
                     </div>
                     
-                    <div className="flex-1">
+                    <div className="flex-1 flex flex-col h-full">
                       <div className="flex justify-between items-start">
                         <span className="text-xs font-mono text-zinc-500 mb-1 block">
                           {item.tag}
@@ -687,7 +687,7 @@ export default function TheArchive() {
                         {/* Tooltip implementation via group-hover */}
                         {!isExpanded && (
                            <div className="group/tooltip relative">
-                             <RiArrowRightUpLine className="text-zinc-600 hover:text-green-300 transition-colors w-4 h-4" />
+                             <RiArrowRightUpLine className="text-zinc-600 hover:text-violet-300 transition-colors w-4 h-4" />
                              <div className="absolute opacity-0 group-hover/tooltip:opacity-100 transition-opacity bg-zinc-800 text-xs px-2 py-1 rounded border border-zinc-700 text-zinc-300 right-0 top-6 w-max max-w-[200px] pointer-events-none z-50">
                                {item.tooltip}
                              </div>
@@ -701,7 +701,7 @@ export default function TheArchive() {
                             }}
                             className="p-2 rounded-full hover:bg-zinc-800 transition-colors"
                           >
-                            <RiArrowRightUpLine size={20} className="text-zinc-500 hover:text-green-300 transform rotate-180" />
+                            <RiArrowRightUpLine size={20} className="text-zinc-500 hover:text-violet-300 transform rotate-180" />
                           </button>
                         )}
                       </div>
@@ -710,8 +710,8 @@ export default function TheArchive() {
                       </h3>
                     
                           {item.link && (
-                            <div className="mt-4">
-                              <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-medium text-black bg-green-400 hover:bg-green-300 px-3 py-1.5 rounded transition-colors">
+                            <div className="mt-auto pt-4">
+                              <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-medium text-black bg-violet-400 hover:bg-violet-300 px-3 py-1.5 rounded transition-colors">
                                 Read Transmission <RiArrowRightUpLine size={14} />
                               </a>
                             </div>
@@ -731,22 +731,22 @@ export default function TheArchive() {
                       >
                         <div className="pt-2 border-t border-zinc-800/50 space-y-3 mt-2">
                           <div>
-                            <span className="text-xs font-medium text-green-300/80 uppercase tracking-wider block mb-0.5">Thesis</span>
+                            <span className="text-xs font-medium text-violet-300/80 uppercase tracking-wider block mb-0.5">Thesis</span>
                             <p className="text-sm text-zinc-300">{item.thesis}</p>
                           </div>
                           
                           <div>
-                            <span className="text-xs font-medium text-green-300/80 uppercase tracking-wider block mb-0.5">Connection</span>
+                            <span className="text-xs font-medium text-violet-300/80 uppercase tracking-wider block mb-0.5">Connection</span>
                             <p className="text-sm text-zinc-300">{item.connection}</p>
                           </div>
                           
                           <div>
-                            <span className="text-xs font-medium text-green-300/80 uppercase tracking-wider block mb-0.5">Application</span>
+                            <span className="text-xs font-medium text-violet-300/80 uppercase tracking-wider block mb-0.5">Application</span>
                             <p className="text-sm text-zinc-300">{item.application}</p>
                           </div>
                           
                           <div className="bg-zinc-800/30 p-3 rounded-lg border border-zinc-700/50 mt-4">
-                            <span className="text-xs font-medium text-green-300/80 uppercase tracking-wider block mb-1">The Nugget</span>
+                            <span className="text-xs font-medium text-violet-300/80 uppercase tracking-wider block mb-1">The Nugget</span>
                             <p className="text-sm text-zinc-200 italic">"{item.nugget}"</p>
                           </div>
                         </div>
@@ -756,7 +756,7 @@ export default function TheArchive() {
 
                   {/* Cosmic Accent Line */}
                   <div 
-                    className="absolute top-0 left-0 w-full h-[1px] opacity-20 transition-opacity group-hover:opacity-100 bg-gradient-to-r from-transparent via-green-400 to-transparent"
+                    className="absolute top-0 left-0 w-full h-[1px] opacity-20 transition-opacity group-hover:opacity-100 bg-gradient-to-r from-transparent via-violet-400 to-transparent"
                   />
                 </motion.div>
               </motion.div>

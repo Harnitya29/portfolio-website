@@ -107,7 +107,7 @@ export default function TransitionWrapper({
               transition={{ duration: 0.3, delay: 0.1 }}
             >
               <motion.div
-                className="w-12 h-[2px] bg-green-400 rounded-full overflow-hidden"
+                className="w-12 h-[2px] bg-violet-400 rounded-full overflow-hidden"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
@@ -161,7 +161,7 @@ export default function TransitionWrapper({
               transition: { duration: 0.3, ease: "easeIn" }
             }}
           >
-            <div className="w-full h-full bg-gradient-to-r from-transparent via-green-400 to-transparent" />
+            <div className="w-full h-full bg-gradient-to-r from-transparent via-violet-400 to-transparent" />
           </motion.div>
         )}
       </AnimatePresence>

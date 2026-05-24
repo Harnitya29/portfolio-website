@@ -135,7 +135,7 @@ export default function PhotosClient() {
         <motion.div 
           className="absolute top-0 left-0 w-full h-1 pointer-events-none"
           style={{
-            background: "linear-gradient(to right, transparent, rgba(52, 211, 153, 0.3), transparent)",
+            background: "linear-gradient(to right, transparent, rgba(167, 139, 250, 0.3), transparent)",
           }}
           animate={{ 
             scaleX: [0, 1, 0],
@@ -152,7 +152,7 @@ export default function PhotosClient() {
         <motion.div 
           className="absolute bottom-0 right-0 w-1 h-full pointer-events-none"
           style={{
-            background: "linear-gradient(to top, transparent, rgba(52, 211, 153, 0.2), transparent)",
+            background: "linear-gradient(to top, transparent, rgba(167, 139, 250, 0.2), transparent)",
           }}
           animate={{ 
             scaleY: [0, 1, 0],
@@ -171,7 +171,7 @@ export default function PhotosClient() {
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={`particle-${i}`}
-            className="absolute w-1 h-1 rounded-full bg-green-300/30 pointer-events-none"
+            className="absolute w-1 h-1 rounded-full bg-violet-300/30 pointer-events-none"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -195,7 +195,7 @@ export default function PhotosClient() {
         <motion.div
           className="absolute w-[500px] h-[500px] rounded-full pointer-events-none opacity-20 -z-10"
           style={{
-            background: "radial-gradient(circle, rgba(52, 211, 153, 0.15) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(167, 139, 250, 0.15) 0%, transparent 70%)",
             left: mousePosition.x - 250,
             top: mousePosition.y - 250,
             filter: "blur(50px)",
@@ -221,7 +221,7 @@ export default function PhotosClient() {
             whileHover={{ scale: 1.03 }}
           >
             <motion.span 
-              className="text-green-300 inline-block"
+              className="text-violet-300 inline-block"
               animate={{ rotate: [0, 5, 0, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
             >
@@ -230,7 +230,7 @@ export default function PhotosClient() {
             <span className="relative">
               photos
               <motion.span 
-                className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-green-300/0 via-green-300 to-green-300/0"
+                className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-violet-300/0 via-violet-300 to-violet-300/0"
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 1, delay: 0.5 }}
@@ -259,7 +259,7 @@ export default function PhotosClient() {
               key={category}
               className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 overflow-hidden ${
                 activeCategory === category 
-                  ? 'bg-green-500/20 text-green-300 border border-green-500/30' 
+                  ? 'bg-violet-500/20 text-violet-300 border border-violet-500/30' 
                   : 'bg-zinc-800/50 text-zinc-400 border border-zinc-700/50 hover:bg-zinc-800 hover:text-zinc-300'
               }`}
               onClick={() => handleCategoryChange(category)}
@@ -271,7 +271,7 @@ export default function PhotosClient() {
             >
               {/* Hiệu ứng ripple khi click */}
               <motion.span
-                className="absolute inset-0 bg-green-400/10 rounded-full"
+                className="absolute inset-0 bg-violet-400/10 rounded-full"
                 initial={{ scale: 0, opacity: 0 }}
                 whileTap={{ scale: 1.5, opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -284,7 +284,7 @@ export default function PhotosClient() {
               {hoveredCategory === category && (
                 <motion.span
                   layoutId="categoryHighlight"
-                  className="absolute inset-0 rounded-full bg-green-500/10"
+                  className="absolute inset-0 rounded-full bg-violet-500/10"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -296,9 +296,9 @@ export default function PhotosClient() {
               {activeCategory === category && (
                 <motion.span
                   className="absolute inset-0 rounded-full"
-                  initial={{ boxShadow: "0 0 0 rgba(52, 211, 153, 0)" }}
+                  initial={{ boxShadow: "0 0 0 rgba(167, 139, 250, 0)" }}
                   animate={{ 
-                    boxShadow: ["0 0 0px rgba(52, 211, 153, 0)", "0 0 10px rgba(52, 211, 153, 0.3)", "0 0 5px rgba(52, 211, 153, 0.2)"] 
+                    boxShadow: ["0 0 0px rgba(167, 139, 250, 0)", "0 0 10px rgba(167, 139, 250, 0.3)", "0 0 5px rgba(167, 139, 250, 0.2)"] 
                   }}
                   transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
                 />
@@ -345,7 +345,7 @@ export default function PhotosClient() {
                 }}
                 whileHover={{ 
                   scale: 1.03,
-                  boxShadow: "0 0 25px rgba(52, 211, 153, 0.3)"
+                  boxShadow: "0 0 25px rgba(167, 139, 250, 0.3)"
                 }}
                 onMouseEnter={() => setHoveredPhoto(photo.id)}
                 onMouseLeave={() => setHoveredPhoto(null)}
@@ -358,7 +358,7 @@ export default function PhotosClient() {
                       <motion.div
                         className="absolute inset-0 w-full h-full"
                         style={{
-                          background: "linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.1), transparent)",
+                          background: "linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.1), transparent)",
                         }}
                         animate={{ x: ['-100%', '100%'] }}
                         transition={{ 
@@ -406,7 +406,7 @@ export default function PhotosClient() {
                   >
                     <div className="flex justify-between items-end">
                       <motion.span 
-                        className="text-xs font-medium px-2 py-1 rounded-full bg-black/60 backdrop-blur-sm text-green-300 border border-green-500/20"
+                        className="text-xs font-medium px-2 py-1 rounded-full bg-black/60 backdrop-blur-sm text-violet-300 border border-violet-500/20"
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ 
                           y: hoveredPhoto === photo.id ? 0 : 20, 
@@ -455,7 +455,7 @@ export default function PhotosClient() {
                 repeatType: "reverse"
               }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-300/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-violet-300/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </motion.div>

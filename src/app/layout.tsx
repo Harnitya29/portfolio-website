@@ -1,5 +1,6 @@
 import "~/styles/globals.css";
-import "~/styles/transition.css"
+import "~/styles/quantum-theme.css";
+import "~/styles/transition.css";
 import NavBar from "~/components/NavBar";
 import TransitionWrapper from "~/components/utils/TransitionWrapper";
 import type { Metadata } from "next";
@@ -9,6 +10,7 @@ import BackToTop from "~/components/utils/BackToTop";
 import { Analytics } from "@vercel/analytics/react"
 import LoadingScreen from "~/components/utils/LoadingScreen";
 import VisitorTracker from "~/components/VisitorTracker";
+import QuantumFieldOverlay from "~/components/QuantumFieldOverlay";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     default: "ℏarnitya | Profile",
     template: "%s | ℏarnitya",
   },
-  description: "High school student, part-time coder, full-time chaos creator",
+  description: "BCA Honours student at MSU Baroda, part-time coder, full-time chaos creator",
   openGraph: {
     title: "Harnitya Narola",
     description: "second year cs grad student, part-time coder, full-time chaos creator",
@@ -52,8 +54,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-foreground font-mono relative overflow-x-hidden`}
-      >       
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--q-void)] text-foreground font-mono relative overflow-x-hidden`}
+      >
+          <QuantumFieldOverlay />
           {/* Loading Screen */}
           <LoadingScreen>
             {/* Content wrapper */}

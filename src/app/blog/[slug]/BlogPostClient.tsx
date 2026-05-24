@@ -70,14 +70,14 @@ export default function BlogPostClient({
       <footer className="max-w-4xl mx-auto px-6 font-mono">
         {/* Enhanced separator with animated particles */}
         <div className="relative h-24 flex items-center justify-center my-8 overflow-hidden">
-          <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-green-300/40 to-transparent"></div>
+          <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-violet-300/40 to-transparent"></div>
           
           {/* Animated particles */}
           <div className="absolute inset-0 flex items-center justify-center">
             {[...Array(6)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-1 h-1 rounded-full bg-green-300/30"
+                className="absolute w-1 h-1 rounded-full bg-violet-300/30"
                 initial={{ 
                   x: Math.random() * 200 - 100, 
                   y: Math.random() * 60 - 30,
@@ -101,8 +101,8 @@ export default function BlogPostClient({
           <motion.div 
             className="absolute w-40 h-[1px]"
             style={{ 
-              background: "linear-gradient(to right, transparent, rgba(52, 211, 153, 0.9), transparent)",
-              boxShadow: "0 0 15px rgba(52, 211, 153, 0.5)"
+              background: "linear-gradient(to right, transparent, rgba(167, 139, 250, 0.9), transparent)",
+              boxShadow: "0 0 15px rgba(167, 139, 250, 0.5)"
             }}
             initial={{ width: 0, opacity: 0 }}
             whileInView={{ width: 160, opacity: 1 }}
@@ -119,17 +119,17 @@ export default function BlogPostClient({
             viewport={{ once: true }}
           >
             <motion.div 
-              className="w-2 h-2 rounded-full bg-green-300/40"
+              className="w-2 h-2 rounded-full bg-violet-300/40"
               animate={{ scale: [1, 1.5, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div 
-              className="w-3 h-3 rounded-full bg-green-300/30 border border-green-300/50"
+              className="w-3 h-3 rounded-full bg-violet-300/30 border border-violet-300/50"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
             />
             <motion.div 
-              className="w-2 h-2 rounded-full bg-green-300/40"
+              className="w-2 h-2 rounded-full bg-violet-300/40"
               animate={{ scale: [1, 1.5, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
             />
@@ -162,12 +162,12 @@ export default function BlogPostClient({
             transition={{ delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-emerald-300 to-teal-300 relative z-10">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-300 via-violet-300 to-teal-300 relative z-10">
               Enjoyed this article?
             </span>
             <motion.span 
               className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-36 h-1 rounded-full opacity-20"
-              style={{ background: "linear-gradient(to right, #10b981, #34d399)" }}
+              style={{ background: "linear-gradient(to right, #8b5cf6, #a78bfa)" }}
               initial={{ width: 0 }}
               whileInView={{ width: "36%" }}
               transition={{ delay: 0.8, duration: 1 }}
@@ -214,11 +214,11 @@ export default function BlogPostClient({
               href="https://twitter.com/intent/tweet"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-green-300/10 to-emerald-500/10 text-green-300 hover:from-green-300/20 hover:to-emerald-500/20 transition-all border border-green-300/20 text-sm backdrop-blur-sm"
+              className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-violet-300/10 to-violet-500/10 text-violet-300 hover:from-violet-300/20 hover:to-violet-500/20 transition-all border border-violet-300/20 text-sm backdrop-blur-sm"
               whileHover={{ 
                 scale: 1.05, 
                 y: -2, 
-                boxShadow: "0 10px 25px -5px rgba(52, 211, 153, 0.3)" 
+                boxShadow: "0 10px 25px -5px rgba(167, 139, 250, 0.3)" 
               }}
               whileTap={{ scale: 0.98 }}
             >
@@ -231,7 +231,7 @@ export default function BlogPostClient({
           
           {/* Enhanced bottom design */}
           <div className="relative py-8">
-            <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-green-300/10 to-transparent"></div>
+            <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-300/10 to-transparent"></div>
             
             <motion.div 
               className="flex justify-center items-center gap-3 mb-4"
@@ -243,7 +243,7 @@ export default function BlogPostClient({
               {[...Array(3)].map((_, i) => (
                 <motion.div 
                   key={i}
-                  className="w-1 h-1 rounded-full bg-green-300/30"
+                  className="w-1 h-1 rounded-full bg-violet-300/30"
                   animate={{ 
                     scale: [1, 1.5, 1],
                     opacity: [0.3, 0.6, 0.3]

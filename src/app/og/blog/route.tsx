@@ -101,8 +101,8 @@ export async function GET(request: Request) {
               position: "absolute",
               inset: 0,
               backgroundImage: `
-                linear-gradient(to right, rgba(52, 211, 153, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(52, 211, 153, 0.05) 1px, transparent 1px)
+                linear-gradient(to right, rgba(167, 139, 250, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(167, 139, 250, 0.05) 1px, transparent 1px)
               `,
               backgroundSize: "40px 40px",
               opacity: 0.3,
@@ -116,7 +116,7 @@ export async function GET(request: Request) {
               width: "800px",
               height: "800px",
               borderRadius: "50%",
-              background: "radial-gradient(circle, rgba(52, 211, 153, 0.15) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(167, 139, 250, 0.15) 0%, transparent 70%)",
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
@@ -137,8 +137,8 @@ export async function GET(request: Request) {
               padding: "10px 20px",
               borderRadius: "30px",
               background: "rgba(15, 23, 42, 0.6)",
-              border: "1px solid rgba(52, 211, 153, 0.3)",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2), 0 0 15px rgba(52, 211, 153, 0.2)",
+              border: "1px solid rgba(167, 139, 250, 0.3)",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2), 0 0 15px rgba(167, 139, 250, 0.2)",
               backdropFilter: "blur(10px)",
             }}
           >
@@ -148,7 +148,7 @@ export async function GET(request: Request) {
                 height: "12px",
                 borderRadius: "50%",
                 backgroundColor: "#86efac",
-                boxShadow: "0 0 10px rgba(134, 239, 172, 0.8)",
+                boxShadow: "0 0 10px rgba(167, 139, 250, 0.8)",
                 position: "relative",
                 display: "flex",
               }}
@@ -204,8 +204,8 @@ export async function GET(request: Request) {
               padding: "50px",
               borderRadius: "30px",
               background: "rgba(15, 23, 42, 0.5)",
-              border: "1px solid rgba(52, 211, 153, 0.2)",
-              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(52, 211, 153, 0.1)",
+              border: "1px solid rgba(167, 139, 250, 0.2)",
+              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(167, 139, 250, 0.1)",
               backdropFilter: "blur(10px)",
               width: "80%",
               maxWidth: "900px",
@@ -232,9 +232,9 @@ export async function GET(request: Request) {
                   width: "70px",
                   height: "70px",
                   borderRadius: "16px",
-                  background: "linear-gradient(135deg, rgba(52, 211, 153, 0.2), rgba(16, 185, 129, 0.1))",
-                  border: "1px solid rgba(52, 211, 153, 0.3)",
-                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 0 15px rgba(52, 211, 153, 0.2)",
+                  background: "linear-gradient(135deg, rgba(167, 139, 250, 0.2), rgba(139, 92, 246, 0.1))",
+                  border: "1px solid rgba(167, 139, 250, 0.3)",
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 0 15px rgba(167, 139, 250, 0.2)",
                   flexShrink: 0,
                   position: "relative",
                   overflow: "hidden",
@@ -245,7 +245,7 @@ export async function GET(request: Request) {
                     color: "#86efac",
                     fontSize: 40,
                     fontWeight: "bold",
-                    textShadow: "0 0 10px rgba(134, 239, 172, 0.7)",
+                    textShadow: "0 0 10px rgba(167, 139, 250, 0.7)",
                     position: "relative",
                   }}
                 >
@@ -290,9 +290,9 @@ export async function GET(request: Request) {
                   style={{
                     height: "3px",
                     width: "100%",
-                    background: "linear-gradient(to right, rgba(52, 211, 153, 0), rgba(52, 211, 153, 0.8), rgba(6, 182, 212, 0.6), rgba(52, 211, 153, 0))",
+                    background: "linear-gradient(to right, rgba(167, 139, 250, 0), rgba(167, 139, 250, 0.8), rgba(6, 182, 212, 0.6), rgba(167, 139, 250, 0))",
                     borderRadius: "3px",
-                    boxShadow: "0 0 10px rgba(52, 211, 153, 0.5)",
+                    boxShadow: "0 0 10px rgba(167, 139, 250, 0.5)",
                   }}
                 />
                 

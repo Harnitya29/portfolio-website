@@ -38,7 +38,7 @@ function CustomLink({
       <Link
         href={href}
         {...props}
-        className="text-green-300 hover:text-green-400 underline"
+        className="text-violet-300 hover:text-violet-400 underline"
       >
         {props.children}
       </Link>
@@ -55,7 +55,7 @@ function CustomLink({
       target="_blank"
       rel="noopener noreferrer"
       {...props}
-      className="text-green-300 hover:text-green-400 underline"
+      className="text-violet-300 hover:text-violet-400 underline"
     />
   );
 }

@@ -93,7 +93,7 @@ export default function BlogClient({
         <motion.div 
           className="absolute top-0 left-0 w-full h-1 pointer-events-none"
           style={{
-            background: "linear-gradient(to right, transparent, rgba(52, 211, 153, 0.3), transparent)",
+            background: "linear-gradient(to right, transparent, rgba(167, 139, 250, 0.3), transparent)",
           }}
           animate={{ 
             scaleX: [0, 1, 0],
@@ -124,7 +124,7 @@ export default function BlogClient({
             whileHover={{ scale: 1.03 }}
           >
             <motion.span 
-              className="text-green-300 inline-block"
+              className="text-violet-300 inline-block"
               animate={{ rotate: [0, 5, 0, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
             >
@@ -133,7 +133,7 @@ export default function BlogClient({
             <span className="relative">
               blogs
               <motion.span 
-                className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-green-300/0 via-green-300 to-green-300/0"
+                className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-violet-300/0 via-violet-300 to-violet-300/0"
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 1, delay: 0.5 }}
@@ -163,9 +163,9 @@ export default function BlogClient({
               className="absolute -inset-1 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
               animate={{
                 background: [
-                  "radial-gradient(circle at top left, rgba(52, 211, 153, 0.15), transparent 70%)",
-                  "radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.15), transparent 70%)",
-                  "radial-gradient(circle at top left, rgba(52, 211, 153, 0.15), transparent 70%)"
+                  "radial-gradient(circle at top left, rgba(167, 139, 250, 0.15), transparent 70%)",
+                  "radial-gradient(circle at bottom right, rgba(167, 139, 250, 0.15), transparent 70%)",
+                  "radial-gradient(circle at top left, rgba(167, 139, 250, 0.15), transparent 70%)"
                 ]
               }}
               transition={{ duration: 5, repeat: Infinity }}
@@ -183,8 +183,8 @@ export default function BlogClient({
                   border: "1px solid rgba(63, 63, 70, 0.5)",
                 }}
                 whileHover={{
-                  boxShadow: "0 0 30px rgba(52, 211, 153, 0.2)",
-                  border: "1px solid rgba(52, 211, 153, 0.3)",
+                  boxShadow: "0 0 30px rgba(167, 139, 250, 0.2)",
+                  border: "1px solid rgba(167, 139, 250, 0.3)",
                 }}
                 transition={{ duration: 0.3 }}
               />
@@ -196,14 +196,14 @@ export default function BlogClient({
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
                 style={{
-                  background: "linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.7), transparent)",
+                  background: "linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.7), transparent)",
                   transformOrigin: "left"
                 }}
               />
               
               {/* Shine effect */}
               <motion.div
-                className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-green-300/5 to-transparent -skew-x-12 z-0"
+                className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-violet-300/5 to-transparent -skew-x-12 z-0"
                 animate={{
                   x: ["-100%", "100%"],
                 }}
@@ -225,7 +225,7 @@ export default function BlogClient({
             
             {/* Enhanced search icon with animation */}
             <motion.div
-              className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-green-300 transition-colors duration-500 flex items-center justify-center z-20"
+              className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-violet-300 transition-colors duration-500 flex items-center justify-center z-20"
               initial={{ opacity: 0.7 }}
               animate={{ 
                 opacity: [0.7, 1, 0.7],
@@ -245,7 +245,7 @@ export default function BlogClient({
                   }}
                   transition={{ duration: 2, repeat: Infinity }}
                   style={{
-                    background: "radial-gradient(circle, rgba(52, 211, 153, 0.8), transparent 70%)",
+                    background: "radial-gradient(circle, rgba(167, 139, 250, 0.8), transparent 70%)",
                   }}
                 />
                 
@@ -275,7 +275,7 @@ export default function BlogClient({
             {searchTerm && (
               <motion.button
                 onClick={() => setSearchTerm("")}
-                className="absolute right-5 top-[calc(50%-8px)] -translate-y-1/2 text-gray-400 hover:text-green-300 transition-colors duration-300 z-20 flex items-center justify-center"
+                className="absolute right-5 top-[calc(50%-8px)] -translate-y-1/2 text-gray-400 hover:text-violet-300 transition-colors duration-300 z-20 flex items-center justify-center"
                 initial={{ opacity: 0, scale: 0.8, rotate: -90 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                 exit={{ opacity: 0, scale: 0.8, rotate: 90 }}
@@ -296,7 +296,7 @@ export default function BlogClient({
                     }}
                     transition={{ duration: 2, repeat: Infinity }}
                     style={{
-                      background: "radial-gradient(circle, rgba(52, 211, 153, 0.8), transparent 70%)",
+                      background: "radial-gradient(circle, rgba(167, 139, 250, 0.8), transparent 70%)",
                     }}
                   />
                   
@@ -344,7 +344,7 @@ export default function BlogClient({
                         width: `${Math.random() * 3 + 1}px`,
                         height: `${Math.random() * 3 + 1}px`,
                         background: `rgba(${52 + Math.random() * 30}, ${211 + Math.random() * 30}, ${153 + Math.random() * 30}, ${Math.random() * 0.5 + 0.5})`,
-                        boxShadow: `0 0 ${Math.random() * 5 + 2}px rgba(52, 211, 153, ${Math.random() * 0.5 + 0.5})`,
+                        boxShadow: `0 0 ${Math.random() * 5 + 2}px rgba(167, 139, 250, ${Math.random() * 0.5 + 0.5})`,
                         filter: `blur(${Math.random() * 1}px)`
                       }}
                     />
@@ -368,21 +368,21 @@ export default function BlogClient({
                   className="flex items-center px-4 py-2 rounded-full bg-zinc-900/80 backdrop-blur-md border border-zinc-800/50 shadow-lg"
                   whileHover={{ 
                     scale: 1.05,
-                    boxShadow: "0 0 20px rgba(52, 211, 153, 0.2)",
-                    borderColor: "rgba(52, 211, 153, 0.3)"
+                    boxShadow: "0 0 20px rgba(167, 139, 250, 0.2)",
+                    borderColor: "rgba(167, 139, 250, 0.3)"
                   }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   {/* Animated dot */}
                   <motion.div 
-                    className="h-2.5 w-2.5 rounded-full bg-green-300 mr-2"
+                    className="h-2.5 w-2.5 rounded-full bg-violet-300 mr-2"
                     animate={{
                       scale: [1, 1.3, 1],
                       opacity: [0.7, 1, 0.7],
                       boxShadow: [
-                        "0 0 0px rgba(52, 211, 153, 0.5)",
-                        "0 0 10px rgba(52, 211, 153, 0.8)",
-                        "0 0 0px rgba(52, 211, 153, 0.5)"
+                        "0 0 0px rgba(167, 139, 250, 0.5)",
+                        "0 0 10px rgba(167, 139, 250, 0.8)",
+                        "0 0 0px rgba(167, 139, 250, 0.5)"
                       ]
                     }}
                     transition={{ duration: 2, repeat: Infinity }}
@@ -391,7 +391,7 @@ export default function BlogClient({
                   {/* Result text with gradient */}
                   <div className="flex items-center">
                     <motion.span 
-                      className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-400 mr-1"
+                      className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-violet-400 mr-1"
                       animate={{
                         backgroundPosition: ["0% center", "100% center", "0% center"],
                       }}
@@ -433,8 +433,8 @@ export default function BlogClient({
                   <motion.div 
                     className="bg-zinc-900/30 border border-zinc-800/50 rounded-lg p-6 transition-all duration-500 relative overflow-hidden"
                     whileHover={{ 
-                      backgroundColor: "rgba(52, 211, 153, 0.05)",
-                      borderColor: "rgba(52, 211, 153, 0.2)",
+                      backgroundColor: "rgba(167, 139, 250, 0.05)",
+                      borderColor: "rgba(167, 139, 250, 0.2)",
                       y: -8,
                       scale: 1.02
                     }}
@@ -443,7 +443,7 @@ export default function BlogClient({
                     <motion.div 
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       style={{ 
-                        background: "linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.2), transparent)",
+                        background: "linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.2), transparent)",
                         backgroundSize: "200% 100%",
                       }}
                       animate={hoveredBlog === blog.slug ? {
@@ -464,7 +464,7 @@ export default function BlogClient({
                         animate={{ opacity: 0.15 }}
                         exit={{ opacity: 0 }}
                         style={{ 
-                          background: "radial-gradient(circle at center, rgba(52, 211, 153, 0.5) 0%, transparent 70%)",
+                          background: "radial-gradient(circle at center, rgba(167, 139, 250, 0.5) 0%, transparent 70%)",
                           filter: "blur(20px)"
                         }}
                       />
@@ -476,7 +476,7 @@ export default function BlogClient({
                         {[...Array(10)].map((_, i) => (
                           <motion.div
                             key={i}
-                            className="absolute w-1 h-1 rounded-full bg-green-300/40"
+                            className="absolute w-1 h-1 rounded-full bg-violet-300/40"
                             initial={{ 
                               x: "50%", 
                               y: "50%",
@@ -500,7 +500,7 @@ export default function BlogClient({
                     
                     <div className="block relative z-10">
                       <motion.h2 
-                        className="text-xl font-semibold text-white group-hover:text-green-300 transition-colors duration-300"
+                        className="text-xl font-semibold text-white group-hover:text-violet-300 transition-colors duration-300"
                         whileHover={{ x: 5 }}
                       >
                         {blog.title}
@@ -509,7 +509,7 @@ export default function BlogClient({
                       <div className="flex items-center mt-3 text-gray-500">
                         <motion.svg 
                           xmlns="http://www.w3.org/2000/svg" 
-                          className="h-4 w-4 mr-2 text-green-300/70" 
+                          className="h-4 w-4 mr-2 text-violet-300/70" 
                           fill="none" 
                           viewBox="0 0 24 24" 
                           stroke="currentColor"
@@ -535,7 +535,7 @@ export default function BlogClient({
                           y: hoveredBlog === blog.slug ? 0 : 10
                         }}
                         transition={{ duration: 0.2 }}
-                        className="mt-4 flex items-center text-green-300 text-sm"
+                        className="mt-4 flex items-center text-violet-300 text-sm"
                       >
                         Read article
                         <motion.svg 
@@ -623,13 +623,13 @@ export default function BlogClient({
           }}
           transition={{ type: "spring", damping: 20, stiffness: 300, mass: 0.5 }}
           style={{ 
-            background: "radial-gradient(circle, rgba(52, 211, 153, 0.8) 0%, rgba(52, 211, 153, 0) 70%)",
+            background: "radial-gradient(circle, rgba(167, 139, 250, 0.8) 0%, rgba(167, 139, 250, 0) 70%)",
             filter: "blur(5px)"
           }}
         />
         
         <motion.div
-          className="fixed w-4 h-4 rounded-full pointer-events-none z-50 bg-green-300 hidden md:block"
+          className="fixed w-4 h-4 rounded-full pointer-events-none z-50 bg-violet-300 hidden md:block"
           animate={{
             x: mousePosition.x - 2,
             y: mousePosition.y - 2,
@@ -660,7 +660,7 @@ export default function BlogClient({
               }}
             />
             <motion.div 
-              className="absolute h-[1px] w-[40%] left-[30%] bg-gradient-to-r from-transparent via-green-300 to-transparent"
+              className="absolute h-[1px] w-[40%] left-[30%] bg-gradient-to-r from-transparent via-violet-300 to-transparent"
               animate={{
                 left: ["0%", "60%", "0%"],
                 opacity: [0, 1, 0]
@@ -683,10 +683,10 @@ export default function BlogClient({
           >
             <motion.a
               href="/"
-              className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-xl overflow-hidden z-10 group-hover:text-green-300 transition-colors duration-300"
+              className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-xl overflow-hidden z-10 group-hover:text-violet-300 transition-colors duration-300"
             >
               <motion.span
-                className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.15),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(167, 139, 250,0.15),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 animate={{
                   scale: [1, 1.2, 1],
                 }}
@@ -700,12 +700,12 @@ export default function BlogClient({
               {/* Animated border */}
                             {/* Animated border */}
                             <motion.span
-                className="absolute inset-0 border border-green-300/30 rounded-xl opacity-0 group-hover:opacity-100"
+                className="absolute inset-0 border border-violet-300/30 rounded-xl opacity-0 group-hover:opacity-100"
                 animate={{
                   boxShadow: [
-                    "0 0 0px rgba(52, 211, 153, 0)",
-                    "0 0 15px rgba(52, 211, 153, 0.3)",
-                    "0 0 0px rgba(52, 211, 153, 0)"
+                    "0 0 0px rgba(167, 139, 250, 0)",
+                    "0 0 15px rgba(167, 139, 250, 0.3)",
+                    "0 0 0px rgba(167, 139, 250, 0)"
                   ]
                 }}
                 transition={{
@@ -719,7 +719,7 @@ export default function BlogClient({
               {[...Array(5)].map((_, i) => (
                 <motion.span
                   key={`home-particle-${i}`}
-                  className="absolute w-1 h-1 rounded-full bg-green-300/60"
+                  className="absolute w-1 h-1 rounded-full bg-violet-300/60"
                   initial={{ 
                     x: "50%", 
                     y: "50%",

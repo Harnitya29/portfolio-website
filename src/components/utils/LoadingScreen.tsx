@@ -102,7 +102,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
               className="relative mb-12"
             >
               <motion.div
-                className="text-green-300 text-3xl font-bold tracking-wider flex overflow-hidden"
+                className="text-violet-400 text-3xl font-bold tracking-wider flex overflow-hidden"
               >
                 {Array.from("Loading...").map((char, index) => (
                   <motion.span
@@ -118,7 +118,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                   >
                     {char}
                     <motion.span
-                      className="absolute inset-0 text-green-100/30 blur-[1px]"
+                      className="absolute inset-0 text-violet-200/30 blur-[1px]"
                       animate={{
                         opacity: [0.3, 0.8, 0.3]
                       }}
@@ -134,7 +134,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                 ))}
               </motion.div>
               <motion.div
-                className="h-[2px] bg-gradient-to-r from-transparent via-green-400 to-transparent mt-1"
+                className="h-[2px] bg-gradient-to-r from-transparent via-violet-500 to-transparent mt-1"
                 initial={{ width: 0, opacity: 0 }}
                 animate={{ width: "100%", opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }} // Giảm từ 0.8s/0.6s xuống 0.5s/0.4s
@@ -147,7 +147,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
               <motion.div 
                 className="absolute inset-0 rounded-full blur-md"
                 style={{ 
-                  background: `linear-gradient(90deg, rgba(52, 211, 153, 0.2) 0%, rgba(52, 211, 153, 0.6) ${progress}%, rgba(52, 211, 153, 0.2) ${progress}%, transparent ${Math.min(progress + 5, 100)}%)` 
+                  background: `linear-gradient(90deg, rgba(123, 110, 246, 0.2) 0%, rgba(123, 110, 246, 0.6) ${progress}%, rgba(123, 110, 246, 0.2) ${progress}%, transparent ${Math.min(progress + 5, 100)}%)` 
                 }}
               />
               
@@ -157,7 +157,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                 <motion.div
                   className="h-full w-full origin-left"
                   style={{ 
-                    background: "linear-gradient(90deg, rgba(52, 211, 153, 0.3) 0%, rgba(52, 211, 153, 0.8) 50%, rgba(52, 211, 153, 0.3) 100%)",
+                    background: "linear-gradient(90deg, rgba(123, 110, 246, 0.3) 0%, rgba(123, 110, 246, 0.8) 50%, rgba(123, 110, 246, 0.3) 100%)",
                     transform: `scaleX(${progress / 100})` 
                   }}
                   transition={{ duration: 0.2 }} // Giảm từ 0.3s xuống 0.2s
@@ -177,7 +177,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                 {isMounted && progress > 10 && Array.from({ length: 5 }).map((_, i) => ( // Giảm từ 10 xuống 5
                   <motion.div
                     key={`progress-particle-${i}`}
-                    className="absolute top-1/2 w-1 h-1 rounded-full bg-green-300/80"
+                    className="absolute top-1/2 w-1 h-1 rounded-full bg-violet-400/80"
                     style={{ 
                       left: `${(progress - 5) * Math.random()}%`,
                       transform: "translateY(-50%)",
@@ -207,7 +207,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                 <span className="relative">
                   {Math.round(progress)}%
                   <motion.span 
-                    className="absolute inset-0 text-green-300 blur-sm"
+                    className="absolute inset-0 text-violet-400 blur-sm"
                     animate={{ opacity: [0.3, 0.7, 0.3] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
@@ -262,7 +262,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                     <motion.div
                       className="absolute inset-0 blur-md rounded-lg -z-10"
                       style={{ 
-                        background: `radial-gradient(circle, rgba(52, 211, 153, 0.8) 0%, transparent 70%)`,
+                        background: `radial-gradient(circle, rgba(123, 110, 246, 0.8) 0%, transparent 70%)`,
                         opacity: 0
                       }}
                       animate={{ 
@@ -281,7 +281,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                     {isMounted && Array.from({ length: 2 }).map((_, i) => ( // Giảm từ 3 xuống 2
                       <motion.div
                         key={`letter-particle-${index}-${i}`}
-                        className="absolute w-1 h-1 rounded-full bg-green-300"
+                        className="absolute w-1 h-1 rounded-full bg-violet-400"
                         style={{
                           top: "50%",
                           left: "50%",
@@ -302,12 +302,12 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                     ))}
                     
                     {/* The actual letter with gradient */}
-                    <span className="text-5xl md:text-6xl font-bold relative inline-block px-1 bg-clip-text text-transparent bg-gradient-to-b from-green-300 to-green-500">
+                    <span className="text-5xl md:text-6xl font-bold relative inline-block px-1 bg-clip-text text-transparent bg-gradient-to-b from-violet-400 to-violet-600">
                       {letter}
                       
                       {/* Holographic overlay */}
                       <motion.span
-                        className="absolute inset-0 bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-transparent mix-blend-overlay"
+                        className="absolute inset-0 bg-clip-text text-transparent bg-gradient-to-r from-violet-300 to-transparent mix-blend-overlay"
                         animate={{
                           backgroundPosition: ["0% 0%", "100% 100%"]
                         }}
@@ -326,7 +326,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
               
               {/* Animated underline */}
               <motion.div
-                className="h-[2px] mt-2 bg-gradient-to-r from-transparent via-green-400 to-transparent"
+                className="h-[2px] mt-2 bg-gradient-to-r from-transparent via-violet-500 to-transparent"
                 initial={{ width: 0, opacity: 0 }}
                 animate={{ width: "100%", opacity: 1 }}
                 transition={{ 
@@ -345,7 +345,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                   exit={{ opacity: 0, y: -20, scale: 0.9 }}
                   whileHover={{ 
                     scale: 1.05,
-                    boxShadow: "0 0 50px rgba(52, 211, 153, 0.8)"
+                    boxShadow: "0 0 50px rgba(123, 110, 246, 0.8)"
                   }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ 
@@ -354,20 +354,20 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                     stiffness: 350, // Tăng từ 300 lên 350
                     damping: 15
                   }}
-                  className="relative px-12 py-5 bg-transparent text-green-300 font-bold rounded-full overflow-hidden group"
+                  className="relative px-12 py-5 bg-transparent text-violet-400 font-bold rounded-full overflow-hidden group"
                   onClick={handleStart}
                 >
                   {/* Animated cosmic background */}
                   <motion.div 
                     className="absolute inset-0 -z-10 rounded-full"
                     style={{
-                      background: "radial-gradient(circle at center, rgba(52, 211, 153, 0.3) 0%, rgba(16, 185, 129, 0.2) 50%, rgba(5, 150, 105, 0.1) 100%)",
+                      background: "radial-gradient(circle at center, rgba(123, 110, 246, 0.3) 0%, rgba(139, 92, 246, 0.2) 50%, rgba(109, 40, 217, 0.1) 100%)",
                     }}
                     animate={{
                       boxShadow: [
-                        "inset 0 0 20px rgba(52, 211, 153, 0.3), 0 0 10px rgba(52, 211, 153, 0.3)",
-                        "inset 0 0 40px rgba(52, 211, 153, 0.5), 0 0 20px rgba(52, 211, 153, 0.5)",
-                        "inset 0 0 20px rgba(52, 211, 153, 0.3), 0 0 10px rgba(52, 211, 153, 0.3)"
+                        "inset 0 0 20px rgba(123, 110, 246, 0.3), 0 0 10px rgba(123, 110, 246, 0.3)",
+                        "inset 0 0 40px rgba(123, 110, 246, 0.5), 0 0 20px rgba(123, 110, 246, 0.5)",
+                        "inset 0 0 20px rgba(123, 110, 246, 0.3), 0 0 10px rgba(123, 110, 246, 0.3)"
                       ]
                     }}
                     transition={{
@@ -382,7 +382,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                     {isMounted && Array.from({ length: 10 }).map((_, i) => ( // Giảm từ 20 xuống 10
                       <motion.div
                         key={`btn-particle-${i}`}
-                        className="absolute rounded-full bg-green-300"
+                        className="absolute rounded-full bg-violet-400"
                         style={{
                           width: `${Math.random() * 3 + 1}px`,
                           height: `${Math.random() * 3 + 1}px`,
@@ -406,11 +406,11 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                   </div>
                   
                   {/* Animated border with double layer */}
-                  <div className="absolute inset-0 rounded-full border border-green-500/30 -z-10" />
+                  <div className="absolute inset-0 rounded-full border border-violet-600/30 -z-10" />
                   <motion.div
                     className="absolute inset-0 rounded-full -z-10"
                     style={{ 
-                      border: "1px solid rgba(52, 211, 153, 0.5)",
+                      border: "1px solid rgba(123, 110, 246, 0.5)",
                       margin: "3px"
                     }}
                     animate={{
@@ -427,7 +427,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                     className="absolute inset-0 -z-10"
                     style={{
                       borderRadius: "100%",
-                      border: "1px dashed rgba(52, 211, 153, 0.3)",
+                      border: "1px dashed rgba(123, 110, 246, 0.3)",
                       margin: "-5px"
                     }}
                     animate={{
@@ -443,7 +443,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                     className="absolute inset-0 -z-10"
                     style={{
                       borderRadius: "100%",
-                      border: "1px dashed rgba(52, 211, 153, 0.2)",
+                      border: "1px dashed rgba(123, 110, 246, 0.2)",
                       margin: "-10px"
                     }}
                     animate={{
@@ -478,21 +478,21 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                   {/* Button text with enhanced effects */}
                   <div className="relative inline-block text-xl tracking-widest font-extrabold">
                     {/* Text shadow layers for 3D effect */}
-                    <span className="absolute inset-0 text-green-500/20 blur-[2px] translate-x-[1px] translate-y-[1px]">
+                    <span className="absolute inset-0 text-violet-600/20 blur-[2px] translate-x-[1px] translate-y-[1px]">
                       START
                     </span>
-                    <span className="absolute inset-0 text-green-400/30 blur-[1px] translate-x-[0.5px] translate-y-[0.5px]">
+                    <span className="absolute inset-0 text-violet-500/30 blur-[1px] translate-x-[0.5px] translate-y-[0.5px]">
                       START
                     </span>
                     
                     {/* Main text with gradient */}
-                    <span className="relative bg-gradient-to-b from-green-200 to-green-400 text-transparent bg-clip-text">
+                    <span className="relative bg-gradient-to-b from-violet-300 to-violet-500 text-transparent bg-clip-text">
                       START
                     </span>
                     
                     {/* Animated glow overlay */}
                     <motion.span 
-                      className="absolute inset-0 text-green-200 blur-sm opacity-0 group-hover:opacity-70"
+                      className="absolute inset-0 text-violet-300 blur-sm opacity-0 group-hover:opacity-70"
                       animate={{
                         opacity: [0, 0.7, 0]
                       }}
@@ -517,7 +517,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
           {particles.map((i) => (
             <motion.div
               key={`transition-particle-${i}`}
-              className="absolute rounded-full bg-green-300"
+              className="absolute rounded-full bg-violet-400"
               style={{
                 width: `${Math.random() * 4 + 1}px`,
                 height: `${Math.random() * 4 + 1}px`,

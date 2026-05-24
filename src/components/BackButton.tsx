@@ -79,9 +79,9 @@ export default function BackButton() {
           scale: isHovered ? [1, 1.05, 1] : 1,
           background: isHovered 
             ? [
-                "radial-gradient(circle at 30% 50%, rgba(134, 239, 172, 0.3), transparent 70%)",
-                "radial-gradient(circle at 70% 50%, rgba(134, 239, 172, 0.3), transparent 70%)",
-                "radial-gradient(circle at 30% 50%, rgba(134, 239, 172, 0.3), transparent 70%)"
+                "radial-gradient(circle at 30% 50%, rgba(167, 139, 250, 0.3), transparent 70%)",
+                "radial-gradient(circle at 70% 50%, rgba(167, 139, 250, 0.3), transparent 70%)",
+                "radial-gradient(circle at 30% 50%, rgba(167, 139, 250, 0.3), transparent 70%)"
               ]
             : "transparent"
         }}
@@ -99,7 +99,7 @@ export default function BackButton() {
         animate={{ 
           opacity: isHovered ? 0.2 : 0,
           background: isHovered 
-            ? "linear-gradient(90deg, rgba(134, 239, 172, 0.3), rgba(59, 130, 246, 0.2), rgba(134, 239, 172, 0.3))" 
+            ? "linear-gradient(90deg, rgba(167, 139, 250, 0.3), rgba(59, 130, 246, 0.2), rgba(167, 139, 250, 0.3))" 
             : "transparent",
           backgroundSize: isHovered ? ["100% 100%", "200% 100%", "100% 100%"] : "100% 100%",
           backgroundPosition: isHovered ? ["0% 0%", "100% 0%", "0% 0%"] : "0% 0%"
@@ -113,14 +113,14 @@ export default function BackButton() {
       
       {/* Animated border with glow */}
       <motion.div 
-        className="absolute inset-0 rounded-full border border-green-300/30 -z-10"
+        className="absolute inset-0 rounded-full border border-violet-300/30 -z-10"
         animate={{ 
           opacity: isHovered ? [0.7, 1, 0.7] : 0.3,
           boxShadow: isHovered 
             ? [
-                "0 0 5px rgba(134, 239, 172, 0.3), inset 0 0 5px rgba(134, 239, 172, 0.2)",
-                "0 0 15px rgba(134, 239, 172, 0.4), inset 0 0 10px rgba(134, 239, 172, 0.3)",
-                "0 0 5px rgba(134, 239, 172, 0.3), inset 0 0 5px rgba(134, 239, 172, 0.2)"
+                "0 0 5px rgba(167, 139, 250, 0.3), inset 0 0 5px rgba(167, 139, 250, 0.2)",
+                "0 0 15px rgba(167, 139, 250, 0.4), inset 0 0 10px rgba(167, 139, 250, 0.3)",
+                "0 0 5px rgba(167, 139, 250, 0.3), inset 0 0 5px rgba(167, 139, 250, 0.2)"
               ] 
             : "none"
         }}
@@ -135,14 +135,14 @@ export default function BackButton() {
       <div className="relative">
         <motion.svg 
           xmlns="http://www.w3.org/2000/svg" 
-          className="h-5 w-5 text-green-300 relative z-10" 
+          className="h-5 w-5 text-violet-300 relative z-10" 
           fill="none" 
           viewBox="0 0 24 24" 
           stroke="currentColor"
           animate={{ 
             x: isHovered ? [-3, -5, -3] : 0,
             opacity: isHovered ? 1 : 0.8,
-            filter: isHovered ? "drop-shadow(0 0 3px rgba(134, 239, 172, 0.7))" : "none"
+            filter: isHovered ? "drop-shadow(0 0 3px rgba(167, 139, 250, 0.7))" : "none"
           }}
           transition={{ 
             duration: 1.5,
@@ -164,7 +164,7 @@ export default function BackButton() {
           <>
             <motion.svg 
               xmlns="http://www.w3.org/2000/svg" 
-              className="h-5 w-5 text-green-300/40 absolute top-0 left-0 z-0" 
+              className="h-5 w-5 text-violet-300/40 absolute top-0 left-0 z-0" 
               fill="none" 
               viewBox="0 0 24 24" 
               stroke="currentColor"
@@ -182,7 +182,7 @@ export default function BackButton() {
             
             <motion.svg 
               xmlns="http://www.w3.org/2000/svg" 
-              className="h-5 w-5 text-green-300/20 absolute top-0 left-0 z-0" 
+              className="h-5 w-5 text-violet-300/20 absolute top-0 left-0 z-0" 
               fill="none" 
               viewBox="0 0 24 24" 
               stroke="currentColor"
@@ -208,9 +208,9 @@ export default function BackButton() {
           color: isHovered ? "#86efac" : "#86efac99",
           textShadow: isHovered 
             ? [
-                "0 0 5px rgba(134, 239, 172, 0.3)",
-                "0 0 8px rgba(134, 239, 172, 0.5)",
-                "0 0 5px rgba(134, 239, 172, 0.3)"
+                "0 0 5px rgba(167, 139, 250, 0.3)",
+                "0 0 8px rgba(167, 139, 250, 0.5)",
+                "0 0 5px rgba(167, 139, 250, 0.3)"
               ] 
             : "none",
           letterSpacing: isHovered ? "0.05em" : "normal"
@@ -240,12 +240,12 @@ export default function BackButton() {
                 top: "50%",
                 left: `${20 + Math.random() * 10}%`,
                 backgroundColor: i % 3 === 0 
-                  ? "rgba(134, 239, 172, 0.8)" 
+                  ? "rgba(167, 139, 250, 0.8)" 
                   : i % 3 === 1 
-                    ? "rgba(134, 239, 172, 0.6)" 
+                    ? "rgba(167, 139, 250, 0.6)" 
                     : "rgba(59, 130, 246, 0.6)",
                 boxShadow: i % 3 === 0 
-                  ? "0 0 2px rgba(134, 239, 172, 0.8)" 
+                  ? "0 0 2px rgba(167, 139, 250, 0.8)" 
                   : "none"
               }}
               animate={{ 
@@ -276,7 +276,7 @@ export default function BackButton() {
           {[...Array(4)].map((_, i) => (
             <motion.div
               key={`ray-${i}`}
-              className="absolute h-px bg-gradient-to-r from-transparent via-green-300/40 to-transparent"
+              className="absolute h-px bg-gradient-to-r from-transparent via-violet-300/40 to-transparent"
               style={{
                 top: `${25 + i * 16}%`,
                 left: 0,

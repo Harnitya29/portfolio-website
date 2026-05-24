@@ -47,7 +47,7 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
     <div ref={containerRef} className="text-white my-10 relative">
       {/* Subtle background effect */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.02),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139, 92, 246,0.02),transparent_70%)]" />
       </div>
 
       <AnimatePresence mode="wait">
@@ -61,7 +61,7 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
             className="text-center py-20"
           >
             <motion.div
-              className="inline-block text-green-300/50 mb-4"
+              className="inline-block text-violet-300/50 mb-4"
               animate={{ 
                 rotate: [0, 5, 0, -5, 0],
               }}
@@ -117,7 +117,7 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                           <motion.stop 
                             offset="0%" 
                             animate={{ 
-                              stopColor: ['#10b981', '#86efac', '#10b981'],
+                              stopColor: ['#8b5cf6', '#86efac', '#8b5cf6'],
                               stopOpacity: [0.7, 1, 0.7]
                             }}
                             transition={{ duration: 3, repeat: Infinity }}
@@ -125,7 +125,7 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                           <motion.stop 
                             offset="50%" 
                             animate={{ 
-                              stopColor: ['#86efac', '#10b981', '#86efac'],
+                              stopColor: ['#86efac', '#8b5cf6', '#86efac'],
                               stopOpacity: [1, 0.7, 1]
                             }}
                             transition={{ duration: 3, repeat: Infinity }}
@@ -133,7 +133,7 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                           <motion.stop 
                             offset="100%" 
                             animate={{ 
-                              stopColor: ['#10b981', '#86efac', '#10b981'],
+                              stopColor: ['#8b5cf6', '#86efac', '#8b5cf6'],
                               stopOpacity: [0.7, 1, 0.7]
                             }}
                             transition={{ duration: 3, repeat: Infinity }}
@@ -189,7 +189,7 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                         width: 200,
                         height: 200,
                         filter: "blur(40px)",
-                        background: "radial-gradient(circle, rgba(134,239,172,0.15) 0%, transparent 70%)",
+                        background: "radial-gradient(circle, rgba(196, 181, 253,0.15) 0%, transparent 70%)",
                         zIndex: 0
                       }}
                     />
@@ -197,11 +197,15 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                   
                   {/* Content container with minimalist design */}
                   <div className="relative p-6 z-10 bg-zinc-900/20 backdrop-blur-sm">
-                    <a
-                      href={project.link}
-                      className="block"
-                    >
-                      {/* Minimalist title with elegant underline effect */}
+                    {(() => {
+                      const Wrapper = (project.link && project.link !== "#" ? "a" : "div") as any;
+                      const wrapperProps = project.link && project.link !== "#" 
+                        ? { href: project.link, className: "block cursor-pointer", target: "_blank", rel: "noopener noreferrer" } 
+                        : { className: "block cursor-default" };
+                        
+                      return (
+                        <Wrapper {...wrapperProps}>
+                        {/* Minimalist title with elegant underline effect */}
                       <div className="overflow-hidden">
                         <motion.h3 
                           className="text-xl font-medium inline-block"
@@ -212,7 +216,7 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                         >
                           {project.title}
                           <motion.div 
-                            className="h-px bg-gradient-to-r from-green-300/0 via-green-300 to-green-300/0 mt-1"
+                            className="h-px bg-gradient-to-r from-violet-300/0 via-violet-300 to-violet-300/0 mt-1"
                             initial={{ scaleX: 0 }}
                             animate={{ 
                               scaleX: isHovered ? 1 : 0,
@@ -244,13 +248,13 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                               opacity: 1,
                               x: 0,
                               borderColor: tech === activeCategory
-                                ? 'rgba(134, 239, 172, 0.5)'
+                                ? 'rgba(167, 139, 250, 0.5)'
                                 : isHovered 
-                                  ? 'rgba(134, 239, 172, 0.3)' 
+                                  ? 'rgba(167, 139, 250, 0.3)' 
                                   : 'rgba(39, 39, 42, 0.3)',
                               color: tech === activeCategory
                                 ? '#86efac'
-                                : isHovered ? 'rgba(134, 239, 172, 0.9)' : '#a1a1aa',
+                                : isHovered ? 'rgba(167, 139, 250, 0.9)' : '#a1a1aa',
                               backgroundColor: 'rgba(0, 0, 0, 0)'
                             }}
                             transition={{ 
@@ -274,7 +278,7 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                         transition={{ duration: 0.3 }}
                       >
                         <motion.div 
-                          className="inline-flex items-center text-green-300 text-sm font-medium relative"
+                          className="inline-flex items-center text-violet-300 text-sm font-medium relative"
                           initial={{ x: -10, opacity: 0 }}
                           animate={{ 
                             x: isHovered ? 0 : -10,
@@ -282,24 +286,32 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                           }}
                           transition={{ duration: 0.4, delay: 0.1 }}
                         >
-                          View Project
-                          <svg 
-                            className="ml-1.5 w-4 h-4" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24"
-                          >
-                            <path 
-                              strokeLinecap="round" 
-                              strokeLinejoin="round" 
-                              strokeWidth={1.5} 
-                              d="M14 5l7 7m0 0l-7 7m7-7H3"
-                            />
-                          </svg>
+                          {project.link && project.link !== "#" ? (
+                            <>
+                              View Project
+                              <svg 
+                                className="ml-1.5 w-4 h-4" 
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                              >
+                                <path 
+                                  strokeLinecap="round" 
+                                  strokeLinejoin="round" 
+                                  strokeWidth={1.5} 
+                                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                />
+                              </svg>
+                            </>
+                          ) : (
+                            <span className="text-zinc-500 font-mono text-xs uppercase tracking-wider">
+                              [ Upcoming ]
+                            </span>
+                          )}
                           
                           {/* Unique liquid trail effect */}
                           <motion.div
-                            className="absolute bottom-0 left-0 h-[1px] bg-green-300/50"
+                            className="absolute bottom-0 left-0 h-[1px] bg-violet-300/50"
                             initial={{ width: 0 }}
                             animate={{ 
                               width: isHovered ? '100%' : '0%',
@@ -311,7 +323,9 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                           />
                         </motion.div>
                       </motion.div>
-                    </a>
+                      </Wrapper>
+                      );
+                    })()}
                   </div>
                   
                   {/* Unique magnetic particles effect */}
@@ -325,7 +339,7 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                         return (
                           <motion.div
                             key={`magnetic-particle-${i}`}
-                            className="absolute rounded-full bg-green-300/80"
+                            className="absolute rounded-full bg-violet-300/80"
                             initial={{ 
                               opacity: 0,
                               x: `${initialX}%`,
@@ -356,7 +370,7 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                             style={{
                               width: `${size}px`,
                               height: `${size}px`,
-                              boxShadow: '0 0 4px rgba(134,239,172,0.8)'
+                              boxShadow: '0 0 4px rgba(196, 181, 253,0.8)'
                             }}
                           />
                         );

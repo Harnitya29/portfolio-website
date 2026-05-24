@@ -13,8 +13,8 @@ interface ContributionDay {
 // Memoized constants to avoid recreating on each render
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const BASE_COLORS = ['rgba(22, 27, 34, 0.06)', 'rgba(52, 211, 153, 0.2)', 'rgba(52, 211, 153, 0.4)', 'rgba(52, 211, 153, 0.7)', 'rgba(52, 211, 153, 1)'];
-const HOVER_COLORS = ['rgba(22, 27, 34, 0.1)', 'rgba(52, 211, 153, 0.3)', 'rgba(52, 211, 153, 0.6)', 'rgba(52, 211, 153, 0.85)', 'rgba(52, 211, 153, 1)'];
+const BASE_COLORS = ['rgba(22, 27, 34, 0.06)', 'rgba(167, 139, 250, 0.2)', 'rgba(167, 139, 250, 0.4)', 'rgba(167, 139, 250, 0.7)', 'rgba(167, 139, 250, 1)'];
+const HOVER_COLORS = ['rgba(22, 27, 34, 0.1)', 'rgba(167, 139, 250, 0.3)', 'rgba(167, 139, 250, 0.6)', 'rgba(167, 139, 250, 0.85)', 'rgba(167, 139, 250, 1)'];
 const GLOW_INTENSITIES = [0, 2, 5, 10, 15];
 
 // Memoized components for better performance
@@ -30,7 +30,7 @@ const LegendItem = memo(({ level, getContributionColor }: { level: number, getCo
     style={{ backgroundColor: getContributionColor(level, false) }}
     whileHover={{ 
       scale: 1.3,
-      boxShadow: level > 0 ? `0 0 ${level * 3}px rgba(52, 211, 153, 0.7)` : 'none'
+      boxShadow: level > 0 ? `0 0 ${level * 3}px rgba(167, 139, 250, 0.7)` : 'none'
     }}
   />
 ));
@@ -41,7 +41,7 @@ const BackgroundGradient = memo(() => (
     <div
       className="absolute inset-0 opacity-5"
       style={{ 
-        background: "radial-gradient(circle at 50% 50%, rgba(52, 211, 153, 0.3) 0%, transparent 70%)", 
+        background: "radial-gradient(circle at 50% 50%, rgba(167, 139, 250, 0.3) 0%, transparent 70%)", 
         filter: "blur(50px)"
       }}
     />
@@ -90,7 +90,7 @@ const ContributionCell = memo(({
           {[...Array(Math.min(day.level * 3, 12))].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-[2px] h-[2px] rounded-full bg-emerald-300"
+              className="absolute w-[2px] h-[2px] rounded-full bg-violet-300"
               initial={{ 
                 x: 0, 
                 y: 0, 
@@ -129,7 +129,7 @@ const ContributionCell = memo(({
             opacity: [0.4, 1, 0.4], 
             boxShadow: [
               `0 0 ${getGlowIntensity(day.level) * 0.8}px ${getContributionColor(day.level, true)}`,
-              `0 0 ${getGlowIntensity(day.level) * 2.5}px ${getContributionColor(day.level, true)}, 0 0 ${getGlowIntensity(day.level) * 4}px rgba(52, 211, 153, 0.3)`,
+              `0 0 ${getGlowIntensity(day.level) * 2.5}px ${getContributionColor(day.level, true)}, 0 0 ${getGlowIntensity(day.level) * 4}px rgba(167, 139, 250, 0.3)`,
               `0 0 ${getGlowIntensity(day.level) * 0.8}px ${getContributionColor(day.level, true)}`
             ]
           }}
@@ -167,7 +167,7 @@ const ContributionCell = memo(({
       {/* Smaller tooltip with animation */}
       {isHovered && (
         <motion.div
-          className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1.5 px-1.5 py-0.5 text-[7px] bg-zinc-800/90 backdrop-blur-sm text-white rounded shadow-sm whitespace-nowrap z-50 border border-emerald-500/20"
+          className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1.5 px-1.5 py-0.5 text-[7px] bg-zinc-800/90 backdrop-blur-sm text-white rounded shadow-sm whitespace-nowrap z-50 border border-violet-500/20"
           initial={{ opacity: 0, y: 5, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 5, scale: 0.9 }}
@@ -465,11 +465,11 @@ export default function GitCommitHistory() {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           <motion.span 
-            className="text-green-300 inline-block will-change-transform"
+            className="text-violet-300 inline-block will-change-transform"
             animate={{ 
               rotate: [0, 5, 0, -5, 0],
               color: ['#86efac', '#4ade80', '#86efac'],
-              textShadow: ['0 0 0px rgba(134, 239, 172, 0)', '0 0 10px rgba(134, 239, 172, 0.5)', '0 0 0px rgba(134, 239, 172, 0)']
+              textShadow: ['0 0 0px rgba(167, 139, 250, 0)', '0 0 10px rgba(167, 139, 250, 0.5)', '0 0 0px rgba(167, 139, 250, 0)']
             }}
             transition={{ 
               duration: 2, 
@@ -482,15 +482,15 @@ export default function GitCommitHistory() {
             &gt;
           </motion.span>{" "}
           <span className="relative group">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-green-200 to-white bg-[length:200%_100%] animate-shimmer">commit</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-violet-200 to-white bg-[length:200%_100%] animate-shimmer">commit</span>
             
             {/* Animated underline with glow */}
             <motion.span 
-              className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-green-300/0 via-green-300 to-green-300/0 will-change-transform"
+              className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-violet-300/0 via-violet-300 to-violet-300/0 will-change-transform"
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ duration: 1, delay: 0.5 }}
-              style={{ boxShadow: '0 2px 10px rgba(134, 239, 172, 0.3)' }}
+              style={{ boxShadow: '0 2px 10px rgba(167, 139, 250, 0.3)' }}
             />
             
             {/* Particle burst on hover - optimized with AnimatePresence */}
@@ -511,7 +511,7 @@ export default function GitCommitHistory() {
                   return (
                     <motion.div
                       key={`title-particle-${i}`}
-                      className="absolute rounded-full bg-green-300"
+                      className="absolute rounded-full bg-violet-300"
                       initial={{ 
                         opacity: 0,
                         scale: 0,
@@ -562,7 +562,7 @@ export default function GitCommitHistory() {
             animate={{ opacity: isLoaded ? 1 : 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
           >
-            <h3 className="text-xs font-medium text-green-400">
+            <h3 className="text-xs font-medium text-violet-400">
               {totalContributions.toLocaleString()} contributions in the last year
             </h3>
           </motion.div>
@@ -574,7 +574,7 @@ export default function GitCommitHistory() {
           >
             <div className="flex items-center gap-1 rounded p-1">
               <div className="w-4 h-4 rounded-full bg-zinc-800/30 flex items-center justify-center flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-violet-400">
                   <path d="M5 12h14"/>
                   <path d="m12 5 7 7-7 7"/>
                 </svg>
@@ -597,7 +597,7 @@ export default function GitCommitHistory() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 611.999 611.999"
                   xmlSpace="preserve"
-                  className="text-emerald-400"
+                  className="text-violet-400"
                 >
                   <g>
                   <path d="M216.02,611.195c5.978,3.178,12.284-3.704,8.624-9.4c-19.866-30.919-38.678-82.947-8.706-149.952 c49.982-111.737,80.396-169.609,80.396-169.609s16.177,67.536,60.029,127.585c42.205,57.793,65.306,130.478,28.064,191.029 c-3.495,5.683,2.668,12.388,8.607,9.349c46.1-23.582,97.806-70.885,103.64-165.017c2.151-28.764-1.075-69.034-17.206-119.851 c-20.741-64.406-46.239-94.459-60.992-107.365c-4.413-3.861-11.276-0.439-10.914,5.413c4.299,69.494-21.845,87.129-36.726,47.386 c-5.943-15.874-9.409-43.33-9.409-76.766c0-55.665-16.15-112.967-51.755-159.531c-9.259-12.109-20.093-23.424-32.523-33.073 c-4.5-3.494-11.023,0.018-10.611,5.7c2.734,37.736,0.257,145.885-94.624,275.089c-86.029,119.851-52.693,211.896-40.864,236.826 C153.666,566.767,185.212,594.814,216.02,611.195z"/>
@@ -673,7 +673,7 @@ export default function GitCommitHistory() {
             transition={{ duration: 0.3, delay: 0.3 }}
           >
             <div className="w-3 h-3 mr-0.5 rounded-full bg-zinc-800/30 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-violet-400">
                 <circle cx="12" cy="12" r="10"/>
                 <path d="m12 16 4-4-4-4"/>
                 <path d="M8 12h8"/>

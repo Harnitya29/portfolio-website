@@ -11,8 +11,15 @@ const config = {
         mono: ["var(--font-geist-mono)"],
       },
       colors: {
-        background: "#000000",
+        background: "#030308",
         foreground: "#ffffff",
+        quantum: {
+          void: "var(--q-void)",
+          violet: "var(--q-violet)",
+          cyan: "var(--q-cyan)",
+          lime: "var(--q-lime)",
+          magenta: "var(--q-magenta)",
+        },
       },
       animation: {
         'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',

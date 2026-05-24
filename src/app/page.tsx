@@ -91,13 +91,22 @@ export default function HomePage() {
   };
 
   return (
-    <main className="relative flex min-h-screen flex-col text-white p-8 md:p-16 lg:p-24 max-w-3xl mx-auto">
+    <main className="relative flex min-h-screen flex-col text-white p-5 sm:p-8 md:p-16 lg:p-24 max-w-3xl mx-auto">
+      {/* Physics Constants Sidebar */}
+      <div className="hidden md:flex fixed left-4 top-1/2 -translate-y-1/2 flex-col gap-6 font-mono text-[9px] text-white opacity-[0.18] pointer-events-none z-50 writing-vertical-lr" style={{ writingMode: 'vertical-lr', textOrientation: 'mixed' }}>
+        <span>ℏ = 1.055×10⁻³⁴ J·s</span>
+        <span>c = 299,792,458 m/s</span>
+        <span>G = 6.674×10⁻¹¹ N m²/kg²</span>
+        <span>k_B = 1.381×10⁻²³ J/K</span>
+        <span>α ≈ 1/137</span>
+      </div>
+
       {/* Background elements */}
       <div className="fixed inset-0 -z-10 bg-black">
         <AntigravityBackground />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(50,50,50,0.1),rgba(0,0,0,0)_50%)]" />
         <motion.div 
-          className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-300/30 to-transparent"
+          className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-violet-300/30 to-transparent"
           animate={{ 
             scaleX: [0, 1, 0],
             opacity: [0, 0.5, 0],
@@ -118,7 +127,7 @@ export default function HomePage() {
             y: [0, 10, 0]
           }}
           transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
-          style={{ background: "radial-gradient(circle, #34d399 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #a78bfa 0%, transparent 70%)" }}
         />
         <motion.div 
           className="absolute -bottom-20 -right-20 w-80 h-80 rounded-full opacity-10 blur-3xl"
@@ -129,7 +138,7 @@ export default function HomePage() {
             y: [0, -10, 0]
           }}
           transition={{ duration: 8, repeat: Infinity, repeatType: "reverse", delay: 1 }}
-          style={{ background: "radial-gradient(circle, #34d399 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #a78bfa 0%, transparent 70%)" }}
         />
       </div>
 
@@ -140,7 +149,7 @@ export default function HomePage() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.1 }}
         style={{
-          boxShadow: "0 10px 40px -10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(52, 211, 153, 0.15)"
+          boxShadow: "0 10px 40px -10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(167, 139, 250, 0.15)"
         }}
         onHoverStart={() => setHoverProfile(true)}
         onHoverEnd={() => setHoverProfile(false)}
@@ -151,9 +160,9 @@ export default function HomePage() {
             className="absolute inset-0 -z-10 opacity-30"
             animate={{
               background: [
-                "linear-gradient(45deg, rgba(52, 211, 153, 0.05) 0%, rgba(8, 47, 73, 0.1) 100%)",
-                "linear-gradient(45deg, rgba(8, 47, 73, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%)",
-                "linear-gradient(45deg, rgba(52, 211, 153, 0.05) 0%, rgba(8, 47, 73, 0.1) 100%)"
+                "linear-gradient(45deg, rgba(167, 139, 250, 0.05) 0%, rgba(8, 47, 73, 0.1) 100%)",
+                "linear-gradient(45deg, rgba(8, 47, 73, 0.1) 0%, rgba(167, 139, 250, 0.05) 100%)",
+                "linear-gradient(45deg, rgba(167, 139, 250, 0.05) 0%, rgba(8, 47, 73, 0.1) 100%)"
               ]
             }}
             transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
@@ -163,7 +172,7 @@ export default function HomePage() {
           {[...Array(8)].map((_, i) => (
             <motion.div
               key={`energy-line-${i}`}
-              className="absolute h-[1px] bg-gradient-to-r from-transparent via-green-300/40 to-transparent"
+              className="absolute h-[1px] bg-gradient-to-r from-transparent via-violet-300/40 to-transparent"
               style={{
                 top: `${30 + i * 20}%`,
                 left: 0,
@@ -198,7 +207,7 @@ export default function HomePage() {
                 }}
                 transition={{ duration: 2, repeat: hoverProfile ? Infinity : 0 }}
                 style={{ 
-                  background: "radial-gradient(circle, rgba(52, 211, 153, 0.5) 0%, transparent 70%)",
+                  background: "radial-gradient(circle, rgba(167, 139, 250, 0.5) 0%, transparent 70%)",
                   filter: "blur(8px)"
                 }}
               />
@@ -215,8 +224,8 @@ export default function HomePage() {
                   rotate: { duration: 8, repeat: Infinity, ease: "linear" }
                 }}
                 style={{ 
-                  border: "1px dashed rgba(52, 211, 153, 0.3)",
-                  boxShadow: "0 0 15px rgba(52, 211, 153, 0.2)"
+                  border: "1px dashed rgba(167, 139, 250, 0.3)",
+                  boxShadow: "0 0 15px rgba(167, 139, 250, 0.2)"
                 }}
               />
               
@@ -225,8 +234,8 @@ export default function HomePage() {
                 className="absolute -inset-1.5 rounded-full"
                 animate={{ 
                   boxShadow: hoverProfile 
-                    ? ["0 0 0 rgba(52, 211, 153, 0)", "0 0 25px rgba(52, 211, 153, 0.7)", "0 0 5px rgba(52, 211, 153, 0.3)"]
-                    : ["0 0 0 rgba(52, 211, 153, 0)", "0 0 15px rgba(52, 211, 153, 0.5)", "0 0 0 rgba(52, 211, 153, 0)"]
+                    ? ["0 0 0 rgba(167, 139, 250, 0)", "0 0 25px rgba(167, 139, 250, 0.7)", "0 0 5px rgba(167, 139, 250, 0.3)"]
+                    : ["0 0 0 rgba(167, 139, 250, 0)", "0 0 15px rgba(167, 139, 250, 0.5)", "0 0 0 rgba(167, 139, 250, 0)"]
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
@@ -235,7 +244,7 @@ export default function HomePage() {
               <motion.div
                 className="absolute -inset-0.5 rounded-full opacity-70"
                 style={{ 
-                  background: "conic-gradient(from 0deg, rgba(52, 211, 153, 0), rgba(52, 211, 153, 0.8), rgba(52, 211, 153, 0))"
+                  background: "conic-gradient(from 0deg, rgba(167, 139, 250, 0), rgba(167, 139, 250, 0.8), rgba(167, 139, 250, 0))"
                 }}
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -245,13 +254,13 @@ export default function HomePage() {
               <motion.div
                 className="absolute -inset-1 rounded-full opacity-30"
                 style={{ 
-                  background: "conic-gradient(from 180deg, rgba(52, 211, 153, 0), rgba(52, 211, 153, 0.4), rgba(52, 211, 153, 0))"
+                  background: "conic-gradient(from 180deg, rgba(167, 139, 250, 0), rgba(167, 139, 250, 0.4), rgba(167, 139, 250, 0))"
                 }}
                 animate={{ rotate: [360, 0] }}
                 transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
               />
               
-              <div className="relative overflow-hidden rounded-full flex items-center justify-center border-2 border-green-300/30 z-10">
+              <div className="relative overflow-hidden rounded-full flex items-center justify-center border-2 border-violet-300/30 z-10">
                 <motion.div
                   whileHover={{ 
                     scale: 1.15, 
@@ -273,7 +282,7 @@ export default function HomePage() {
                         className="absolute top-1/2 left-1/2 w-full h-[1px] origin-left"
                         style={{ 
                           rotate: `${i * 30}deg`,
-                          background: "linear-gradient(90deg, rgba(52, 211, 153, 0.8) 0%, rgba(52, 211, 153, 0) 100%)",
+                          background: "linear-gradient(90deg, rgba(167, 139, 250, 0.8) 0%, rgba(167, 139, 250, 0) 100%)",
                           opacity: 0
                         }}
                         whileHover={{
@@ -299,7 +308,7 @@ export default function HomePage() {
                     <motion.div
                       className="absolute inset-0 rounded-full"
                       style={{
-                        background: "radial-gradient(circle, rgba(52, 211, 153, 0.4) 0%, rgba(52, 211, 153, 0) 70%)",
+                        background: "radial-gradient(circle, rgba(167, 139, 250, 0.4) 0%, rgba(167, 139, 250, 0) 70%)",
                       }}
                       whileHover={{
                         scale: [1, 1.5, 1],
@@ -315,7 +324,7 @@ export default function HomePage() {
                     {[...Array(8)].map((_, i) => (
                       <motion.div
                         key={`avatar-particle-${i}`}
-                        className="absolute w-1 h-1 rounded-full bg-green-300"
+                        className="absolute w-1 h-1 rounded-full bg-violet-300"
                         style={{
                           top: '50%',
                           left: '50%',
@@ -340,7 +349,7 @@ export default function HomePage() {
                   <motion.div
                     className="absolute inset-0 rounded-full mix-blend-overlay pointer-events-none"
                     style={{
-                      background: "linear-gradient(135deg, rgba(52, 211, 153, 0.3) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(52, 211, 153, 0.3) 100%)",
+                      background: "linear-gradient(135deg, rgba(167, 139, 250, 0.3) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(167, 139, 250, 0.3) 100%)",
                       opacity: 0
                     }}
                     whileHover={{
@@ -364,7 +373,7 @@ export default function HomePage() {
                   
                   {/* Cosmic energy overlay */}
                   <motion.div 
-                    className="absolute inset-0 bg-gradient-to-tr from-green-500/10 to-transparent opacity-0 hover:opacity-60 transition-opacity duration-300"
+                    className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-transparent opacity-0 hover:opacity-60 transition-opacity duration-300"
                   />
                   
                   {/* Cosmic flare effect */}
@@ -446,10 +455,10 @@ export default function HomePage() {
                           scale: [1, 1.5, 0.8, 1.3, 1],
                           rotate: [0, i % 2 === 0 ? 15 : -15, i % 2 === 0 ? -8 : 8, 0],
                           filter: [
-                            'drop-shadow(0 0 0px rgba(52, 211, 153, 0))',
-                            'drop-shadow(0 0 10px rgba(52, 211, 153, 0.8))',
-                            'drop-shadow(0 0 5px rgba(52, 211, 153, 0.4))',
-                            'drop-shadow(0 0 0px rgba(52, 211, 153, 0))'
+                            'drop-shadow(0 0 0px rgba(167, 139, 250, 0))',
+                            'drop-shadow(0 0 10px rgba(167, 139, 250, 0.8))',
+                            'drop-shadow(0 0 5px rgba(167, 139, 250, 0.4))',
+                            'drop-shadow(0 0 0px rgba(167, 139, 250, 0))'
                           ],
                           transition: { 
                             duration: 1.2,
@@ -471,7 +480,7 @@ export default function HomePage() {
                             delay: i * 0.08
                           }}
                           style={{
-                            background: `radial-gradient(circle, rgba(52, 211, 153, 0.8) 0%, rgba(52, 211, 153, 0) 70%)`,
+                            background: `radial-gradient(circle, rgba(167, 139, 250, 0.8) 0%, rgba(167, 139, 250, 0) 70%)`,
                             filter: 'blur(8px)'
                           }}
                         />
@@ -554,7 +563,7 @@ export default function HomePage() {
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   style={{
-                    background: "linear-gradient(90deg, rgba(52, 211, 153, 0) 0%, rgba(52, 211, 153, 1) 50%, rgba(52, 211, 153, 0) 100%)"
+                    background: "linear-gradient(90deg, rgba(167, 139, 250, 0) 0%, rgba(167, 139, 250, 1) 50%, rgba(167, 139, 250, 0) 100%)"
                   }}
                   transition={{ duration: 1, delay: 0.8 }}
                 />
@@ -563,7 +572,7 @@ export default function HomePage() {
                 {[...Array(3)].map((_, i) => (
                   <motion.div
                     key={`name-particle-${i}`}
-                    className="absolute bottom-0 w-1 h-1 rounded-full bg-green-300"
+                    className="absolute bottom-0 w-1 h-1 rounded-full bg-violet-300"
                     style={{ left: `${20 + i * 30}%` }}
                     animate={{ 
                       y: [0, -10, 0],
@@ -595,18 +604,18 @@ export default function HomePage() {
                   @
                 </motion.span>
                 <motion.span 
-                  className="text-xs sm:text-sm bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500 font-medium relative"
+                  className="text-xs sm:text-sm bg-clip-text text-transparent bg-gradient-to-r from-violet-300 to-violet-500 font-medium relative"
                   whileHover={{ 
                     scale: 1.05,
                     letterSpacing: "0.5px",
-                    textShadow: "0 0 8px rgba(52, 211, 153, 0.5)"
+                    textShadow: "0 0 8px rgba(167, 139, 250, 0.5)"
                   }}
                 >
                   ℏarnitya
                   
                   {/* Animated underline on hover */}
                   <motion.div
-                    className="absolute bottom-0 left-0 h-[1px] w-0 bg-gradient-to-r from-green-300 to-green-500"
+                    className="absolute bottom-0 left-0 h-[1px] w-0 bg-gradient-to-r from-violet-300 to-violet-500"
                     whileHover={{ width: "100%" }}
                     transition={{ duration: 0.3 }}
                   />
@@ -620,7 +629,7 @@ export default function HomePage() {
                     {[...Array(3)].map((_, i) => (
                       <motion.div
                         key={`username-sparkle-${i}`}
-                        className="absolute w-1 h-1 rounded-full bg-green-300"
+                        className="absolute w-1 h-1 rounded-full bg-violet-300"
                         style={{
                           top: `${20 + i * 15}%`,
                           left: `${20 + i * 20}%`,
@@ -644,10 +653,10 @@ export default function HomePage() {
                 
                 {/* Enhanced cosmic verified badge */}
                 <motion.div
-                  className="ml-1 flex items-center justify-center w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-green-500/20"
+                  className="ml-1 flex items-center justify-center w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-violet-500/20"
                   whileHover={{ 
                     scale: 1.2,
-                    boxShadow: "0 0 10px rgba(52, 211, 153, 0.5)"
+                    boxShadow: "0 0 10px rgba(167, 139, 250, 0.5)"
                   }}
                   transition={{ duration: 0.3 }}
                 >
@@ -662,7 +671,7 @@ export default function HomePage() {
                                         }}
                                       >
                                         <svg width="8" height="8" className="sm:w-[10px] sm:h-[10px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#34d399" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                          <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
                                       </motion.div>
                                     </motion.div>
@@ -677,7 +686,7 @@ export default function HomePage() {
                                     whileHover={{ 
                                       opacity: 1,
                                       scale: 1.02,
-                                      color: "rgb(134, 239, 172)"
+                                      color: "rgb(167, 139, 250)"
                                     }}
                                   >
                                     <motion.p
@@ -697,7 +706,7 @@ export default function HomePage() {
                                       {[...Array(4)].map((_, i) => (
                                         <motion.div
                                           key={`bio-particle-${i}`}
-                                          className="absolute w-0.5 h-0.5 rounded-full bg-green-300/70"
+                                          className="absolute w-0.5 h-0.5 rounded-full bg-violet-300/70"
                                           style={{
                                             top: `${15 + i * 12}%`,
                                             left: `${15 + i * 15}%`,
@@ -723,7 +732,7 @@ export default function HomePage() {
                                       className="absolute inset-0 rounded-lg opacity-0 pointer-events-none"
                                       whileHover={{ opacity: 0.15 }}
                                       style={{
-                                        background: "radial-gradient(circle, rgba(52, 211, 153, 0.3) 0%, transparent 70%)",
+                                        background: "radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, transparent 70%)",
                                         filter: "blur(5px)"
                                       }}
                                     />
@@ -738,15 +747,15 @@ export default function HomePage() {
                                   transition={{ duration: 0.5, delay: 0.7 }}
                                   whileHover={{ 
                                     scale: 1.08,
-                                    backgroundColor: "rgba(52, 211, 153, 0.2)",
-                                    borderColor: "rgba(52, 211, 153, 0.5)"
+                                    backgroundColor: "rgba(167, 139, 250, 0.2)",
+                                    borderColor: "rgba(167, 139, 250, 0.5)"
                                   }}
                                 >
                                   {/* Cosmic nebula background */}
                                   <motion.div 
                                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                     style={{
-                                      background: "radial-gradient(ellipse at center, rgba(52, 211, 153, 0.4) 0%, rgba(16, 185, 129, 0.2) 40%, transparent 70%)",
+                                      background: "radial-gradient(ellipse at center, rgba(167, 139, 250, 0.4) 0%, rgba(139, 92, 246, 0.2) 40%, transparent 70%)",
                                       filter: "blur(5px)"
                                     }}
                                   />
@@ -756,9 +765,9 @@ export default function HomePage() {
                                     className="absolute inset-0 opacity-0 group-hover:opacity-30"
                                     animate={{
                                       background: [
-                                        "radial-gradient(circle at 30% 50%, rgba(52, 211, 153, 0.4) 0%, transparent 50%)",
-                                        "radial-gradient(circle at 70% 50%, rgba(52, 211, 153, 0.4) 0%, transparent 50%)",
-                                        "radial-gradient(circle at 30% 50%, rgba(52, 211, 153, 0.4) 0%, transparent 50%)"
+                                        "radial-gradient(circle at 30% 50%, rgba(167, 139, 250, 0.4) 0%, transparent 50%)",
+                                        "radial-gradient(circle at 70% 50%, rgba(167, 139, 250, 0.4) 0%, transparent 50%)",
+                                        "radial-gradient(circle at 30% 50%, rgba(167, 139, 250, 0.4) 0%, transparent 50%)"
                                       ]
                                     }}
                                     transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
@@ -772,7 +781,7 @@ export default function HomePage() {
                                     {[...Array(6)].map((_, i) => (
                                       <motion.div
                                         key={`badge-dust-${i}`}
-                                        className="absolute w-0.5 h-0.5 rounded-full bg-green-200"
+                                        className="absolute w-0.5 h-0.5 rounded-full bg-violet-200"
                                         style={{
                                           top: `${10 + i * 6}%`,
                                           left: `${10 + i * 7}%`,
@@ -803,7 +812,7 @@ export default function HomePage() {
                                     <motion.div 
                                       className="absolute top-0 left-0 w-full h-[1px]"
                                       style={{
-                                        background: "linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.8), transparent)"
+                                        background: "linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.8), transparent)"
                                       }}
                                       animate={{ 
                                         left: ["-100%", "100%"] 
@@ -819,7 +828,7 @@ export default function HomePage() {
                                     <motion.div 
                                       className="absolute bottom-0 right-0 w-full h-[1px]"
                                       style={{
-                                        background: "linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.8), transparent)"
+                                        background: "linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.8), transparent)"
                                       }}
                                       animate={{ 
                                         right: ["-100%", "100%"] 
@@ -835,7 +844,7 @@ export default function HomePage() {
                                     <motion.div 
                                       className="absolute left-0 top-0 h-full w-[1px]"
                                       style={{
-                                        background: "linear-gradient(180deg, transparent, rgba(52, 211, 153, 0.4), transparent)"
+                                        background: "linear-gradient(180deg, transparent, rgba(167, 139, 250, 0.4), transparent)"
                                       }}
                                       animate={{ 
                                         top: ["-100%", "100%"] 
@@ -852,7 +861,7 @@ export default function HomePage() {
                                     <motion.div 
                                       className="absolute right-0 bottom-0 h-full w-[1px]"
                                       style={{
-                                        background: "linear-gradient(180deg, transparent, rgba(52, 211, 153, 0.4), transparent)"
+                                        background: "linear-gradient(180deg, transparent, rgba(167, 139, 250, 0.4), transparent)"
                                       }}
                                       animate={{ 
                                         bottom: ["-100%", "100%"] 
@@ -875,10 +884,10 @@ export default function HomePage() {
                                           bottom: i >= 2 ? -1 : 'auto',
                                           left: i % 2 === 0 ? -1 : 'auto',
                                           right: i % 2 === 1 ? -1 : 'auto',
-                                          borderTop: i < 2 ? '1px solid rgba(52, 211, 153, 0.8)' : 'none',
-                                          borderBottom: i >= 2 ? '1px solid rgba(52, 211, 153, 0.8)' : 'none',
-                                          borderLeft: i % 2 === 0 ? '1px solid rgba(52, 211, 153, 0.8)' : 'none',
-                                          borderRight: i % 2 === 1 ? '1px solid rgba(52, 211, 153, 0.8)' : 'none',
+                                          borderTop: i < 2 ? '1px solid rgba(167, 139, 250, 0.8)' : 'none',
+                                          borderBottom: i >= 2 ? '1px solid rgba(167, 139, 250, 0.8)' : 'none',
+                                          borderLeft: i % 2 === 0 ? '1px solid rgba(167, 139, 250, 0.8)' : 'none',
+                                          borderRight: i % 2 === 1 ? '1px solid rgba(167, 139, 250, 0.8)' : 'none',
                                           opacity: 0
                                         }}
                                         animate={{
@@ -898,16 +907,16 @@ export default function HomePage() {
                                   <motion.div 
                                     className="relative w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full"
                                     style={{
-                                      background: "conic-gradient(from 0deg, #10b981, #34d399, #6ee7b7, #34d399, #10b981)"
+                                      background: "conic-gradient(from 0deg, #8b5cf6, #a78bfa, #c4b5fd, #a78bfa, #8b5cf6)"
                                     }}
                                     animate={{ 
                                       rotate: [0, 360],
                                       scale: [1, 1.2, 1],
                                       opacity: [0.8, 1, 0.8],
                                       boxShadow: [
-                                        "0 0 0 rgba(52, 211, 153, 0.4)",
-                                        "0 0 15px rgba(52, 211, 153, 0.8)",
-                                        "0 0 0 rgba(52, 211, 153, 0.4)"
+                                        "0 0 0 rgba(167, 139, 250, 0.4)",
+                                        "0 0 15px rgba(167, 139, 250, 0.8)",
+                                        "0 0 0 rgba(167, 139, 250, 0.4)"
                                       ]
                                     }}
                                     transition={{ 
@@ -918,21 +927,21 @@ export default function HomePage() {
                                     }}
                                     whileHover={{
                                       scale: 1.5,
-                                      boxShadow: "0 0 25px rgba(52, 211, 153, 1)"
+                                      boxShadow: "0 0 25px rgba(167, 139, 250, 1)"
                                     }}
                                   >
                                     {/* Dimensional core with 3D effect */}
                                     <motion.div
                                       className="absolute inset-[1px] rounded-full z-10"
                                       style={{
-                                        background: "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(52, 211, 153, 0.8) 50%, rgba(16, 185, 129, 0.8) 100%)",
+                                        background: "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(167, 139, 250, 0.8) 50%, rgba(139, 92, 246, 0.8) 100%)",
                                         boxShadow: "inset 0 0 2px rgba(0, 0, 0, 0.3)"
                                       }}
                                       animate={{
                                         background: [
-                                          "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(52, 211, 153, 0.8) 50%, rgba(16, 185, 129, 0.8) 100%)",
-                                          "radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.9) 0%, rgba(52, 211, 153, 0.8) 50%, rgba(16, 185, 129, 0.8) 100%)",
-                                          "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(52, 211, 153, 0.8) 50%, rgba(16, 185, 129, 0.8) 100%)"
+                                          "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(167, 139, 250, 0.8) 50%, rgba(139, 92, 246, 0.8) 100%)",
+                                          "radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.9) 0%, rgba(167, 139, 250, 0.8) 50%, rgba(139, 92, 246, 0.8) 100%)",
+                                          "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(167, 139, 250, 0.8) 50%, rgba(139, 92, 246, 0.8) 100%)"
                                         ]
                                       }}
                                       transition={{ duration: 3, repeat: Infinity }}
@@ -942,7 +951,7 @@ export default function HomePage() {
                                     <motion.div
                                       className="absolute inset-0 rounded-full mix-blend-overlay"
                                       style={{
-                                        background: "radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(52, 211, 153, 0.5) 50%, transparent 100%)",
+                                        background: "radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(167, 139, 250, 0.5) 50%, transparent 100%)",
                                       }}
                                       animate={{
                                         opacity: [0.5, 1, 0.5],
@@ -957,16 +966,16 @@ export default function HomePage() {
                                         key={`pulse-ring-${i}`}
                                         className="absolute inset-0 rounded-full"
                                         style={{
-                                          border: `1px solid rgba(52, 211, 153, ${0.8 - i * 0.2})`,
+                                          border: `1px solid rgba(167, 139, 250, ${0.8 - i * 0.2})`,
                                           opacity: 0
                                         }}
                                         animate={{ 
                                           scale: [1, 2 + i * 0.5],
                                           opacity: [0.8, 0],
                                           borderColor: [
-                                            `rgba(52, 211, 153, ${0.8 - i * 0.2})`,
+                                            `rgba(167, 139, 250, ${0.8 - i * 0.2})`,
                                             `rgba(110, 231, 183, ${0.6 - i * 0.15})`,
-                                            `rgba(52, 211, 153, ${0.4 - i * 0.1})`
+                                            `rgba(167, 139, 250, ${0.4 - i * 0.1})`
                                           ]
                                         }}
                                         transition={{ 
@@ -992,7 +1001,7 @@ export default function HomePage() {
                                             left: '50%',
                                             top: '50%',
                                             backgroundColor: `hsl(${142 + i * 2}, ${80 + i * 1}%, ${70 + i * 1}%)`,
-                                            boxShadow: "0 0 2px rgba(52, 211, 153, 0.8)"
+                                            boxShadow: "0 0 2px rgba(167, 139, 250, 0.8)"
                                           }}
                                           initial={{ scale: 0, x: 0, y: 0 }}
                                           whileHover={{
@@ -1026,14 +1035,14 @@ export default function HomePage() {
                                   <motion.span 
                                     className="text-[10px] sm:text-xs font-medium relative"
                                     style={{
-                                      textShadow: "0 0 5px rgba(52, 211, 153, 0.3)"
+                                      textShadow: "0 0 5px rgba(167, 139, 250, 0.3)"
                                     }}
                                     animate={{
-                                      color: ["rgb(134, 239, 172)", "rgb(52, 211, 153)", "rgb(16, 185, 129)", "rgb(52, 211, 153)", "rgb(134, 239, 172)"]
+                                      color: ["rgb(167, 139, 250)", "rgb(52, 211, 153)", "rgb(16, 185, 129)", "rgb(52, 211, 153)", "rgb(167, 139, 250)"]
                                     }}
                                     transition={{ duration: 8, repeat: Infinity }}
                                     whileHover={{
-                                      textShadow: "0 0 10px rgba(52, 211, 153, 0.8)",
+                                      textShadow: "0 0 10px rgba(167, 139, 250, 0.8)",
                                       letterSpacing: "1px",
                                       scale: 1.05
                                     }}
@@ -1042,7 +1051,7 @@ export default function HomePage() {
                                     <motion.div
                                       className="absolute inset-0 rounded-lg -z-10"
                                       style={{
-                                        background: "linear-gradient(90deg, rgba(52, 211, 153, 0) 0%, rgba(52, 211, 153, 0.2) 50%, rgba(52, 211, 153, 0) 100%)",
+                                        background: "linear-gradient(90deg, rgba(167, 139, 250, 0) 0%, rgba(167, 139, 250, 0.2) 50%, rgba(167, 139, 250, 0) 100%)",
                                         filter: "blur(4px)",
                                         opacity: 0
                                       }}
@@ -1082,7 +1091,7 @@ export default function HomePage() {
                                       {[...Array(3)].map((_, i) => (
                                         <motion.div
                                           key={`text-status-particle-${i}`}
-                                          className="absolute w-0.5 h-0.5 rounded-full bg-green-200"
+                                          className="absolute w-0.5 h-0.5 rounded-full bg-violet-200"
                                           style={{
                                             top: `${20 + i * 15}%`,
                                             left: `${20 + i * 20}%`,
@@ -1199,18 +1208,7 @@ export default function HomePage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 1.5 }}
                           >
-                            <ClientOnly fallback={
-                              <div className="flex flex-col items-center">
-                                <div className="text-green-300 text-sm font-bold tracking-wider mb-4">
-                                  NOW PLAYING
-                                </div>
-                                <div className="flex items-center justify-center h-16 w-full">
-                                  <div className="text-gray-500">Loading Spotify data...</div>
-                                </div>
-                              </div>
-                            }>
-                              <NowPlaying />
-                            </ClientOnly>
+                            {/* Removed broken Spotify widget */}
                             <div className="mt-8 text-center text-xs text-zinc-500">
                               <p>© {new Date().getFullYear()} designed and built by Harnitya. All rights reserved.</p>
                               <p className="mt-1">built with Next.js, Tailwind, and a mild obsession with better futures.</p>

@@ -85,10 +85,10 @@ export default function NotFound() {
           className="absolute inset-0 opacity-20"
           animate={{
             background: [
-              "radial-gradient(circle at 30% 30%, rgba(52, 211, 153, 0.3) 0%, transparent 70%)",
-              "radial-gradient(circle at 70% 70%, rgba(52, 211, 153, 0.3) 0%, transparent 70%)",
-              "radial-gradient(circle at 30% 70%, rgba(52, 211, 153, 0.3) 0%, transparent 70%)",
-              "radial-gradient(circle at 70% 30%, rgba(52, 211, 153, 0.3) 0%, transparent 70%)",
+              "radial-gradient(circle at 30% 30%, rgba(167, 139, 250, 0.3) 0%, transparent 70%)",
+              "radial-gradient(circle at 70% 70%, rgba(167, 139, 250, 0.3) 0%, transparent 70%)",
+              "radial-gradient(circle at 30% 70%, rgba(167, 139, 250, 0.3) 0%, transparent 70%)",
+              "radial-gradient(circle at 70% 30%, rgba(167, 139, 250, 0.3) 0%, transparent 70%)",
             ]
           }}
           transition={{ 
@@ -101,7 +101,7 @@ export default function NotFound() {
         <motion.div 
           className="absolute top-0 left-0 w-full h-1 pointer-events-none"
           style={{
-            background: "linear-gradient(to right, transparent, rgba(52, 211, 153, 0.3), transparent)",
+            background: "linear-gradient(to right, transparent, rgba(167, 139, 250, 0.3), transparent)",
           }}
           animate={{ 
             scaleX: [0, 1, 0],
@@ -127,7 +127,7 @@ export default function NotFound() {
               top: `${Math.random() * 100}%`,
               background: `rgba(${52 + Math.random() * 30}, ${211 + Math.random() * 30}, ${153 + Math.random() * 30}, ${0.2 + Math.random() * 0.3})`,
               filter: "blur(1px)",
-              boxShadow: `0 0 ${Math.random() * 5 + 2}px rgba(52, 211, 153, ${0.3 + Math.random() * 0.4})`,
+              boxShadow: `0 0 ${Math.random() * 5 + 2}px rgba(167, 139, 250, ${0.3 + Math.random() * 0.4})`,
             }}
             animate={{
               opacity: [0, 0.8, 0],
@@ -150,7 +150,7 @@ export default function NotFound() {
           {[...Array(15)].map((_, i) => (
             <motion.div
               key={`grid-line-h-${i}`}
-              className="absolute h-px w-full bg-gradient-to-r from-transparent via-green-300 to-transparent"
+              className="absolute h-px w-full bg-gradient-to-r from-transparent via-violet-300 to-transparent"
               style={{ top: `${(i / 15) * 100}%` }}
               animate={{
                 opacity: [0.1, 0.3, 0.1],
@@ -166,7 +166,7 @@ export default function NotFound() {
           {[...Array(15)].map((_, i) => (
             <motion.div
               key={`grid-line-v-${i}`}
-              className="absolute w-px h-full bg-gradient-to-b from-transparent via-green-300 to-transparent"
+              className="absolute w-px h-full bg-gradient-to-b from-transparent via-violet-300 to-transparent"
               style={{ left: `${(i / 15) * 100}%` }}
               animate={{
                 opacity: [0.1, 0.3, 0.1],
@@ -193,7 +193,7 @@ export default function NotFound() {
                 height: size,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                background: `radial-gradient(circle, rgba(52, 211, 153, 0.3) 0%, rgba(52, 211, 153, 0.1) 50%, transparent 80%)`,
+                background: `radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, rgba(167, 139, 250, 0.1) 50%, transparent 80%)`,
                 transform: 'translate(-50%, -50%)',
               }}
               animate={{
@@ -217,7 +217,7 @@ export default function NotFound() {
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="hexagons" width="50" height="43.4" patternUnits="userSpaceOnUse" patternTransform="scale(5) rotate(0)">
-                <path d="M25,17.3 L25,0 L0,8.7 L0,25.9 L25,34.6 L50,25.9 L50,8.7 Z" fill="none" stroke="rgba(52, 211, 153, 0.5)" strokeWidth="0.5" />
+                <path d="M25,17.3 L25,0 L0,8.7 L0,25.9 L25,34.6 L50,25.9 L50,8.7 Z" fill="none" stroke="rgba(167, 139, 250, 0.5)" strokeWidth="0.5" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#hexagons)" />
@@ -247,8 +247,8 @@ export default function NotFound() {
             />
             <defs>
               <linearGradient id="paint0_linear" x1="720" y1="0" x2="720" y2="100" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#34D399" />
-                <stop offset="1" stopColor="#34D399" stopOpacity="0" />
+                <stop stopColor="#a78bfa" />
+                <stop offset="1" stopColor="#a78bfa" stopOpacity="0" />
               </linearGradient>
             </defs>
           </svg>
@@ -289,30 +289,30 @@ export default function NotFound() {
               animate={{ 
                 textShadow: isGlitching 
                   ? [
-                      "0 0 10px rgba(52, 211, 153, 0.8), 0 0 20px rgba(52, 211, 153, 0.4), 0 0 30px rgba(52, 211, 153, 0.2)",
+                      "0 0 10px rgba(167, 139, 250, 0.8), 0 0 20px rgba(167, 139, 250, 0.4), 0 0 30px rgba(167, 139, 250, 0.2)",
                       "5px 0 10px rgba(59, 130, 246, 0.8), -5px 0 20px rgba(59, 130, 246, 0.4), 0 0 30px rgba(59, 130, 246, 0.2)",
-                      "0 0 10px rgba(52, 211, 153, 0.8), 0 0 20px rgba(52, 211, 153, 0.4), 0 0 30px rgba(52, 211, 153, 0.2)",
+                      "0 0 10px rgba(167, 139, 250, 0.8), 0 0 20px rgba(167, 139, 250, 0.4), 0 0 30px rgba(167, 139, 250, 0.2)",
                     ]
-                  : "0 0 10px rgba(52, 211, 153, 0.8), 0 0 20px rgba(52, 211, 153, 0.4), 0 0 30px rgba(52, 211, 153, 0.2)"
+                  : "0 0 10px rgba(167, 139, 250, 0.8), 0 0 20px rgba(167, 139, 250, 0.4), 0 0 30px rgba(167, 139, 250, 0.2)"
               }}
               transition={{ duration: 0.2 }}
             >
-              <span className={`absolute inset-0 ${isGlitching ? "text-blue-500" : "text-green-300"}`} style={{ 
+              <span className={`absolute inset-0 ${isGlitching ? "text-blue-500" : "text-violet-300"}`} style={{ 
                 clipPath: isGlitching ? "polygon(0 15%, 100% 15%, 100% 40%, 0 40%)" : "none",
                 transform: isGlitching ? "translate(-5px, 0)" : "none",
                 WebkitTextStroke: "2px rgba(0,0,0,0.3)",
-                filter: "drop-shadow(0 0 15px rgba(52, 211, 153, 0.8))",
+                filter: "drop-shadow(0 0 15px rgba(167, 139, 250, 0.8))",
               }}>404</span>
-              <span className={`absolute inset-0 ${isGlitching ? "text-purple-500" : "text-green-300"}`} style={{ 
+              <span className={`absolute inset-0 ${isGlitching ? "text-purple-500" : "text-violet-300"}`} style={{ 
                 clipPath: isGlitching ? "polygon(0 60%, 100% 60%, 100% 85%, 0 85%)" : "none",
                 transform: isGlitching ? "translate(5px, 0)" : "none",
                 WebkitTextStroke: "2px rgba(0,0,0,0.3)",
-                filter: "drop-shadow(0 0 15px rgba(52, 211, 153, 0.8))",
+                filter: "drop-shadow(0 0 15px rgba(167, 139, 250, 0.8))",
               }}>404</span>
-              <span className="relative text-green-300" style={{
+              <span className="relative text-violet-300" style={{
                 WebkitTextStroke: "2px rgba(0,0,0,0.3)",
-                filter: "drop-shadow(0 0 15px rgba(52, 211, 153, 0.8))",
-                background: "linear-gradient(to bottom, rgba(52, 211, 153, 1), rgba(16, 185, 129, 1))",
+                filter: "drop-shadow(0 0 15px rgba(167, 139, 250, 0.8))",
+                background: "linear-gradient(to bottom, rgba(167, 139, 250, 1), rgba(139, 92, 246, 1))",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}>404</span>
@@ -322,7 +322,7 @@ export default function NotFound() {
             <motion.div
               className="absolute inset-0 opacity-30 pointer-events-none"
               style={{
-                background: "linear-gradient(45deg, transparent 25%, rgba(52, 211, 153, 0.3) 25%, rgba(52, 211, 153, 0.3) 50%, transparent 50%, transparent 75%, rgba(52, 211, 153, 0.3) 75%)",
+                background: "linear-gradient(45deg, transparent 25%, rgba(167, 139, 250, 0.3) 25%, rgba(167, 139, 250, 0.3) 50%, transparent 50%, transparent 75%, rgba(167, 139, 250, 0.3) 75%)",
                 backgroundSize: "10px 10px",
                 mixBlendMode: "overlay",
               }}
@@ -338,10 +338,10 @@ export default function NotFound() {
 
             {/* 3D layers for depth */}
             <div className="absolute inset-0 opacity-20" style={{ transform: "translateZ(-50px)" }}>
-              <div className="w-full h-full text-[12rem] md:text-[20rem] font-bold leading-none tracking-tighter text-center text-green-300/30">404</div>
+              <div className="w-full h-full text-[12rem] md:text-[20rem] font-bold leading-none tracking-tighter text-center text-violet-300/30">404</div>
             </div>
             <div className="absolute inset-0 opacity-10" style={{ transform: "translateZ(-100px)" }}>
-              <div className="w-full h-full text-[12rem] md:text-[20rem] font-bold leading-none tracking-tighter text-center text-green-300/20">404</div>
+              <div className="w-full h-full text-[12rem] md:text-[20rem] font-bold leading-none tracking-tighter text-center text-violet-300/20">404</div>
             </div>
           </motion.div>
 
@@ -357,7 +357,7 @@ export default function NotFound() {
                   transition={{ duration: 0.1 }}
                 />
                 <motion.div 
-                  className="absolute top-2/3 left-0 right-0 h-2 bg-green-500"
+                  className="absolute top-2/3 left-0 right-0 h-2 bg-violet-500"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   exit={{ scaleX: 0 }}
@@ -370,17 +370,17 @@ export default function NotFound() {
           {/* Decorative circles */}
           <div className="absolute -z-10 inset-0 flex items-center justify-center">
             <motion.div
-              className="absolute w-[120%] h-[120%] rounded-full border-2 border-dashed border-green-300/20"
+              className="absolute w-[120%] h-[120%] rounded-full border-2 border-dashed border-violet-300/20"
               animate={{ rotate: 360 }}
               transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
             />
             <motion.div
-              className="absolute w-[140%] h-[140%] rounded-full border border-green-300/10"
+              className="absolute w-[140%] h-[140%] rounded-full border border-violet-300/10"
               animate={{ rotate: -360 }}
               transition={{ duration: 180, repeat: Infinity, ease: "linear" }}
             />
             <motion.div
-              className="absolute w-[160%] h-[160%] rounded-full border border-green-300/5"
+              className="absolute w-[160%] h-[160%] rounded-full border border-violet-300/5"
               animate={{ rotate: 180 }}
               transition={{ duration: 240, repeat: Infinity, ease: "linear" }}
             />
@@ -391,7 +391,7 @@ export default function NotFound() {
             {[...Array(4)].map((_, i) => (
               <motion.div
                 key={`corner-decoration-${i}`}
-                className="absolute w-16 h-16 border-2 border-green-300/30"
+                className="absolute w-16 h-16 border-2 border-violet-300/30"
                 style={{
                   top: i < 2 ? "-8px" : "auto",
                   bottom: i >= 2 ? "-8px" : "auto",
@@ -409,9 +409,9 @@ export default function NotFound() {
                 animate={{
                   opacity: [0.3, 0.6, 0.3],
                   boxShadow: [
-                    "0 0 5px 0 rgba(52, 211, 153, 0.3)",
-                    "0 0 10px 2px rgba(52, 211, 153, 0.5)",
-                    "0 0 5px 0 rgba(52, 211, 153, 0.3)",
+                    "0 0 5px 0 rgba(167, 139, 250, 0.3)",
+                    "0 0 10px 2px rgba(167, 139, 250, 0.5)",
+                    "0 0 5px 0 rgba(167, 139, 250, 0.3)",
                   ],
                 }}
                 transition={{
@@ -436,11 +436,11 @@ export default function NotFound() {
             }}
             transition={{ duration: 0.2 }}
             style={{
-              background: "linear-gradient(to right, #34D399, #10B981, #059669, #10B981, #34D399)",
+              background: "linear-gradient(to right, #a78bfa, #8b5cf6, #059669, #8b5cf6, #a78bfa)",
               backgroundSize: "200% auto",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              textShadow: "0 0 20px rgba(52, 211, 153, 0.4)",
+              textShadow: "0 0 20px rgba(167, 139, 250, 0.4)",
             }}
             whileInView={{
               backgroundPosition: ["0% center", "200% center"],
@@ -466,13 +466,13 @@ export default function NotFound() {
           </motion.div>
           
           <motion.p 
-            className="text-zinc-300 max-w-lg mx-auto text-lg backdrop-blur-sm py-3 px-6 rounded-lg bg-black/20 border border-green-500/10"
+            className="text-zinc-300 max-w-lg mx-auto text-lg backdrop-blur-sm py-3 px-6 rounded-lg bg-black/20 border border-violet-500/10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
             whileHover={{
-              boxShadow: "0 0 20px rgba(52, 211, 153, 0.2)",
-              borderColor: "rgba(52, 211, 153, 0.3)",
+              boxShadow: "0 0 20px rgba(167, 139, 250, 0.2)",
+              borderColor: "rgba(167, 139, 250, 0.3)",
               scale: 1.02,
             }}
           >
@@ -493,7 +493,7 @@ The page you're looking for is either chilling in the void, got kidnapped, renam
           {/* Decorative tech elements */}
           <div className="absolute -z-10 left-0 right-0 top-1/2 transform -translate-y-1/2 flex justify-between px-4 opacity-20 pointer-events-none">
             <motion.div
-              className="w-20 h-20 rounded-full border border-green-300/30"
+              className="w-20 h-20 rounded-full border border-violet-300/30"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.2, 0.5, 0.2],
@@ -506,7 +506,7 @@ The page you're looking for is either chilling in the void, got kidnapped, renam
               }}
             />
             <motion.div
-              className="w-20 h-20 rounded-full border border-green-300/30"
+              className="w-20 h-20 rounded-full border border-violet-300/30"
               animate={{
                 scale: [1.2, 1, 1.2],
                 opacity: [0.2, 0.5, 0.2],
@@ -572,7 +572,7 @@ The page you're looking for is either chilling in the void, got kidnapped, renam
             {/* Button content */}
             <span className="relative z-10 flex items-center font-medium text-white">
               <motion.div
-                className="mr-2 bg-green-300 text-zinc-800 rounded-full p-1 flex items-center justify-center"
+                className="mr-2 bg-violet-300 text-zinc-800 rounded-full p-1 flex items-center justify-center"
                 animate={{
                   rotate: [0, 360],
                 }}
@@ -602,7 +602,7 @@ The page you're looking for is either chilling in the void, got kidnapped, renam
             ease: "easeInOut",
           }}
         >
-          <RiErrorWarningLine size={200} className="text-green-300" />
+          <RiErrorWarningLine size={200} className="text-violet-300" />
         </motion.div>
         
         {/* Binary code rain effect */}
@@ -616,7 +616,7 @@ The page you're looking for is either chilling in the void, got kidnapped, renam
             return (
               <motion.div
                 key={`binary-${i}`}
-                className="absolute top-0 text-xs font-mono text-green-500/30"
+                className="absolute top-0 text-xs font-mono text-violet-500/30"
                 style={{
                   left: `${startPos}%`,
                   opacity,
@@ -651,7 +651,7 @@ The page you're looking for is either chilling in the void, got kidnapped, renam
             return (
               <motion.div
                 key={`circuit-line-${i}`}
-                className="absolute bg-gradient-to-r from-green-500 to-green-500/0"
+                className="absolute bg-gradient-to-r from-violet-500 to-violet-500/0"
                 style={{
                   height: "1px",
                   left: `${startX}%`,
@@ -683,7 +683,7 @@ The page you're looking for is either chilling in the void, got kidnapped, renam
           return (
             <motion.div
               key={`floating-element-${i}`}
-              className={`absolute ${isSquare ? 'rounded-md' : 'rounded-full'} border border-green-300/30 pointer-events-none`}
+              className={`absolute ${isSquare ? 'rounded-md' : 'rounded-full'} border border-violet-300/30 pointer-events-none`}
               style={{
                 width: size,
                 height: size,
@@ -714,7 +714,7 @@ The page you're looking for is either chilling in the void, got kidnapped, renam
           animate={{}}
         >
           <motion.div
-            className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-green-300 to-transparent"
+            className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-violet-300 to-transparent"
             animate={{
               top: ["-2px", "100%"],
             }}

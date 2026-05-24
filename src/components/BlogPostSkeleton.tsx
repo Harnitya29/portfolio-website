@@ -17,19 +17,19 @@ export default function BlogPostSkeleton() {
       {/* Skeleton cho danh sách có dấu chấm tròn */}
       <div className="space-y-4 my-8">
         <div className="flex items-start">
-          <div className="h-3 w-3 rounded-full bg-green-500/40 mt-1 mr-3 flex-shrink-0" />
+          <div className="h-3 w-3 rounded-full bg-violet-500/40 mt-1 mr-3 flex-shrink-0" />
           <div className="h-4 w-5/6 bg-zinc-800 rounded-md animate-pulse" />
         </div>
         <div className="flex items-start">
-          <div className="h-3 w-3 rounded-full bg-green-500/40 mt-1 mr-3 flex-shrink-0" />
+          <div className="h-3 w-3 rounded-full bg-violet-500/40 mt-1 mr-3 flex-shrink-0" />
           <div className="h-4 w-4/6 bg-zinc-800 rounded-md animate-pulse" />
         </div>
         <div className="flex items-start">
-          <div className="h-3 w-3 rounded-full bg-green-500/40 mt-1 mr-3 flex-shrink-0" />
+          <div className="h-3 w-3 rounded-full bg-violet-500/40 mt-1 mr-3 flex-shrink-0" />
           <div className="h-4 w-5/6 bg-zinc-800 rounded-md animate-pulse" />
         </div>
         <div className="flex items-start">
-          <div className="h-3 w-3 rounded-full bg-green-500/40 mt-1 mr-3 flex-shrink-0" />
+          <div className="h-3 w-3 rounded-full bg-violet-500/40 mt-1 mr-3 flex-shrink-0" />
           <div className="h-4 w-3/6 bg-zinc-800 rounded-md animate-pulse" />
         </div>
       </div>
@@ -39,15 +39,15 @@ export default function BlogPostSkeleton() {
       {/* Skeleton cho danh sách đánh số */}
       <div className="space-y-4 my-8">
         <div className="flex items-start">
-          <div className="text-green-500/60 w-6 flex-shrink-0 font-mono">1.</div>
+          <div className="text-violet-500/60 w-6 flex-shrink-0 font-mono">1.</div>
           <div className="h-4 w-5/6 bg-zinc-800 rounded-md animate-pulse" />
         </div>
         <div className="flex items-start">
-          <div className="text-green-500/60 w-6 flex-shrink-0 font-mono">2.</div>
+          <div className="text-violet-500/60 w-6 flex-shrink-0 font-mono">2.</div>
           <div className="h-4 w-4/6 bg-zinc-800 rounded-md animate-pulse" />
         </div>
         <div className="flex items-start">
-          <div className="text-green-500/60 w-6 flex-shrink-0 font-mono">3.</div>
+          <div className="text-violet-500/60 w-6 flex-shrink-0 font-mono">3.</div>
           <div className="h-4 w-5/6 bg-zinc-800 rounded-md animate-pulse" />
         </div>
       </div>

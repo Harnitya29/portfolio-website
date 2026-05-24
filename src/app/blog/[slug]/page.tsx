@@ -103,14 +103,14 @@ export default async function Post({ params }: { params: { slug: string } }) {
               
               <h1 className="text-5xl font-bold mb-4 mt-6 text-white relative inline-block">
                 {post.metadata.title}
-                <div className="absolute -bottom-2 left-0 h-[3px] w-full bg-gradient-to-r from-green-300/0 via-green-300 to-green-300/0 animate-pulse" style={{ animationDuration: '3s' }} />
+                <div className="absolute -bottom-2 left-0 h-[3px] w-full bg-gradient-to-r from-violet-300/0 via-violet-300 to-violet-300/0 animate-pulse" style={{ animationDuration: '3s' }} />
               </h1>
               
               <div className="mb-12 flex items-center justify-between text-sm">
                 <time className="text-gray-400 block flex items-center space-x-2 group relative overflow-hidden">
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
-                    className="h-4 w-4 mr-2 text-green-400/70 group-hover:text-green-300 transition-colors duration-300" 
+                    className="h-4 w-4 mr-2 text-violet-400/70 group-hover:text-violet-300 transition-colors duration-300" 
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor"
@@ -122,7 +122,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
                       d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" 
                     />
                   </svg>
-                  <span className="group-hover:text-green-300/80 transition-colors duration-300">
+                  <span className="group-hover:text-violet-300/80 transition-colors duration-300">
                     {formatDate(post.metadata.date)}
                   </span>
                   
@@ -131,13 +131,13 @@ export default async function Post({ params }: { params: { slug: string } }) {
               </div>
               
               <article className="prose prose-lg dark:prose-invert max-w-none text-gray-300 my-6 leading-relaxed relative">
-                <div className="absolute -top-4 left-0 w-16 h-1 bg-gradient-to-r from-green-300/0 via-green-300/50 to-green-300/0 animate-pulse" style={{ animationDuration: '4s' }} />
+                <div className="absolute -top-4 left-0 w-16 h-1 bg-gradient-to-r from-violet-300/0 via-violet-300/50 to-violet-300/0 animate-pulse" style={{ animationDuration: '4s' }} />
                 
                 <div className="mdx-content">
                   <MDX source={post.content} />
                 </div>
                 
-                <div className="absolute -bottom-4 right-0 w-16 h-1 bg-gradient-to-r from-green-300/0 via-green-300/50 to-green-300/0 animate-pulse" style={{ animationDuration: '4s', animationDelay: '2s' }} />
+                <div className="absolute -bottom-4 right-0 w-16 h-1 bg-gradient-to-r from-violet-300/0 via-violet-300/50 to-violet-300/0 animate-pulse" style={{ animationDuration: '4s', animationDelay: '2s' }} />
               </article>
             </section>
           </BlogPostClient>

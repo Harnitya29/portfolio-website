@@ -46,7 +46,7 @@ export default function Projects() {
         <motion.div 
           className="absolute top-0 left-0 w-full h-1 pointer-events-none"
           style={{
-            background: "linear-gradient(to right, transparent, rgba(52, 211, 153, 0.3), transparent)",
+            background: "linear-gradient(to right, transparent, rgba(167, 139, 250, 0.3), transparent)",
           }}
           animate={{ 
             scaleX: [0, 1, 0],
@@ -63,7 +63,7 @@ export default function Projects() {
         <motion.div 
           className="absolute bottom-0 left-0 w-full h-1 pointer-events-none"
           style={{
-            background: "linear-gradient(to right, transparent, rgba(52, 211, 153, 0.2), transparent)",
+            background: "linear-gradient(to right, transparent, rgba(167, 139, 250, 0.2), transparent)",
           }}
           animate={{ 
             scaleX: [0, 1, 0],
@@ -89,7 +89,7 @@ export default function Projects() {
               top: `${Math.random() * 100}%`,
               background: `rgba(${52 + Math.random() * 30}, ${211 + Math.random() * 30}, ${153 + Math.random() * 30}, ${0.2 + Math.random() * 0.3})`,
               filter: "blur(1px)",
-              boxShadow: `0 0 ${Math.random() * 5 + 2}px rgba(52, 211, 153, ${0.3 + Math.random() * 0.4})`,
+              boxShadow: `0 0 ${Math.random() * 5 + 2}px rgba(167, 139, 250, ${0.3 + Math.random() * 0.4})`,
             }}
             animate={{
               opacity: [0, 0.8, 0],
@@ -113,8 +113,8 @@ export default function Projects() {
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
           style={{
             backgroundImage: `
-              linear-gradient(to right, rgba(52, 211, 153, 0.5) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(52, 211, 153, 0.5) 1px, transparent 1px)
+              linear-gradient(to right, rgba(167, 139, 250, 0.5) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(167, 139, 250, 0.5) 1px, transparent 1px)
             `,
             backgroundSize: '80px 80px',
           }}
@@ -137,7 +137,7 @@ export default function Projects() {
             whileHover={{ scale: 1.03 }}
           >
             <motion.span 
-              className="text-green-300 inline-block"
+              className="text-violet-300 inline-block"
               animate={{ rotate: [0, 5, 0, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
             >
@@ -146,7 +146,7 @@ export default function Projects() {
             <span className="relative">
               projects
               <motion.span 
-                className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-green-300/0 via-green-300 to-green-300/0"
+                className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-violet-300/0 via-violet-300 to-violet-300/0"
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 1, delay: 0.5 }}
@@ -172,7 +172,7 @@ export default function Projects() {
         >
           {/* Animated background glow for active category */}
           <motion.div 
-            className="absolute inset-0 -z-10 rounded-full bg-green-300/5 filter blur-xl"
+            className="absolute inset-0 -z-10 rounded-full bg-violet-300/5 filter blur-xl"
             animate={{ 
               x: categories.findIndex(cat => cat === activeCategory) * 110,
               opacity: [0.5, 0.8, 0.5],
@@ -203,10 +203,10 @@ export default function Projects() {
                 className="absolute inset-0 -z-10 rounded-full"
                 animate={{ 
                   backgroundColor: category === activeCategory 
-                    ? 'rgba(52, 211, 153, 0.2)' 
+                    ? 'rgba(167, 139, 250, 0.2)' 
                     : 'rgba(39, 39, 42, 0.5)',
                   borderColor: category === activeCategory 
-                    ? 'rgba(52, 211, 153, 0.3)' 
+                    ? 'rgba(167, 139, 250, 0.3)' 
                     : 'rgba(82, 82, 91, 0.5)',
                 }}
                 style={{
@@ -218,7 +218,7 @@ export default function Projects() {
               {/* Hover effect */}
               {hoveredCategory === category && category !== activeCategory && (
                 <motion.div 
-                  className="absolute inset-0 -z-10 rounded-full opacity-0 bg-green-300/10"
+                  className="absolute inset-0 -z-10 rounded-full opacity-0 bg-violet-300/10"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 1.2 }}
@@ -232,7 +232,7 @@ export default function Projects() {
                   {[...Array(5)].map((_, i) => (
                     <motion.div
                       key={`btn-particle-${i}`}
-                      className="absolute rounded-full bg-green-300/80 pointer-events-none"
+                      className="absolute rounded-full bg-violet-300/80 pointer-events-none"
                       style={{
                         width: Math.random() * 2 + 1,
                         height: Math.random() * 2 + 1,
@@ -261,7 +261,7 @@ export default function Projects() {
                 animate={{ 
                   color: category === activeCategory ? '#86efac' : '#a1a1aa',
                   textShadow: category === activeCategory 
-                    ? '0 0 8px rgba(134, 239, 172, 0.5)' 
+                    ? '0 0 8px rgba(167, 139, 250, 0.5)' 
                     : 'none',
                 }}
                 transition={{ duration: 0.3 }}
@@ -297,7 +297,7 @@ export default function Projects() {
             {/* Elegant divider with animated particles */}
             <div className="relative w-full max-w-xs mx-auto mb-8">
               <motion.div 
-                className="h-px w-full bg-gradient-to-r from-transparent via-green-300/50 to-transparent"
+                className="h-px w-full bg-gradient-to-r from-transparent via-violet-300/50 to-transparent"
                 animate={{ 
                   opacity: [0.3, 0.7, 0.3],
                   width: ["70%", "100%", "70%"]
@@ -310,15 +310,15 @@ export default function Projects() {
               {[...Array(7)].map((_, i) => (
                 <motion.div
                   key={`line-particle-${i}`}
-                  className="absolute top-0 h-[2px] w-[2px] rounded-full bg-green-300"
+                  className="absolute top-0 h-[2px] w-[2px] rounded-full bg-violet-300"
                   initial={{ left: `${i * 16.6}%`, opacity: 0 }}
                   animate={{ 
                     opacity: [0, 1, 0],
                     y: [-1, 1, -1],
                     boxShadow: [
-                      "0 0 2px rgba(52, 211, 153, 0.3)",
-                      "0 0 4px rgba(52, 211, 153, 0.8)",
-                      "0 0 2px rgba(52, 211, 153, 0.3)"
+                      "0 0 2px rgba(167, 139, 250, 0.3)",
+                      "0 0 4px rgba(167, 139, 250, 0.8)",
+                      "0 0 2px rgba(167, 139, 250, 0.3)"
                     ]
                   }}
                   transition={{ 
@@ -350,9 +350,9 @@ export default function Projects() {
                   className="absolute inset-0 rounded-full opacity-10"
                   animate={{
                     background: [
-                      "linear-gradient(120deg, rgba(52, 211, 153, 0.05) 0%, rgba(52, 211, 153, 0.1) 50%, rgba(52, 211, 153, 0.05) 100%)",
-                      "linear-gradient(240deg, rgba(52, 211, 153, 0.05) 0%, rgba(52, 211, 153, 0.1) 50%, rgba(52, 211, 153, 0.05) 100%)",
-                      "linear-gradient(120deg, rgba(52, 211, 153, 0.05) 0%, rgba(52, 211, 153, 0.1) 50%, rgba(52, 211, 153, 0.05) 100%)"
+                      "linear-gradient(120deg, rgba(167, 139, 250, 0.05) 0%, rgba(167, 139, 250, 0.1) 50%, rgba(167, 139, 250, 0.05) 100%)",
+                      "linear-gradient(240deg, rgba(167, 139, 250, 0.05) 0%, rgba(167, 139, 250, 0.1) 50%, rgba(167, 139, 250, 0.05) 100%)",
+                      "linear-gradient(120deg, rgba(167, 139, 250, 0.05) 0%, rgba(167, 139, 250, 0.1) 50%, rgba(167, 139, 250, 0.05) 100%)"
                     ],
                   }}
                   transition={{ duration: 10, repeat: Infinity }}
@@ -362,7 +362,7 @@ export default function Projects() {
                 <motion.div 
                   className="absolute inset-0 rounded-full opacity-20"
                   style={{ 
-                    border: "1px solid rgba(52, 211, 153, 0.2)"
+                    border: "1px solid rgba(167, 139, 250, 0.2)"
                   }}
                 />
                 
@@ -371,7 +371,7 @@ export default function Projects() {
                   className="text-base font-medium tracking-wider relative z-10"
                 >
                   <motion.span
-                    className="text-transparent bg-clip-text bg-gradient-to-r from-green-200 via-green-300 to-green-200 font-medium"
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-violet-200 via-violet-300 to-violet-200 font-medium"
                     animate={{
                       backgroundPosition: ["0% center", "100% center", "0% center"],
                     }}
@@ -416,7 +416,7 @@ export default function Projects() {
                     />
                   </motion.span>
                   <motion.span
-                    className="text-transparent bg-clip-text bg-gradient-to-r from-green-200 via-green-300 to-green-200 font-medium"
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-violet-200 via-violet-300 to-violet-200 font-medium"
                     animate={{
                       backgroundPosition: ["0% center", "100% center", "0% center"],
                     }}
@@ -432,7 +432,7 @@ export default function Projects() {
                     {" "}by{" "}
                   </motion.span>
                   <motion.span
-                    className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-400 to-green-300 font-bold"
+                    className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-violet-400 to-violet-300 font-bold"
                     animate={{
                       backgroundPosition: ["0% center", "100% center", "0% center"],
                     }}
@@ -446,7 +446,7 @@ export default function Projects() {
                     }}
                     whileHover={{
                       letterSpacing: "0.05em",
-                      textShadow: "0 0 8px rgba(52, 211, 153, 0.5)"
+                      textShadow: "0 0 8px rgba(167, 139, 250, 0.5)"
                     }}
                   >
                     Harnitya
@@ -463,7 +463,7 @@ export default function Projects() {
                         repeatDelay: 1
                       }}
                       style={{
-                        background: "linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.8), rgba(52, 211, 153, 0.8), transparent)",
+                        background: "linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.8), rgba(167, 139, 250, 0.8), transparent)",
                         transformOrigin: "left"
                       }}
                     />
@@ -474,7 +474,7 @@ export default function Projects() {
                 {[...Array(5)].map((_, i) => (
                   <motion.div
                     key={`sign-particle-${i}`}
-                    className="absolute rounded-full bg-green-300/60"
+                    className="absolute rounded-full bg-violet-300/60"
                     style={{
                       width: Math.random() * 2 + 1,
                       height: Math.random() * 2 + 1,
@@ -501,9 +501,9 @@ export default function Projects() {
             <motion.div 
               className="mb-6 text-xs text-gray-500/70"
               whileHover={{ 
-                color: "rgba(134, 239, 172, 0.8)",
+                color: "rgba(167, 139, 250, 0.8)",
                 letterSpacing: "0.05em",
-                textShadow: "0 0 5px rgba(52, 211, 153, 0.2)"
+                textShadow: "0 0 5px rgba(167, 139, 250, 0.2)"
               }}
               transition={{ duration: 0.3 }}
             >
@@ -527,7 +527,7 @@ export default function Projects() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <motion.div
-                  className="text-lg font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300/60 via-green-300 to-green-300/60"
+                  className="text-lg font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-300/60 via-violet-300 to-violet-300/60"
                   animate={{
                     backgroundPosition: ["0% center", "100% center", "0% center"],
                   }}
@@ -541,7 +541,7 @@ export default function Projects() {
                   }}
                   whileHover={{
                     letterSpacing: "0.2em",
-                    textShadow: "0 0 8px rgba(52, 211, 153, 0.5)"
+                    textShadow: "0 0 8px rgba(167, 139, 250, 0.5)"
                   }}
                 >
                   &lt;/&gt;

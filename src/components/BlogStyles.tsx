@@ -19,13 +19,13 @@ export default function BlogStyles() {
         color: #f9fafb;
         position: relative;
         display: inline-block;
-        text-shadow: 0 0 15px rgba(134, 239, 172, 0.3);
+        text-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
         transition: all 0.3s ease;
         letter-spacing: -0.02em;
       }
       
       .mdx-content h2:hover {
-        text-shadow: 0 0 20px rgba(134, 239, 172, 0.5);
+        text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
         color: #fff;
         transform: translateY(-2px);
       }
@@ -38,9 +38,9 @@ export default function BlogStyles() {
         width: 100%;
         height: 2px;
         background: linear-gradient(90deg, 
-          rgba(52, 211, 153, 0), 
-          rgba(52, 211, 153, 0.8), 
-          rgba(52, 211, 153, 0)
+          rgba(167, 139, 250, 0), 
+          rgba(167, 139, 250, 0.8), 
+          rgba(167, 139, 250, 0)
         );
         border-radius: 2px;
         transition: all 0.3s ease;
@@ -49,11 +49,11 @@ export default function BlogStyles() {
       .mdx-content h2:hover::after {
         height: 3px;
         background: linear-gradient(90deg, 
-          rgba(52, 211, 153, 0), 
-          rgba(134, 239, 172, 1), 
-          rgba(52, 211, 153, 0)
+          rgba(167, 139, 250, 0), 
+          rgba(167, 139, 250, 1), 
+          rgba(167, 139, 250, 0)
         );
-        box-shadow: 0 0 10px rgba(52, 211, 153, 0.3);
+        box-shadow: 0 0 10px rgba(167, 139, 250, 0.3);
         width: 120%;
         left: -10%;
       }
@@ -68,14 +68,14 @@ export default function BlogStyles() {
         position: relative;
         display: inline-block;
         padding-left: 1.2rem;
-        border-left: 3px solid rgba(52, 211, 153, 0.7);
+        border-left: 3px solid rgba(167, 139, 250, 0.7);
         transition: all 0.3s ease;
         letter-spacing: -0.01em;
       }
       
       .mdx-content h3:hover {
         color: #fff;
-        border-left-color: rgba(134, 239, 172, 1);
+        border-left-color: rgba(167, 139, 250, 1);
         padding-left: 1.5rem;
         transform: translateX(5px);
       }
@@ -84,14 +84,14 @@ export default function BlogStyles() {
         content: '//';
         position: absolute;
         left: -2.5rem;
-        color: rgba(52, 211, 153, 0.7);
+        color: rgba(167, 139, 250, 0.7);
         font-weight: 400;
         opacity: 0.8;
         transition: all 0.3s ease;
       }
       
       .mdx-content h3:hover::before {
-        color: rgba(134, 239, 172, 1);
+        color: rgba(167, 139, 250, 1);
         transform: translateX(-5px);
       }
       
@@ -128,7 +128,7 @@ export default function BlogStyles() {
         left: 0;
         width: 100%;
         height: 1px;
-        background: rgba(134, 239, 172, 0.5);
+        background: rgba(167, 139, 250, 0.5);
         transform: scaleX(0);
         transform-origin: bottom right;
         transition: transform 0.3s ease;
@@ -136,7 +136,7 @@ export default function BlogStyles() {
       
       .mdx-content a:hover {
         color: #4ade80;
-        text-shadow: 0 0 8px rgba(134, 239, 172, 0.5);
+        text-shadow: 0 0 8px rgba(167, 139, 250, 0.5);
       }
       
       .mdx-content a:hover::after {
@@ -144,9 +144,9 @@ export default function BlogStyles() {
         transform-origin: bottom left;
         height: 2px;
         background: linear-gradient(90deg, 
-          rgba(134, 239, 172, 0.3), 
-          rgba(134, 239, 172, 0.8), 
-          rgba(134, 239, 172, 0.3)
+          rgba(167, 139, 250, 0.3), 
+          rgba(167, 139, 250, 0.8), 
+          rgba(167, 139, 250, 0.3)
         );
       }
       
@@ -195,7 +195,7 @@ export default function BlogStyles() {
       .mdx-content ul li:hover::before {
         transform: rotate(135deg) scale(1.2);
         background: linear-gradient(135deg, #4ade80, #86efac);
-        box-shadow: 0 0 8px rgba(134, 239, 172, 0.5);
+        box-shadow: 0 0 8px rgba(167, 139, 250, 0.5);
       }
       
       /* Numbered lists - simplified hover */
@@ -214,11 +214,11 @@ export default function BlogStyles() {
         position: absolute;
         left: -2.2rem;
         top: -0.1rem;
-        color: rgba(52, 211, 153, 0.9);
+        color: rgba(167, 139, 250, 0.9);
         font-weight: 600;
         font-family: monospace;
-        background: rgba(52, 211, 153, 0.1);
-        border: 1px solid rgba(52, 211, 153, 0.4);
+        background: rgba(167, 139, 250, 0.1);
+        border: 1px solid rgba(167, 139, 250, 0.4);
         border-radius: 6px;
         width: 1.7rem;
         height: 1.7rem;
@@ -230,11 +230,11 @@ export default function BlogStyles() {
       }
       
       .mdx-content ol li:hover::before {
-        background: rgba(52, 211, 153, 0.2);
+        background: rgba(167, 139, 250, 0.2);
         color: #86efac;
-        border-color: rgba(134, 239, 172, 0.6);
+        border-color: rgba(167, 139, 250, 0.6);
         transform: scale(1.1) rotate(-3deg);
-        box-shadow: 0 0 10px rgba(134, 239, 172, 0.3);
+        box-shadow: 0 0 10px rgba(167, 139, 250, 0.3);
       }
       
       /* Code blocks - enhanced styling */
@@ -250,7 +250,7 @@ export default function BlogStyles() {
       }
       
       .mdx-content pre:hover {
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(134, 239, 172, 0.2);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(167, 139, 250, 0.2);
         transform: translateY(-5px) scale(1.01);
       }
       
@@ -262,12 +262,12 @@ export default function BlogStyles() {
         right: 0;
         height: 3px;
         background: linear-gradient(90deg, 
-          rgba(134, 239, 172, 0), 
-          rgba(134, 239, 172, 0.7), 
-          rgba(134, 239, 172, 0)
+          rgba(167, 139, 250, 0), 
+          rgba(167, 139, 250, 0.7), 
+          rgba(167, 139, 250, 0)
         );
         z-index: 1;
-        box-shadow: 0 0 15px rgba(134, 239, 172, 0.5);
+        box-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
       }
       
       .mdx-content pre::after {
@@ -278,9 +278,9 @@ export default function BlogStyles() {
         right: 0;
         height: 1px;
         background: linear-gradient(90deg, 
-          rgba(134, 239, 172, 0), 
-          rgba(134, 239, 172, 0.3), 
-          rgba(134, 239, 172, 0)
+          rgba(167, 139, 250, 0), 
+          rgba(167, 139, 250, 0.3), 
+          rgba(167, 139, 250, 0)
         );
         z-index: 1;
       }
@@ -309,13 +309,13 @@ export default function BlogStyles() {
         align-items: center;
         padding: 0.5rem 1rem;
         background: rgba(0, 0, 0, 0.8);
-        border-bottom: 1px solid rgba(134, 239, 172, 0.2);
+        border-bottom: 1px solid rgba(167, 139, 250, 0.2);
       }
       
       .code-language {
         font-family: 'JetBrains Mono', monospace;
         font-size: 0.8rem;
-        color: rgba(134, 239, 172, 0.8);
+        color: rgba(167, 139, 250, 0.8);
         font-weight: 500;
         letter-spacing: 0.05em;
       }
@@ -323,7 +323,7 @@ export default function BlogStyles() {
       .copy-button {
         background: transparent;
         border: none;
-        color: rgba(134, 239, 172, 0.6);
+        color: rgba(167, 139, 250, 0.6);
         cursor: pointer;
         padding: 0.25rem;
         display: flex;
@@ -334,8 +334,8 @@ export default function BlogStyles() {
       }
       
       .copy-button:hover {
-        background: rgba(134, 239, 172, 0.1);
-        color: rgba(134, 239, 172, 0.9);
+        background: rgba(167, 139, 250, 0.1);
+        color: rgba(167, 139, 250, 0.9);
       }
       
       .copy-button svg {
@@ -360,8 +360,8 @@ export default function BlogStyles() {
       .mdx-content blockquote {
         margin: 2.5rem 0;
         padding: 1.5rem 1.75rem;
-        border-left: 4px solid rgba(134, 239, 172, 0.5);
-        background: rgba(134, 239, 172, 0.05);
+        border-left: 4px solid rgba(167, 139, 250, 0.5);
+        background: rgba(167, 139, 250, 0.05);
         border-radius: 0 8px 8px 0;
         position: relative;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -369,10 +369,10 @@ export default function BlogStyles() {
       }
       
       .mdx-content blockquote:hover {
-        background: rgba(134, 239, 172, 0.08);
+        background: rgba(167, 139, 250, 0.08);
         border-left-width: 5px;
         transform: translateX(5px);
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 10px rgba(134, 239, 172, 0.1);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 10px rgba(167, 139, 250, 0.1);
       }
       
       .mdx-content blockquote::before {
@@ -381,14 +381,14 @@ export default function BlogStyles() {
         top: -0.5rem;
         left: 0.5rem;
         font-size: 3rem;
-        color: rgba(134, 239, 172, 0.2);
+        color: rgba(167, 139, 250, 0.2);
         font-family: Georgia, serif;
         line-height: 1;
         transition: all 0.3s ease;
       }
       
       .mdx-content blockquote:hover::before {
-        color: rgba(134, 239, 172, 0.3);
+        color: rgba(167, 139, 250, 0.3);
         transform: scale(1.1);
       }
       
@@ -407,23 +407,23 @@ export default function BlogStyles() {
         border-spacing: 0;
         overflow: hidden;
         border-radius: 12px;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3), 0 0 10px rgba(134, 239, 172, 0.1);
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3), 0 0 10px rgba(167, 139, 250, 0.1);
         position: relative;
         transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-        border: 1px solid rgba(134, 239, 172, 0.2);
+        border: 1px solid rgba(167, 139, 250, 0.2);
         background: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(10px);
       }
       
       .mdx-content table:hover {
-        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(134, 239, 172, 0.2);
-        border-color: rgba(134, 239, 172, 0.4);
+        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(167, 139, 250, 0.2);
+        border-color: rgba(167, 139, 250, 0.4);
         transform: translateY(-5px) scale(1.01);
       }
       
       /* Table header styling */
       .mdx-content thead {
-        background: rgba(134, 239, 172, 0.1);
+        background: rgba(167, 139, 250, 0.1);
         position: relative;
       }
       
@@ -435,9 +435,9 @@ export default function BlogStyles() {
         right: 0;
         height: 2px;
         background: linear-gradient(90deg, 
-          rgba(134, 239, 172, 0.1), 
-          rgba(134, 239, 172, 0.6), 
-          rgba(134, 239, 172, 0.1)
+          rgba(167, 139, 250, 0.1), 
+          rgba(167, 139, 250, 0.6), 
+          rgba(167, 139, 250, 0.1)
         );
         z-index: 1;
       }
@@ -452,18 +452,18 @@ export default function BlogStyles() {
         font-size: 1rem;
         letter-spacing: 0.02em;
         border-bottom: none;
-        text-shadow: 0 0 10px rgba(134, 239, 172, 0.3);
+        text-shadow: 0 0 10px rgba(167, 139, 250, 0.3);
       }
       
       .mdx-content th:hover {
         color: #86efac;
-        background: rgba(134, 239, 172, 0.08);
+        background: rgba(167, 139, 250, 0.08);
       }
       
       /* Table cell styling */
       .mdx-content td {
         padding: 1.2rem 1.5rem;
-        border-bottom: 1px solid rgba(134, 239, 172, 0.1);
+        border-bottom: 1px solid rgba(167, 139, 250, 0.1);
         transition: all 0.3s ease;
         position: relative;
         color: #d1d5db;
@@ -477,7 +477,7 @@ export default function BlogStyles() {
       }
       
       .mdx-content tbody tr:hover {
-        background: rgba(134, 239, 172, 0.05);
+        background: rgba(167, 139, 250, 0.05);
       }
       
       .mdx-content tbody tr:hover td {
@@ -491,19 +491,19 @@ export default function BlogStyles() {
       
       /* Alternating row colors */
       .mdx-content tbody tr:nth-child(even) {
-        background: rgba(134, 239, 172, 0.02);
+        background: rgba(167, 139, 250, 0.02);
       }
       
       /* Table cell hover effect */
       .mdx-content td:hover {
-        background: rgba(134, 239, 172, 0.08);
+        background: rgba(167, 139, 250, 0.08);
       }
       
       /* Table caption styling */
       .mdx-content table caption {
         margin-bottom: 1rem;
         font-style: italic;
-        color: rgba(134, 239, 172, 0.7);
+        color: rgba(167, 139, 250, 0.7);
         text-align: center;
         font-size: 0.9rem;
       }
@@ -517,9 +517,9 @@ export default function BlogStyles() {
         padding: 1px;
         background: linear-gradient(
           135deg, 
-          rgba(134, 239, 172, 0.3) 0%, 
-          rgba(134, 239, 172, 0.1) 50%, 
-          rgba(134, 239, 172, 0.3) 100%
+          rgba(167, 139, 250, 0.3) 0%, 
+          rgba(167, 139, 250, 0.1) 50%, 
+          rgba(167, 139, 250, 0.3) 100%
         );
         -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
@@ -553,9 +553,9 @@ export default function BlogStyles() {
         height: 1px;
         border: none;
         background: linear-gradient(90deg, 
-          rgba(134, 239, 172, 0), 
-          rgba(134, 239, 172, 0.5), 
-          rgba(134, 239, 172, 0)
+          rgba(167, 139, 250, 0), 
+          rgba(167, 139, 250, 0.5), 
+          rgba(167, 139, 250, 0)
         );
         position: relative;
         transition: all 0.3s ease;
@@ -569,26 +569,26 @@ export default function BlogStyles() {
         transform: translate(-50%, -50%);
         background: #000;
         padding: 0 1.5rem;
-        color: rgba(134, 239, 172, 0.7);
+        color: rgba(167, 139, 250, 0.7);
         font-size: 1.2rem;
         transition: all 0.3s ease;
       }
       
       .mdx-content hr:hover::before {
-        color: rgba(134, 239, 172, 0.9);
+        color: rgba(167, 139, 250, 0.9);
         transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
-        text-shadow: 0 0 10px rgba(134, 239, 172, 0.5);
+        text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
       }
       
       /* Inline code - enhanced styling */
       .mdx-content code:not(pre code) {
         font-family: 'JetBrains Mono', monospace;
-        background: rgba(134, 239, 172, 0.1);
+        background: rgba(167, 139, 250, 0.1);
         color: #86efac;
         padding: 0.2rem 0.5rem;
         border-radius: 4px;
         font-size: 0.9em;
-        border: 1px solid rgba(134, 239, 172, 0.2);
+        border: 1px solid rgba(167, 139, 250, 0.2);
         transition: all 0.3s ease;
         margin: 0 0.2rem;
         white-space: nowrap;
@@ -596,11 +596,11 @@ export default function BlogStyles() {
       }
       
       .mdx-content code:not(pre code):hover {
-        background: rgba(134, 239, 172, 0.15);
+        background: rgba(167, 139, 250, 0.15);
         color: #4ade80;
-        border-color: rgba(134, 239, 172, 0.4);
+        border-color: rgba(167, 139, 250, 0.4);
         transform: translateY(-1px);
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(134, 239, 172, 0.2);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(167, 139, 250, 0.2);
       }
       
       /* Image styling - simplified hover */
@@ -612,32 +612,32 @@ export default function BlogStyles() {
         height: auto;
         margin: 2.5rem 0;
         position: relative;
-        border: 1px solid rgba(134, 239, 172, 0.1);
+        border: 1px solid rgba(167, 139, 250, 0.1);
       }
       
       .mdx-content img:hover {
         transform: scale(1.02);
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(134, 239, 172, 0.2);
-        border-color: rgba(134, 239, 172, 0.3);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(167, 139, 250, 0.2);
+        border-color: rgba(167, 139, 250, 0.3);
       }
       
       /* Details/summary - simplified hover */
       .mdx-content details {
         margin: 2.5rem 0;
-        border: 1px solid rgba(134, 239, 172, 0.2);
+        border: 1px solid rgba(167, 139, 250, 0.2);
         border-radius: 8px;
         overflow: hidden;
-        background: rgba(134, 239, 172, 0.03);
+        background: rgba(167, 139, 250, 0.03);
         transition: all 0.3s ease;
         position: relative;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       }
       
       .mdx-content details:hover {
-        background: rgba(134, 239, 172, 0.05);
-        border-color: rgba(134, 239, 172, 0.4);
+        background: rgba(167, 139, 250, 0.05);
+        border-color: rgba(167, 139, 250, 0.4);
         transform: translateY(-3px);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15), 0 0 10px rgba(134, 239, 172, 0.1);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15), 0 0 10px rgba(167, 139, 250, 0.1);
       }
       
       .mdx-content summary {
@@ -647,7 +647,7 @@ export default function BlogStyles() {
         font-weight: 600;
         color: #e5e7eb;
         transition: all 0.3s ease;
-        background: rgba(134, 239, 172, 0.05);
+        background: rgba(167, 139, 250, 0.05);
         border-bottom: 1px solid transparent;
         display: flex;
         align-items: center;
@@ -663,7 +663,7 @@ export default function BlogStyles() {
         content: '▸';
         margin-right: 0.75rem;
         font-size: 1.2rem;
-        color: rgba(134, 239, 172, 0.7);
+        color: rgba(167, 139, 250, 0.7);
         transition: all 0.3s ease;
         display: inline-block;
       }
@@ -674,11 +674,11 @@ export default function BlogStyles() {
       
       .mdx-content summary:hover {
         color: #f9fafb;
-        background: rgba(134, 239, 172, 0.08);
+        background: rgba(167, 139, 250, 0.08);
       }
       
       .mdx-content details[open] summary {
-        border-bottom: 1px solid rgba(134, 239, 172, 0.2);
+        border-bottom: 1px solid rgba(167, 139, 250, 0.2);
       }
       
       .mdx-content details > div {
@@ -686,7 +686,7 @@ export default function BlogStyles() {
         position: relative;
         z-index: 1;
         background: linear-gradient(to bottom, 
-          rgba(134, 239, 172, 0.03),
+          rgba(167, 139, 250, 0.03),
           transparent
         );
       }

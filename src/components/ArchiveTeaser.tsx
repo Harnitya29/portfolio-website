@@ -15,8 +15,8 @@ export default function ArchiveTeaser() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span className="text-green-300">&gt;</span>
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-green-200 to-white">
+        <span className="text-violet-300">&gt;</span>
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-violet-200 to-white">
           the archive preview
         </span>
       </motion.h2>
@@ -30,13 +30,13 @@ export default function ArchiveTeaser() {
       >
         {/* Item 1 */}
         <motion.div 
-          className="rounded-xl border border-zinc-800/50 bg-zinc-900/30 p-4 transition-colors hover:border-green-500/30 relative overflow-hidden group"
+          className="rounded-xl border border-zinc-800/50 bg-zinc-900/30 p-4 transition-colors hover:border-violet-500/30 relative overflow-hidden group"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <div className="flex items-center gap-2 mb-2 relative z-10">
-            <RiCodeBoxLine size={18} className="text-zinc-400 group-hover:text-green-400 transition-colors" />
+            <RiCodeBoxLine size={18} className="text-zinc-400 group-hover:text-violet-400 transition-colors" />
             <span className="text-xs font-mono text-zinc-500">[ARCHITECTURE]</span>
           </div>
           <h3 className="text-base font-sans font-medium text-zinc-200 mb-1 relative z-10">Systems Thinking</h3>
@@ -45,13 +45,13 @@ export default function ArchiveTeaser() {
 
         {/* Item 2 */}
         <motion.div 
-          className="rounded-xl border border-zinc-800/50 bg-zinc-900/30 p-4 transition-colors hover:border-green-500/30 relative overflow-hidden group"
+          className="rounded-xl border border-zinc-800/50 bg-zinc-900/30 p-4 transition-colors hover:border-violet-500/30 relative overflow-hidden group"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <div className="flex items-center gap-2 mb-2 relative z-10">
-            <RiBookLine size={18} className="text-zinc-400 group-hover:text-green-400 transition-colors" />
+            <RiBookLine size={18} className="text-zinc-400 group-hover:text-violet-400 transition-colors" />
             <span className="text-xs font-mono text-zinc-500">[ASTROPHYSICS]</span>
           </div>
           <h3 className="text-base font-sans font-medium text-zinc-200 mb-1 relative z-10">Cosmos</h3>
@@ -68,7 +68,7 @@ export default function ArchiveTeaser() {
       >
         <TransitionLink 
           href="/archive"
-          className="group flex items-center gap-2 text-sm font-medium text-green-300 hover:text-green-200 transition-colors"
+          className="group flex items-center gap-2 text-sm font-medium text-violet-300 hover:text-violet-200 transition-colors"
         >
           ENTER THE GRAND ARCHIVE
           <RiArrowRightLine size={16} className="transform group-hover:translate-x-1 transition-transform" />

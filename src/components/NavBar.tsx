@@ -82,14 +82,14 @@ const NavBar = () => {
           }`}
           whileHover={{ 
             scale: isCollapsed ? 1.05 : 1.02,
-            boxShadow: "0 20px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(134, 239, 172, 0.4)"
+            boxShadow: "0 20px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(167, 139, 250, 0.4)"
           }}
           animate={{ 
             width: isCollapsed ? "auto" : "auto",
             height: isCollapsed ? "auto" : "auto",
             boxShadow: isCollapsed 
-              ? "0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(134, 239, 172, 0.2)"
-              : "0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(134, 239, 172, 0.3)"
+              ? "0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(167, 139, 250, 0.2)"
+              : "0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(167, 139, 250, 0.3)"
           }}
           transition={{ 
             type: "spring", 
@@ -104,8 +104,8 @@ const NavBar = () => {
             className="absolute inset-0 -z-10 opacity-30"
             animate={{ 
               background: isCollapsed 
-                ? "radial-gradient(circle at center, rgba(134, 239, 172, 0.2), transparent 70%)"
-                : "radial-gradient(circle at center, rgba(134, 239, 172, 0.3), transparent 80%)"
+                ? "radial-gradient(circle at center, rgba(167, 139, 250, 0.2), transparent 70%)"
+                : "radial-gradient(circle at center, rgba(167, 139, 250, 0.3), transparent 80%)"
             }}
             transition={{ duration: 0.5 }}
           />
@@ -115,7 +115,7 @@ const NavBar = () => {
             {isMounted && !isCollapsed && [...Array(8)].map((_, i) => (
               <motion.div
                 key={`particle-${i}`}
-                className="absolute w-1 h-1 rounded-full bg-green-300/30"
+                className="absolute w-1 h-1 rounded-full bg-violet-300/30"
                 initial={{ 
                   x: Math.random() * 100 + "%", 
                   y: Math.random() * 100 + "%",
@@ -147,14 +147,14 @@ const NavBar = () => {
             animate={{ 
               boxShadow: isCollapsed
                 ? [
-                    "inset 0 0 0 1px rgba(134, 239, 172, 0.1)",
-                    "inset 0 0 0 1px rgba(134, 239, 172, 0.3)",
-                    "inset 0 0 0 1px rgba(134, 239, 172, 0.1)"
+                    "inset 0 0 0 1px rgba(167, 139, 250, 0.1)",
+                    "inset 0 0 0 1px rgba(167, 139, 250, 0.3)",
+                    "inset 0 0 0 1px rgba(167, 139, 250, 0.1)"
                   ]
                 : [
-                    "inset 0 0 0 1px rgba(134, 239, 172, 0.2)",
-                    "inset 0 0 0 1px rgba(134, 239, 172, 0.4)",
-                    "inset 0 0 0 1px rgba(134, 239, 172, 0.2)"
+                    "inset 0 0 0 1px rgba(167, 139, 250, 0.2)",
+                    "inset 0 0 0 1px rgba(167, 139, 250, 0.4)",
+                    "inset 0 0 0 1px rgba(167, 139, 250, 0.2)"
                   ]
             }}
             transition={{ 
@@ -214,9 +214,9 @@ const NavBar = () => {
                     className="absolute inset-0 rounded-full"
                     animate={{
                       boxShadow: [
-                        "0 0 0 0 rgba(134, 239, 172, 0)",
-                        "0 0 0 4px rgba(134, 239, 172, 0.3)",
-                        "0 0 0 0 rgba(134, 239, 172, 0)"
+                        "0 0 0 0 rgba(167, 139, 250, 0)",
+                        "0 0 0 4px rgba(167, 139, 250, 0.3)",
+                        "0 0 0 0 rgba(167, 139, 250, 0)"
                       ]
                     }}
                     transition={{
@@ -225,11 +225,11 @@ const NavBar = () => {
                       repeatType: "reverse"
                     }}
                   />
-                  <RiMenuUnfoldLine size={22} className="text-green-300 transition-colors duration-300" />
+                  <RiMenuUnfoldLine size={22} className="text-violet-300 transition-colors duration-300" />
                   
                   {/* Orbital particles */}
                   <motion.div
-                    className="absolute w-1.5 h-1.5 rounded-full bg-green-300/60"
+                    className="absolute w-1.5 h-1.5 rounded-full bg-violet-300/60"
                     animate={{
                       rotate: 360,
                       x: 15 * Math.cos(0),
@@ -242,7 +242,7 @@ const NavBar = () => {
                     }}
                   />
                   <motion.div
-                    className="absolute w-1 h-1 rounded-full bg-green-300/40"
+                    className="absolute w-1 h-1 rounded-full bg-violet-300/40"
                     animate={{
                       rotate: -360,
                       x: 15 * Math.cos(Math.PI * 2/3),
@@ -255,7 +255,7 @@ const NavBar = () => {
                     }}
                   />
                   <motion.div
-                    className="absolute w-1 h-1 rounded-full bg-green-300/40"
+                    className="absolute w-1 h-1 rounded-full bg-violet-300/40"
                     animate={{
                       rotate: 180,
                       x: 15 * Math.cos(Math.PI * 4/3),
@@ -370,10 +370,10 @@ const NavBar = () => {
                   <motion.div 
                     className="absolute inset-0 rounded-full bg-zinc-800 group-hover:bg-zinc-700/90 transition-all duration-300"
                     animate={{
-                      boxShadow: "0 0 10px rgba(134, 239, 172, 0.3)"
+                      boxShadow: "0 0 10px rgba(167, 139, 250, 0.3)"
                     }}
                     whileHover={{ 
-                      boxShadow: "0 0 25px rgba(134, 239, 172, 0.6)",
+                      boxShadow: "0 0 25px rgba(167, 139, 250, 0.6)",
                       background: "linear-gradient(135deg, rgba(52, 52, 52, 0.9), rgba(23, 23, 23, 0.9))"
                     }}
                   />
@@ -385,7 +385,7 @@ const NavBar = () => {
                     whileHover={{ rotate: -10 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <RiMenuFoldLine size={22} className="text-green-300 group-hover:text-green-200 transition-colors duration-300" />
+                    <RiMenuFoldLine size={22} className="text-violet-300 group-hover:text-violet-200 transition-colors duration-300" />
                   </motion.div>
                   
                   {/* Always visible halo effect around button */}
@@ -393,9 +393,9 @@ const NavBar = () => {
                     className="absolute inset-0 rounded-full"
                     animate={{
                       boxShadow: [
-                        "0 0 0 1px rgba(134, 239, 172, 0.2)",
-                        "0 0 0 2px rgba(134, 239, 172, 0.3)",
-                        "0 0 0 1px rgba(134, 239, 172, 0.2)"
+                        "0 0 0 1px rgba(167, 139, 250, 0.2)",
+                        "0 0 0 2px rgba(167, 139, 250, 0.3)",
+                        "0 0 0 1px rgba(167, 139, 250, 0.2)"
                       ]
                     }}
                     transition={{
@@ -409,7 +409,7 @@ const NavBar = () => {
                   <motion.div
                     className="absolute inset-0 rounded-full opacity-30 group-hover:opacity-100 transition-opacity duration-300"
                     style={{
-                      background: "radial-gradient(circle at center, rgba(134, 239, 172, 0.3) 0%, transparent 70%)"
+                      background: "radial-gradient(circle at center, rgba(167, 139, 250, 0.3) 0%, transparent 70%)"
                     }}
                   />
                 </motion.button>
@@ -472,11 +472,11 @@ const NavItem = ({ href, icon, name, isActive, hoveredIcon, setHoveredIcon }: Na
           }}
         >
           <motion.div 
-            className="absolute inset-0 bg-gradient-to-r from-green-300 to-emerald-400 opacity-80"
+            className="absolute inset-0 bg-gradient-to-r from-violet-300 to-violet-400 opacity-80"
             animate={{
               background: isHovered && !isActive
-                ? "linear-gradient(135deg, rgba(134, 239, 172, 0.9), rgba(110, 231, 183, 0.9))"
-                : "linear-gradient(135deg, rgba(134, 239, 172, 0.8), rgba(110, 231, 183, 0.8))"
+                ? "linear-gradient(135deg, rgba(167, 139, 250, 0.9), rgba(110, 231, 183, 0.9))"
+                : "linear-gradient(135deg, rgba(167, 139, 250, 0.8), rgba(110, 231, 183, 0.8))"
             }}
             transition={{ duration: 0.5 }}
           />
@@ -503,7 +503,7 @@ const NavItem = ({ href, icon, name, isActive, hoveredIcon, setHoveredIcon }: Na
         <motion.div
           className={`absolute inset-0 rounded-full ${
             isActive || isHovered
-              ? "bg-green-300" 
+              ? "bg-violet-300" 
               : "bg-zinc-800"
           }`}
           initial={{ opacity: 0, scale: 0.8 }}
@@ -511,7 +511,7 @@ const NavItem = ({ href, icon, name, isActive, hoveredIcon, setHoveredIcon }: Na
             opacity: isActive || isHovered ? 1 : 0,
             scale: isActive || isHovered ? 1 : 0.8,
             boxShadow: isActive || isHovered 
-              ? "0 0 30px rgba(134,239,172,0.9), inset 0 0 15px rgba(255,255,255,0.5)" 
+              ? "0 0 30px rgba(196, 181, 253,0.9), inset 0 0 15px rgba(255,255,255,0.5)" 
               : "none"
           }}
           transition={{ 
@@ -525,7 +525,7 @@ const NavItem = ({ href, icon, name, isActive, hoveredIcon, setHoveredIcon }: Na
         {(isActive || isHovered) && (
           <>
             <motion.div
-              className="absolute inset-0 rounded-full border-2 border-green-300/50"
+              className="absolute inset-0 rounded-full border-2 border-violet-300/50"
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ 
                 opacity: [0.7, 0.5, 0.7], 
@@ -539,7 +539,7 @@ const NavItem = ({ href, icon, name, isActive, hoveredIcon, setHoveredIcon }: Na
               }}
             />
             <motion.div
-              className="absolute inset-0 rounded-full border border-green-200/30"
+              className="absolute inset-0 rounded-full border border-violet-200/30"
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ 
                 opacity: [0.5, 0.3, 0.5], 
@@ -553,7 +553,7 @@ const NavItem = ({ href, icon, name, isActive, hoveredIcon, setHoveredIcon }: Na
               }}
             />
             <motion.div
-              className="absolute inset-0 rounded-full border border-green-100/20"
+              className="absolute inset-0 rounded-full border border-violet-100/20"
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ 
                 opacity: [0.3, 0.1, 0.3], 

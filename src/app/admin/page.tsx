@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import React from "react";
 
 export const dynamic = "force-dynamic";
-export const config = { runtime: "nodejs" };
+export const runtime = "nodejs";
 
 // Removed global supabase client initialization. Doing it dynamically per request.
 
@@ -50,7 +50,7 @@ export default async function AdminPage() {
   // 1. Password Protection View
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-black text-green-500 font-mono flex items-center justify-center p-4">
+      <div className="min-h-screen bg-black text-violet-500 font-mono flex items-center justify-center p-4">
         <form
           action={authenticate}
           className="border border-zinc-800 bg-zinc-950 p-8 rounded-xl flex flex-col items-center gap-6 shadow-2xl w-full max-w-sm"
@@ -60,12 +60,12 @@ export default async function AdminPage() {
             type="password"
             name="password"
             autoFocus
-            className="w-full bg-zinc-900 border border-zinc-700 rounded px-4 py-2 text-white focus:outline-none focus:border-green-500 transition-colors"
+            className="w-full bg-zinc-900 border border-zinc-700 rounded px-4 py-2 text-white focus:outline-none focus:border-violet-500 transition-colors"
             placeholder="[ ENTER PASSWORD ]"
           />
           <button
             type="submit"
-            className="w-full bg-zinc-100 text-black font-semibold py-2 rounded hover:bg-green-400 transition-colors"
+            className="w-full bg-zinc-100 text-black font-semibold py-2 rounded hover:bg-violet-400 transition-colors"
           >
             DECRYPT
           </button>
@@ -170,7 +170,7 @@ export default async function AdminPage() {
                       month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" 
                     })}
                   </td>
-                  <td className="px-4 py-3 text-emerald-400 font-medium">{row.ip}</td>
+                  <td className="px-4 py-3 text-violet-400 font-medium">{row.ip}</td>
                   <td className="px-4 py-3">
                     {row.city}, {row.country}
                   </td>
