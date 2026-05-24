@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://harnitya.vercel.app"),
+  metadataBase: new URL("https://harnitya.in"),
   title: {
     default: "ℏarnitya | Profile",
     template: "%s | ℏarnitya",
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Harnitya Narola",
     description: "second year cs grad student, part-time coder, full-time chaos creator",
-    url: "https://harnitya.vercel.app",
+    url: "https://harnitya.in",
     siteName: "Harnitya Narola",
     locale: "en_US",
     type: "website",
-    images: ["https://harnitya.vercel.app/og/home"],
+    images: ["https://harnitya.in/og/home"],
   },
   robots: {
     index: true,

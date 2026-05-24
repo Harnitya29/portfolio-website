@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Projects",
     description: "Explore the innovative projects crafted by Harnitya Narola, blending creativity, technology, and design.",
-    url: "https://harnitya.vercel.app/projects",
+    url: "https://harnitya.in/projects",
     images: [
       {
-        url: "https://harnitya.vercel.app/og/home?title=projects",
+        url: "https://harnitya.in/og/home?title=projects",
       },
     ],
   },
@@ -18,6 +18,6 @@ export const metadata: Metadata = {
     description: "Explore the innovative projects crafted by Harnitya Narola, blending creativity, technology, and design.",
     card: "summary_large_image",
     creator: "@harnitya29",
-    images: ["https://harnitya.vercel.app/og/home?title=projects"],
+    images: ["https://harnitya.in/og/home?title=projects"],
   },
 };

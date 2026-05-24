@@ -40,10 +40,10 @@ export async function generateMetadata({
       description: post.metadata.description,
       publishedTime,
       type: "article",
-      url: `https://harnitya.vercel.app/blog/${post.slug}`,
+      url: `https://harnitya.in/blog/${post.slug}`,
       images: [
         {
-          url: `https://harnitya.vercel.app/og/blog?title=${encodedTitle}`,
+          url: `https://harnitya.in/og/blog?title=${encodedTitle}`,
         },
       ],
     },
@@ -53,7 +53,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       creator: "@harnitya29",
       images: [
-        `https://harnitya.vercel.app/og/blog?title=${encodedTitle}&top=${encodedDate}`,
+        `https://harnitya.in/og/blog?title=${encodedTitle}&top=${encodedDate}`,
       ],
     },
   };
@@ -84,8 +84,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
               datePublished: post.metadata.date,
               dateModified: post.metadata.date,
               description: post.metadata.description,
-              image: `https://harnitya.vercel.app/og/blog?title=${encodedTitle}&top=${encodedDate}`,
-              url: `https://harnitya.vercel.app/blog/${post.slug}`,
+              image: `https://harnitya.in/og/blog?title=${encodedTitle}&top=${encodedDate}`,
+              url: `https://harnitya.in/blog/${post.slug}`,
               author: {
                 "@type": "Person",
                 name: "Harnitya Narola",

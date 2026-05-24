@@ -389,7 +389,7 @@ export async function GET(request: Request) {
           
           {/* Hình ảnh hồ sơ */}
           <img
-            src="https://harnitya.vercel.app/cc.jpg"
+            src="https://harnitya.in/cc.jpg"
             style={{
               width: "100px",
               height: "100px",
@@ -496,7 +496,7 @@ export async function GET(request: Request) {
               textShadow: "0 0 5px rgba(226, 232, 240, 0.3)",
             }}
           >
-            harnitya.vercel.app
+            harnitya.in
           </span>
         </div>
         
