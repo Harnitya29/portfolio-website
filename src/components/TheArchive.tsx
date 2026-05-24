@@ -35,7 +35,7 @@ const archiveData: ArchiveItem[] = [
     application: "Evolving models of thought.",
     nugget: "Think -> Write -> Publish.",
     tooltip: "Related: Philosophy, Cognition, Systems.",
-    link: "https://medium.com/"
+    link: "https://medium.com/@narolaharnity/übermensch-notes-notes-on-cognitive-evolution-31ee843bf607"
   },
   {
     id: "meditations",

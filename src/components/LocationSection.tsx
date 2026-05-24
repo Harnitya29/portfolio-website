@@ -1,18 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { motion } from "framer-motion";
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
-
-// Mapbox access token
-mapboxgl.accessToken = 'pk.eyJ1IjoibGV2aW5oa2hhbmdnZ2dnZ2dnIiwiYSI6ImNtYWptcmp0azB1ZzYycnE0YnlvcjYybDYifQ.5uqIaOqzd3NHunVaa2DqZA';
+import "leaflet/dist/leaflet.css";
 
 export default function LocationSection() {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [isMapLoading, setIsMapLoading] = useState(true);
 
   // Memoize animation variants
   const containerVariants = useMemo(() => ({
@@ -25,7 +18,6 @@ export default function LocationSection() {
     visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.2 } }
   }), []);
 
-  // Memoize title animation
   const titleAnimation = useMemo(() => ({
     rotate: [0, 5, 0, -5, 0],
     color: ['#86efac', '#4ade80', '#86efac'],
@@ -40,7 +32,6 @@ export default function LocationSection() {
     repeatType: 'loop' as const
   }), []);
 
-  // Memoize event handlers
   const handleHoverStart = useCallback((item: string) => {
     setHoveredItem(item);
   }, []);
@@ -49,355 +40,205 @@ export default function LocationSection() {
     setHoveredItem(null);
   }, []);
 
-  // Initialize map when component mounts
   useEffect(() => {
-    if (map.current || !mapContainer.current) return;
+    let map: any;
 
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      // Sử dụng style tùy chỉnh giống Apple Maps dark mode 2024-2025
-      style: 'mapbox://styles/mapbox/navigation-night-v1',
-      center: [73.1791, 22.3186], // Vadodara NV Hall coordinates
-      zoom: 11,
-      attributionControl: false,
-      interactive: true,
-      // Tắt các control mặc định
-      boxZoom: false,
-      doubleClickZoom: false,
-      dragRotate: false,
-      touchZoomRotate: false
-    });
+    async function init() {
+      const L = (await import("leaflet")).default;
 
-    // Loại bỏ control điều hướng (không thêm NavigationControl)
+      const el = document.getElementById("portfolio-map");
+      if (!el) return;
+      if ((el as any)._leaflet_id) return;
 
-    // Add marker for location
-    map.current.on('style.load', () => {
-      setIsMapLoading(false);
-      
-      // Tùy chỉnh style bản đồ để giống Apple Maps 2024-2025
-      if (map.current) {
-        // The custom layer paint properties caused console errors as `navigation-night-v1`
-        // does not contain these exact layer IDs. We rely on the default dark theme.
-      }
-      
-      // Add custom marker
-      const marker = new mapboxgl.Marker({
-        color: '#34d399',
-        scale: 0.8
-      })
-        .setLngLat([73.1791, 22.3186])
-        .addTo(map.current!);
-      
-      // Add pulsing dot effect
-      const size = 150;
-      
-      // This implements `StyleImageInterface`
-      // to draw a pulsing dot icon on the map.
-      const pulsingDot: {
-        width: number;
-        height: number;
-        data: Uint8ClampedArray;
-        context?: CanvasRenderingContext2D;
-        onAdd: () => void;
-        render: () => boolean;
-      } = {
-        width: size,
-        height: size,
-        data: new Uint8ClampedArray(size * size * 4),
-        
-        // When the layer is added to the map,
-        // get the rendering context for the map canvas.
-        onAdd: function() {
-          const canvas = document.createElement('canvas');
-          canvas.width = this.width;
-          canvas.height = this.height;
-          this.context = canvas.getContext('2d', { willReadFrequently: true }) || undefined;
-        },
-        
-        // Call once before every frame where the icon will be used.
-        render: function() {
-          const duration = 1500;
-          const t = (performance.now() % duration) / duration;
-          
-          const radius = (size / 2) * 0.3;
-          const outerRadius = (size / 2) * 0.7 * t + radius;
-          const context = this.context!;
-          
-          // Draw the outer circle.
-          context.clearRect(0, 0, this.width, this.height);
-          context.beginPath();
-          context.arc(
-            this.width / 2,
-            this.height / 2,
-            outerRadius,
-            0,
-            Math.PI * 2
-          );
-          context.fillStyle = `rgba(52, 211, 153, ${1 - t})`;
-          context.fill();
-          
-          // Draw the inner circle.
-          context.beginPath();
-          context.arc(
-            this.width / 2,
-            this.height / 2,
-            radius,
-            0,
-            Math.PI * 2
-          );
-          context.fillStyle = 'rgba(52, 211, 153, 1)';
-          context.strokeStyle = 'white';
-          context.lineWidth = 2 + 4 * (1 - t);
-          context.fill();
-          context.stroke();
-          
-          // Update this image's data with data from the canvas.
-          this.data = context.getImageData(
-            0,
-            0,
-            this.width,
-            this.height
-          ).data;
-          
-          // Continuously repaint the map, resulting
-          // in the smooth animation of the dot.
-          map.current!.triggerRepaint();
-          
-          // Return `true` to let the map know that the image was updated.
-          return true;
+      map = L.map(el, {
+        zoomControl: false,
+        scrollWheelZoom: false,
+        touchZoom: true,
+        dragging: true,
+      }).setView([22.3186, 73.1791], 11);
+
+      L.tileLayer(
+        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+        {
+          attribution: "&copy; OpenStreetMap &copy; CARTO",
         }
-      };
-      
-      map.current!.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
-      
-      map.current!.addSource('dot-point', {
-        'type': 'geojson',
-        'data': {
-          'type': 'FeatureCollection',
-          'features': [
-            {
-              'type': 'Feature',
-              'geometry': {
-                'type': 'Point',
-                'coordinates': [73.1791, 22.3186]
-              },
-              'properties': {}
-            }
-          ]
-        }
+      ).addTo(map);
+
+      L.control.zoom({ position: "bottomright" }).addTo(map);
+
+      const marker = L.divIcon({
+        className: "",
+        iconSize: [26, 26],
+        html: '<div class="pulse-marker"><div class="core"></div></div>',
       });
-      
-      map.current!.addLayer({
-        'id': 'layer-with-pulsing-dot',
-        'type': 'symbol',
-        'source': 'dot-point',
-        'layout': {
-          'icon-image': 'pulsing-dot',
-          'icon-allow-overlap': true
-        }
-      });
-    });
 
-    // Clean up on unmount
+      L.marker([22.3186, 73.1791], { icon: marker }).addTo(map);
+
+      setTimeout(() => {
+        map.invalidateSize();
+      }, 500);
+    }
+
+    init();
+
     return () => {
-      if (map.current) {
-        map.current.remove();
-        map.current = null;
-      }
+      if (map) map.remove();
     };
   }, []);
 
   return (
-    <motion.div 
-      className="text-white mb-16 relative will-change-transform"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.h1 
-        className="text-2xl font-bold text-white relative inline-block"
-        variants={titleVariants}
-        whileHover={{ scale: 1.03 }}
+    <>
+      <motion.div 
+        className="text-white mb-16 relative will-change-transform"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <motion.span
-          className="text-green-300 inline-block will-change-transform"
-          animate={titleAnimation}
-          transition={titleTransition}
+        <motion.h1 
+          className="text-2xl font-bold text-white relative inline-block"
+          variants={titleVariants}
+          whileHover={{ scale: 1.03 }}
         >
-          &gt;
-        </motion.span>{" "}
-        <span className="relative group">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-green-200 to-white bg-[length:200%_100%] animate-shimmer">location</span>
           <motion.span
-            className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-green-300/0 via-green-300 to-green-300/0 will-change-transform"
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 1, delay: 0.5 }}
-            style={{ boxShadow: '0 2px 10px rgba(134, 239, 172, 0.3)' }}
-          />
-        </span>
-      </motion.h1>
-      
-      <div className="mt-10 relative">
-        <motion.div
-          className="relative rounded-xl overflow-hidden"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ 
-            opacity: 1, 
-            y: 0,
-            transition: { duration: 0.5, delay: 0.3 }
-          }}
-          whileHover={{ 
-            scale: 1.02,
-            transition: { duration: 0.3 }
-          }}
-          onHoverStart={() => handleHoverStart('map')}
-          onHoverEnd={handleHoverEnd}
-          onTouchStart={() => handleHoverStart('map')}
-          onTouchEnd={handleHoverEnd}
-          onTouchCancel={handleHoverEnd}
-        >
-          {/* Map container */}
-          <div 
-            ref={mapContainer} 
-            className="w-full h-[400px] rounded-xl relative z-10"
-          />
-          
-          {/* Overlay with glass effect */}
-          <motion.div 
-            className="absolute inset-0 pointer-events-none z-20 rounded-xl overflow-hidden"
-            initial={{ opacity: 0 }}
+            className="text-green-300 inline-block will-change-transform"
+            animate={titleAnimation}
+            transition={titleTransition}
+          >
+            &gt;
+          </motion.span>{" "}
+          <span className="relative group">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-green-200 to-white bg-[length:200%_100%] animate-shimmer">location</span>
+            <motion.span
+              className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-green-300/0 via-green-300 to-green-300/0 will-change-transform"
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 1, delay: 0.5 }}
+              style={{ boxShadow: '0 2px 10px rgba(134, 239, 172, 0.3)' }}
+            />
+          </span>
+        </motion.h1>
+        
+        <div className="mt-10 relative">
+          <motion.div
+            className="relative rounded-[34px] overflow-hidden border border-zinc-800"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ 
-              opacity: hoveredItem === 'map' ? 1 : 0,
+              opacity: 1, 
+              y: 0,
+              transition: { duration: 0.5, delay: 0.3 }
+            }}
+            whileHover={{ 
+              scale: 1.02,
               transition: { duration: 0.3 }
             }}
+            onHoverStart={() => handleHoverStart('map')}
+            onHoverEnd={handleHoverEnd}
+            onTouchStart={() => handleHoverStart('map')}
+            onTouchEnd={handleHoverEnd}
+            onTouchCancel={handleHoverEnd}
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            <div 
+              id="portfolio-map"
+              className="w-full h-[320px] md:h-[460px] lg:h-[560px] relative z-10"
+            />
             
-            {/* Animated border */}
-            <motion.div
-              className="absolute top-0 left-0 w-full h-[1px]"
-              style={{ background: 'linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.7), transparent)' }}
+            <motion.div 
+              className="absolute inset-0 pointer-events-none z-20 rounded-[34px] overflow-hidden"
+              initial={{ opacity: 0 }}
               animate={{ 
-                left: ['-100%', '100%'],
+                opacity: hoveredItem === 'map' ? 1 : 0,
+                transition: { duration: 0.3 }
               }}
-              transition={{ 
-                duration: 2,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-0 right-0 w-full h-[1px]"
-              style={{ background: 'linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.7), transparent)' }}
-              animate={{ 
-                right: ['-100%', '100%'],
-              }}
-              transition={{ 
-                duration: 2,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
-            <motion.div
-              className="absolute left-0 top-0 h-full w-[1px]"
-              style={{ background: 'linear-gradient(180deg, transparent, rgba(52, 211, 153, 0.7), transparent)' }}
-              animate={{ 
-                top: ['-100%', '100%'],
-              }}
-              transition={{ 
-                duration: 2,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
-            <motion.div
-              className="absolute right-0 bottom-0 h-full w-[1px]"
-              style={{ background: 'linear-gradient(180deg, transparent, rgba(52, 211, 153, 0.7), transparent)' }}
-              animate={{ 
-                bottom: ['-100%', '100%'],
-              }}
-              transition={{ 
-                duration: 2,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            </motion.div>
           </motion.div>
           
-          {/* Loading indicator */}
-          {isMapLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-zinc-900/80 z-30">
-              <div className="flex space-x-2">
-                {[...Array(3)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="w-3 h-3 rounded-full bg-green-300"
-                    animate={{
-                      scale: [1, 1.5, 1],
-                      opacity: [0.3, 1, 0.3]
-                    }}
-                    transition={{
-                      duration: 1,
-                      repeat: Infinity,
-                      delay: i * 0.2,
-                      ease: "easeInOut"
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
-        </motion.div>
-        
-        {/* Location info */}
-        <motion.div
-          className="mt-6 relative pl-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ 
-            opacity: 1, 
-            y: 0,
-            transition: { duration: 0.5, delay: 0.5 }
-          }}
-        >
-          {/* Circle indicator */}
-          <motion.div 
-            className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-green-300"
-            animate={{
-              scale: [1, 1.2, 1],
-              boxShadow: [
-                '0 0 0 rgba(52, 211, 153, 0.4)',
-                '0 0 10px rgba(52, 211, 153, 0.7)',
-                '0 0 0 rgba(52, 211, 153, 0.4)'
-              ]
+          <motion.div
+            className="mt-6 relative pl-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ 
+              opacity: 1, 
+              y: 0,
+              transition: { duration: 0.5, delay: 0.5 }
             }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "reverse"
-            }}
-          />
-          
-          <motion.h3 
-            className="text-xl font-medium text-green-300"
-            whileHover={{ scale: 1.02 }}
           >
-            NV Hall MSU Boys Hostel Vadodara , Gujarat India
-          </motion.h3>
-          
-          <motion.p 
-            className="text-zinc-400 mt-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-          >
-            Currently living in uni dorm room and surviving and might thrive.
-            <span className="block mt-2 text-zinc-500">
-              If you&apos;re looking for me in 5 years, check 35.3606° N, 138.7274° E. I&apos;ll probably be somewhere there—chilling.
-            </span>
-          </motion.p>
-        </motion.div>
-      </div>
-    </motion.div>
+            <motion.div 
+              className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-green-300"
+              animate={{
+                scale: [1, 1.2, 1],
+                boxShadow: [
+                  '0 0 0 rgba(52, 211, 153, 0.4)',
+                  '0 0 10px rgba(52, 211, 153, 0.7)',
+                  '0 0 0 rgba(52, 211, 153, 0.4)'
+                ]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse"
+              }}
+            />
+            
+            <motion.h3 
+              className="text-xl font-medium text-green-300"
+              whileHover={{ scale: 1.02 }}
+            >
+              NV Hall MSU Boys Hostel Vadodara , Gujarat India
+            </motion.h3>
+            
+            <motion.p 
+              className="text-zinc-400 mt-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+            >
+              Currently living in uni dorm room and surviving and might thrive.
+              <span className="block mt-2 text-zinc-500">
+                If you&apos;re looking for me in 5 years, check 35.3606° N, 138.7274° E. I&apos;ll probably be somewhere there—chilling.
+              </span>
+            </motion.p>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      <style jsx global>{`
+        .leaflet-container {
+          background: #0f172a;
+          filter: brightness(1.12) contrast(1.06);
+        }
+        .pulse-marker {
+          width: 26px;
+          height: 26px;
+          position: relative;
+        }
+        .pulse-marker::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 999px;
+          background: rgba(52, 211, 153, 0.25);
+          animation: pulse 2s infinite;
+        }
+        .core {
+          width: 8px;
+          height: 8px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 999px;
+          background: rgb(52, 211, 153);
+          box-shadow: 0 0 18px rgb(52, 211, 153);
+        }
+        @keyframes pulse {
+          from { transform: scale(0.8); opacity: 1; }
+          to { transform: scale(1.8); opacity: 0; }
+        }
+        @media (max-width: 768px) {
+          .leaflet-control-container { transform: scale(0.88); }
+        }
+      `}</style>
+    </>
   );
 }

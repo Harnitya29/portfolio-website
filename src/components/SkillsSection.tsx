@@ -110,38 +110,10 @@ const skills: Skill[] = [
     color: "#ff6f00",
     category: "AI & Data"
   },
-  {
-    id: "owasp",
-    name: "OWASP",
-    level: 3,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/OWASP_Logo.svg/100px-OWASP_Logo.svg.png",
-    color: "#ffffff",
-    category: "Cybersecurity"
-  },
-  {
-    id: "pentesting",
-    name: "Basic Pentesting",
-    level: 3,
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kali/kali-original.svg",
-    color: "#557C94",
-    category: "Cybersecurity"
-  },
-  {
-    id: "ctfs",
-    name: "CTFs",
-    level: 4,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag-icon.svg/100px-Flag-icon.svg.png",
-    color: "#FF0000",
-    category: "Cybersecurity"
-  },
-  {
-    id: "network",
-    name: "Network Fundamentals",
-    level: 4,
-    logo: "https://www.svgrepo.com/show/354112/network.svg",
-    color: "#38b2ac",
-    category: "Cybersecurity"
-  },
+  
+  
+  
+  
   {
     id: "java",
     name: "Java",
