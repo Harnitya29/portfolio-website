@@ -208,13 +208,18 @@ export function ProjectCards({ activeCategory = "All" }: ProjectCardsProps) {
                         {/* Minimalist title with elegant underline effect */}
                       <div className="overflow-hidden">
                         <motion.h3 
-                          className="text-xl font-medium inline-block"
+                          className="text-xl font-medium inline-block items-center"
                           animate={{ 
                             color: isHovered ? '#86efac' : '#ffffff',
                           }}
                           transition={{ duration: 0.3 }}
                         >
                           {project.title}
+                          {project.link === "#" && (
+                            <span className="ml-3 text-[10px] font-mono px-2 py-0.5 rounded border border-violet-500/30 text-violet-300 uppercase tracking-widest align-middle bg-violet-500/10">
+                              Upcoming
+                            </span>
+                          )}
                           <motion.div 
                             className="h-px bg-gradient-to-r from-violet-300/0 via-violet-300 to-violet-300/0 mt-1"
                             initial={{ scaleX: 0 }}
