@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import "leaflet/dist/leaflet.css";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 export default function LocationSection() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const mapContainer = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<any>(null);
 
   // Memoize animation variants
   const containerVariants = useMemo(() => ({
@@ -41,48 +43,53 @@ export default function LocationSection() {
   }, []);
 
   useEffect(() => {
-    let map: any;
+    if (!mapContainer.current || mapRef.current) return;
+
+    let resizeObserver: ResizeObserver;
 
     async function init() {
-      const L = (await import("leaflet")).default;
+      const maplibregl = (await import("maplibre-gl")).default;
 
-      const el = document.getElementById("portfolio-map");
-      if (!el) return;
-      if ((el as any)._leaflet_id) return;
-
-      map = L.map(el, {
-        zoomControl: false,
-        scrollWheelZoom: false,
-        touchZoom: true,
-        dragging: true,
-      }).setView([22.3186, 73.1791], 11);
-
-      L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-        {
-          attribution: "&copy; OpenStreetMap &copy; CARTO",
-        }
-      ).addTo(map);
-
-      L.control.zoom({ position: "bottomright" }).addTo(map);
-
-      const marker = L.divIcon({
-        className: "",
-        iconSize: [26, 26],
-        html: '<div class="pulse-marker"><div class="core"></div></div>',
+      mapRef.current = new maplibregl.Map({
+        container: mapContainer.current!,
+        style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
+        center: [73.1791, 22.3186],
+        zoom: 11,
+        attributionControl: false,
+        dragPan: true,
+        scrollZoom: false
       });
 
-      L.marker([22.3186, 73.1791], { icon: marker }).addTo(map);
+      mapRef.current.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
 
-      setTimeout(() => {
-        map.invalidateSize();
-      }, 500);
+      const el = document.createElement('div');
+      el.className = 'pulse-marker';
+      const core = document.createElement('div');
+      core.className = 'core';
+      el.appendChild(core);
+
+      new maplibregl.Marker({ element: el })
+        .setLngLat([73.1791, 22.3186])
+        .addTo(mapRef.current);
+
+      resizeObserver = new ResizeObserver(() => {
+        if (mapRef.current) {
+          mapRef.current.resize();
+        }
+      });
+      resizeObserver.observe(mapContainer.current!);
     }
 
     init();
 
     return () => {
-      if (map) map.remove();
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
     };
   }, []);
 
@@ -138,7 +145,7 @@ export default function LocationSection() {
             onTouchCancel={handleHoverEnd}
           >
             <div 
-              id="portfolio-map"
+              ref={mapContainer}
               className="w-full h-[400px] rounded-xl relative z-10"
             />
             
@@ -229,10 +236,6 @@ export default function LocationSection() {
       </motion.div>
 
       <style jsx global>{`
-        .leaflet-container {
-          background: #0f172a;
-          filter: brightness(1.12) contrast(1.06);
-        }
         .pulse-marker {
           width: 26px;
           height: 26px;
@@ -261,8 +264,8 @@ export default function LocationSection() {
           from { transform: scale(0.8); opacity: 1; }
           to { transform: scale(1.8); opacity: 0; }
         }
-        @media (max-width: 768px) {
-          .leaflet-control-container { transform: scale(0.88); }
+        .maplibregl-ctrl-bottom-right {
+          z-index: 10 !important;
         }
       `}</style>
     </>
