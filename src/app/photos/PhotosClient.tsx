@@ -395,7 +395,7 @@ export default function PhotosClient() {
                     />
                   </motion.div>
                   
-                  {/* Overlay thông tin với hiệu ứng cải tiến */}
+                  {/* Overlay <p>まだ何もありません</p> */}
                   <motion.div 
                     className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-4"
                     initial={{ opacity: 0 }}
