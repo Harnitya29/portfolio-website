@@ -8,7 +8,7 @@ const getPhotos = () => {
   return [];
 };
 
-// Hàm định dạng ngày tháng theo dd/mm/yyyy
+// まだ何もありません dd/mm/yyyy
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
   return date.toLocaleDateString('vi-VN', {
