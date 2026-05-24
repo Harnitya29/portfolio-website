@@ -120,7 +120,7 @@ export default function LocationSection() {
         
         <div className="mt-10 relative">
           <motion.div
-            className="relative rounded-[34px] overflow-hidden border border-zinc-800"
+            className="relative rounded-xl overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={{ 
               opacity: 1, 
@@ -139,11 +139,11 @@ export default function LocationSection() {
           >
             <div 
               id="portfolio-map"
-              className="w-full h-[320px] md:h-[460px] lg:h-[560px] relative z-10"
+              className="w-full h-[400px] rounded-xl relative z-10"
             />
             
             <motion.div 
-              className="absolute inset-0 pointer-events-none z-20 rounded-[34px] overflow-hidden"
+              className="absolute inset-0 pointer-events-none z-20 rounded-xl overflow-hidden"
               initial={{ opacity: 0 }}
               animate={{ 
                 opacity: hoveredItem === 'map' ? 1 : 0,
@@ -151,6 +151,32 @@ export default function LocationSection() {
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              
+              {/* Animated border */}
+              <motion.div
+                className="absolute top-0 left-0 w-full h-[1px]"
+                style={{ background: 'linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.7), transparent)' }}
+                animate={{ left: ['-100%', '100%'] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div
+                className="absolute bottom-0 right-0 w-full h-[1px]"
+                style={{ background: 'linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.7), transparent)' }}
+                animate={{ right: ['-100%', '100%'] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div
+                className="absolute left-0 top-0 h-full w-[1px]"
+                style={{ background: 'linear-gradient(180deg, transparent, rgba(52, 211, 153, 0.7), transparent)' }}
+                animate={{ top: ['-100%', '100%'] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div
+                className="absolute right-0 bottom-0 h-full w-[1px]"
+                style={{ background: 'linear-gradient(180deg, transparent, rgba(52, 211, 153, 0.7), transparent)' }}
+                animate={{ bottom: ['-100%', '100%'] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              />
             </motion.div>
           </motion.div>
           
